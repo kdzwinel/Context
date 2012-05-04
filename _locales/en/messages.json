@@ -9,6 +9,9 @@
    "all_extensions": {
       "message": "All extensions"
    },
+   "highlight_ungrouped_extensions": {
+      "message": "highlight ungrouped extensions"
+   },
    "create_new_context": {
       "message": "Create new context"
    },

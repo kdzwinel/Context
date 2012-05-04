@@ -158,6 +158,7 @@ function newContext(name, imgSrc) {
 //mark config as modified
 function markDirty() {
 	$("#save-button").button( "option", "disabled", false );
+	highlightUngrouped();
 }
 
 //mark config as saved
@@ -257,6 +258,27 @@ function pageLoaded() {
 			}
 		});
 	});
+}
+
+//higlights ungrouped extensions inside 'Available extensions' box
+function highlightUngrouped() {
+	var enabled = $('#highlightUngrouped').is(':checked');
+
+	//remove .ungrouped class from all extensions and fade them back to full visibility
+	$('.extensions_list li:visible, .contextExtensions li:visible').removeClass('ungrouped').fadeTo('fast', 1);
+
+	if( enabled ) {
+		$.each($('#extensions li'), function(i, extensionElem) {
+			var extid = $(extensionElem).data('extid');
+
+			if( $('.context li:visible[data-extid=' + extid + ']').length == 0 ) {
+				$(extensionElem).addClass('ungrouped');
+			}
+		});
+
+		//make all extensions that are grouped opaque to expose ungrouped extensions
+		$('#extensions li:visible:not(.ungrouped)').stop().fadeTo('fast', .4);
+	}
 }
 
 $(document).ready(function(){
@@ -415,5 +437,9 @@ $(document).ready(function(){
 			
 			markDirty();
 		}
+	});
+
+	$('#highlightUngrouped').click(function() {
+		highlightUngrouped();
 	});
 });
