@@ -132,6 +132,9 @@
    "programmer": {
       "message": "Programmer"
    },
+   "source_code": {
+      "message": "Source code"
+   },
    "translations": {
       "message": "Translations"
    },
