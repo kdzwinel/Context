@@ -1,0 +1,153 @@
+{
+   "locale": {
+      "message": "pl",
+      "description": "Istnieje wbudowana zmienna @@_ui_locale która zawiera tą informacje, ale jest ona zbyt dokładna jak na nasze potrzeby (en_GB, en_US)."
+   },
+   "application_description": {
+      "message": "Połącz swoje rozszerzenia w grupy i wygodnie przełączaj się między nimi."
+   },
+   "all_extensions": {
+      "message": "Wszystkie dodatki"
+   },
+   "create_new_context": {
+      "message": "Nowy kontekst"
+   },
+   "edit_context": {
+      "message": "Edytuj kontekst"
+   },
+   "name_field_is_required": {
+      "message": "Nazwa jest wymagana."
+   },
+   "this_name_is_already_in_use": {
+      "message": "Nazwa jest już zajęta."
+   },
+   "pick_an_icon": {
+      "message": "Wybierz ikonę."
+   },
+   "available_extensions": {
+      "message": "Dostępne rozszerzenia"
+   },
+   "always_enabled_extensions": {
+      "message": "Zawsze aktywne rozszerzenia"
+   },
+   "name": {
+      "message": "Nazwa"
+   },
+   "options": {
+      "message": "Ustawienia"
+   },
+   "icon": {
+      "message": "Ikona"
+   },
+   "context_will_be_deleted": {
+      "message": "Kontekst zostanie usunięty. Kontynuować?"
+   },
+   "additional_options": {
+      "message": "Opcje dodatkowe"
+   },
+   "new_context": {
+      "message": "Nowy kontekst"
+   },
+   "save": {
+      "message": "Zapisz"
+   },
+   "about": {
+      "message": "O tym dodatku"
+   },
+   "enable_apps_support": {
+      "message": "włącz obsługę aplikacji (domyślnie jedynie rozszerzenia są obsługiwane)"
+   },
+   "show_all_extensions_button": {
+      "message": "pokaż przycisk 'Wszystkie dodatki' w popup'ie"
+   },
+   "delay_after_enabling_extension": {
+      "message": "opóźnienie w milisekundach po uaktywnieniu każdego rozszerzenia"
+   },
+   "context_options": {
+      "message": "Context - Ustawienia"
+   },
+   "remove_context": {
+      "message": "Usunać kontekst?"
+   },
+   "cancel": {
+      "message": "Anuluj"
+   },
+   "edit": {
+      "message": "Edytuj"
+   },
+   "create": {
+      "message": "Utwórz"
+   },
+   "delete": {
+      "message": "Usuń"
+   },
+   "clone": {
+      "message": "Duplikuj"
+   },
+   "move": {
+      "message": "Przenieś"
+   },
+   "extension_is_loading": {
+      "message": "Ładowanie rozszerzenia ..."
+   },
+   "new_extension_installed_action": {
+      "message": "po instalacji nowego rozszerzenia"
+   },
+   "ask_what_to_do": {
+      "message": "zapytaj co robić"
+   },
+   "add_to_all_contexts": {
+      "message": "dodaj do wszystkich kontekstów"
+   },
+   "do_nothing": {
+      "message": "nie rób nic"
+   },
+   "extension_installed_1": {
+      "message": "Nowe rozszerzenie"
+   },
+   "extension_installed_2": {
+      "message": "zostało zainstalowane"
+   },
+   "add_to_contexts": {
+      "message": "Dodaj je do wybranych kontekstów"
+   },
+   "font": {
+      "message": "Czcionka"
+   },
+   "icons": {
+      "message": "Ikony"
+   },
+   "icon_flip_animation": {
+      "message": "Animacja obrotu ikony"
+   },
+   "programmer": {
+      "message": "Programista"
+   },
+   "translations": {
+      "message": "Tłumaczenia"
+   },
+   "welcome": {
+      "message": "Witaj"
+   },
+   "welcome_step_1": {
+      "message": "Witaj! Pracę z tym dodatkiem zacznij od stworzenia kontekstów (grup dodatków). Dla każdego z kontekstów wybierz nazwę i ikonę."
+   },
+   "welcome_step_2": {
+      "message": "Aby dodać dodatki do kontekstów przeciągnij je z górnej, alfabetycznej listy do wybranego boksu reprezentującego kontekst."
+   },
+   "welcome_step_3": {
+      "message": "Przenieś dodatki które powinny być aktywne dla każdego z kontekstów z boksu 'Dostępne rozszerzenia' do boksu 'Zawsze aktywne rozszerzenia'."
+   },
+   "welcome_step_4": {
+      "message": "Zapisz ustawienia i gotowe! Możesz łatwo przełączać się pomiędzy kontekstami za pomocą ikony w pasku Twojej przeglądarki. Wybranie nazwy z menu przełącza do danego kontekstu. Wybranie przycisku plusa/minusa powoduje aktywację/dezaktywację kontekstu co pozwala na łączenie kontekstów ze sobą."
+   },
+   "next": {
+      "message": "Dalej"
+   },
+   "previous": {
+      "message": "Wstecz"
+   },
+   "close": {
+      "message": "Zamknij"
+   }
+}

@@ -1,0 +1,20 @@
+{
+   "name": "Context",
+   "version": "0.300",
+   "permissions": [ "management", "notifications", "tabs" ],
+   "background_page": "background.html",
+   "options_page": "options.html",
+   "browser_action": {
+      "default_icon": "context.png",
+      "default_popup": "popup.html",
+      "default_title": "Context"
+   },
+   "default_locale": "en",
+   "description": "__MSG_application_description__",
+   "icons": {
+      "128": "context-128.png",
+      "19": "context.png",
+      "48": "context-48.png",
+      "64": "context-64.png"
+   }
+}

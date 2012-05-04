@@ -1,0 +1,141 @@
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title data-i18n="context_options"></title>
+	<link rel="icon" type="image/png" href="context_wrench.png">
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css" type="text/css" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+
+	<script src="js/libs/jquery-1.7.1.min.js"></script>
+	<script src="js/libs/jquery-ui-1.8.17.custom.min.js"></script>
+
+	<script src="js/config.js"></script>
+
+	<script src="js/classes/ExtensionsManager.class.js"></script>
+	<script src="js/classes/ContextsManager.class.js"></script>
+
+	<script src="js/options/main.js"></script>
+	<script src="js/options/firstrun.js"></script>
+	<script src="js/options/dialogs.js"></script>
+</head>
+<body>
+
+<div class='wrapper'>
+	<h1>Context <span data-i18n="options"><span></h1>
+
+	<div id='loader'>
+		<p><img src='other/flower.gif' /> <span data-i18n="extension_is_loading"><span></p>
+	</div>
+
+	<div id='content'>
+		<div id='help-icon'><span class='ui-icon ui-icon-help'></span></div>
+
+		<div class='ui-widget-content ui-corner-all' id='available_extensions_wrapper'>
+			<h2 data-i18n="available_extensions"></h2>
+			<ul id="extensions" class='extensions_list clearfix'>
+			</ul>
+		</div>
+
+		<div class='ui-widget-content ui-corner-all' id='always_enabled_extensions_wrapper'>
+			<h2 data-i18n="always_enabled_extensions"></h2>
+			<ul id="always_enabled_extensions" class='extensions_list clearfix'>
+			</ul>
+		</div>
+
+		<ul id="contexts" class='clearfix'>
+		</ul>
+
+		<!-- FORMS AND DIALOGS -->
+		<div id="new-context-form">
+			<div class="ui-state-highlight ui-corner-all errors"></div>
+			<form>
+			<fieldset>
+				<label for="context-name" data-i18n="name"></label>
+				<input type="text" name="context-name" id="context-name" class="text ui-widget-content ui-corner-all" />
+
+				<label for="context-icons" data-i18n="icon"></label>
+				<ul id='context-icons' class='clearfix'>
+				</ul>
+			</fieldset>
+			</form>
+		</div>
+		<div id="dialog-confirm">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span data-i18n="context_will_be_deleted"></span></p>
+		</div>
+		<div id="advanced-config">
+			<h3><a href="#" data-i18n="additional_options"></a></h3>
+			<div>
+				<ul>
+					<li><input type='checkbox' id='appsSupport' /> <label for='appsSupport' data-i18n="enable_apps_support"></label></li>
+					<li><select id='newExtensionAction'>
+						<option value='ask' data-i18n="ask_what_to_do"></option>
+						<option value='add_to_all' data-i18n="add_to_all_contexts"></option>
+						<option value='add_to_always_enabled' data-i18n="add_to_always_enabled"></option>
+						<option value='do_nothing' data-i18n="do_nothing"></option>
+					</select> <label for='newExtensionAction' data-i18n="new_extension_installed_action"></label></li>
+					<li><input type='checkbox' id='showLoadAllBtn' /> <label for='showLoadAllBtn' data-i18n="show_all_extensions_button"></label></li>
+					<li class='hidden_feature'><input type='number' id='extensionEnableDelay' min="0" max="1000" step="100" /> <label for='extensionEnableDelay' data-i18n="delay_after_enabling_extension"></label></li>
+				</ul>
+				
+			</div>
+			<h3><a href="#" data-i18n="about"></a></h3>
+			<div>
+				<ul>
+					<li><span data-i18n="font"></span>: Andika - <a href='http://www.google.com/webfonts/specimen/Andika'>Google Web Fonts</a></li>
+					<li><span data-i18n="icons"></span>: Dortmund - <a href='http://pc.de/icons/'>pc.de</a>, silk icons - <a href='http://www.famfamfam.com/archive/silk-icons-thats-your-lot/'>famfamfam</a></li>
+					<li><span data-i18n="icon_flip_animation"></span>: <a href='https://chrome.google.com/webstore/detail/mihcahmgecmbnbcchbopgniflfhgnkff'>Google Mail Checker</a></li>
+					<li><span data-i18n="translations"></span>: Español - <a href='http://wwwhatsnew.com/'>Juan Diego Polo</a>, 日本語 - <a href='http://web-marketing.zako.org/'>Junichi Murashige</a>, 中文 - <a href='https://plus.google.com/u/0/107010653165528905049'>Techlive Zheng</a>, Français - <a href='http://www.passion-net.fr/'>Julien Lemonnier</a></li>
+					<li><span data-i18n="programmer"></span>: Konrad Dzwinel (<a href='mailto:kdzwinel@gmail.com'>kdzwinel@gmail.com</a>)</li>
+				</ul>
+			</div>
+		</div>
+		<div id="welcome" class='clearfix'>
+			<ul>
+				<li class='step_1'>
+					<div class='picture'></div>
+					<p data-i18n="welcome_step_1"></p>
+				</li>
+				<li class='step_2'>
+					<div class='picture'></div>
+					<p data-i18n="welcome_step_2"></p>
+				</li>
+				<li class='step_3'>
+					<div class='picture'></div>
+					<p data-i18n="welcome_step_3"></p>
+				</li>
+				<li class='step_4'>
+					<div class='picture'></div>
+					<p data-i18n="welcome_step_4"></p>
+				</li>
+			</ul>
+			<div style='float: right'>
+				<button class='previous' data-i18n="previous"></button>
+				<button class='next' data-i18n="next"></button>
+				<button class='close' data-i18n="close"></button>
+			</div>
+		</div>
+		<!-- FORMS AND DIALOGS -->
+
+		<div id="footer">
+			<button id="new-context-button" onclick="openNewContextDialog()" data-i18n="new_context"></button>
+			<button id="save-button" onclick="save()" data-i18n="save"></button>
+		</div>
+
+		<div id="social-buttons">
+			<g:plusone size="medium" href="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka"></g:plusone>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka" data-text="Context - Sort extensions into groups and easily switch between them." data-count="horizontal">&nbsp;</a>
+			<a name="fb_share" id="fb_share" type="button" share_url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka">Share</a> 
+			<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+		</div>
+	</div>
+</div>
+<script>
+$('[data-i18n]').each(function(i, item){
+	$(item).text(chrome.i18n.getMessage($(item).data('i18n')));
+});
+</script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</body>
+</html>
