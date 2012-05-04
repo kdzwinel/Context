@@ -6,7 +6,7 @@ function init() {
 	iconAnimation = new IconAnimation({
 		canvasObj: document.getElementById('canvas'),
 		imageObj: document.getElementById('image'),
-		defaultIcon: "context.png"
+		defaultIcon: "icons/context.png"
 	});
 
 	if(config.get('firstRun') == 'yes') {
@@ -17,7 +17,7 @@ function init() {
 /*CONTEXT CHANGING*/
 function reloadConfiguration(callback) {
 	//show animation
-	iconAnimation.animate("context_cog.png");
+	iconAnimation.animate("icons/context_cog.png");
 	
 	//reload list of all extensions and always enabled extensions
 	extensionsManager.init(callback);
@@ -140,7 +140,7 @@ function configUpdated() {
 	contextsManager.init();
 	extensionsManager.init();
 
-	iconAnimation.animate("context_wrench.png");
+	iconAnimation.animate("icons/context_wrench.png");
 }
 
 /* NEW EXTENSION INSTALLATION */

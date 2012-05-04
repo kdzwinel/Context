@@ -10,7 +10,7 @@ You may install this extension from its google chrome webstore page
 
 https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka
 
-or download it and manually and load as an 'Unpacked extension' via chrome extensions page.
+or download it and manually load as an 'Unpacked extension' via chrome extensions page.
 
 
 Bugs and Features
@@ -43,7 +43,7 @@ Other:
 New features:
 + enabling/disabling multiple contexts ("+" and "-" buttons in the popup)
 + possibility to duplicate contexts on options page
-+ always enabled exensions
++ always enabled extensions
 
 Author
 ------
