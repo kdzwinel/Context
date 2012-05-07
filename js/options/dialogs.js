@@ -129,9 +129,10 @@ function addDialogError(dialog, error) {
 
 //init basic dialog for editing / adding new contexts
 function initNewContextDialog() {
-	for(index in config.icons) {
-		var iconName = config.icons[index];
-		var iconImg = $('<img/>').attr('src', config.iconsPath + iconName + '.png').attr('alt', iconName);
+	var icons = CONFIG.get("icons");
+	for(var index in icons) {
+		var iconName = icons[index];
+		var iconImg = $('<img/>').attr('src', CONFIG.get("iconsPath") + iconName + '.png').attr('alt', iconName);
 		var iconBox = $('<li/>').addClass('ui-widget-content').addClass('ui-corner-all').append(iconImg);
 
 		$( "#context-icons" ).append(iconBox);

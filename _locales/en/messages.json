@@ -57,6 +57,18 @@
    "about": {
       "message": "About"
    },
+   "configuration_import_export": {
+      "message": "Configuration import/export"
+   },
+   "configuration_export_description": {
+      "message": "To export all your settings, copy encoded configuration string from the box below."
+   },
+   "configuration_import_description": {
+      "message": "Paste configuration string to the box below and click 'Import' to restore your configuration."
+   },
+   "import": {
+      "message": "Import"
+   },
    "enable_apps_support": {
       "message": "enable apps support (by default only extensions are supported)"
    },

@@ -552,6 +552,14 @@ a:visited {
 		height: 25px;
 	}
 
+#import_box, #export_box {
+	width: 600px;
+	height: 40px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	display: block;
+}
+
 /* =============================================================================
    Non-semantic helper classes
    Please define your styles before this section.

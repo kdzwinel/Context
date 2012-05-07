@@ -1,5 +1,7 @@
 var extensionsManager;
 var contextsManager;
+var configurationBackupExporter = new ConfigurationBackupExporter();
+var configurationBackupImporter = new ConfigurationBackupImporter();
 
 //display list of all extensions
 function displayExtensions() {
@@ -10,7 +12,7 @@ function displayExtensions() {
 		var extension = extensionsList[index];
 
 		li = createExtensionLi(extension);
-			
+
 		if(extensionsManager.isAlwaysEnabled(extension.id)) {
 			$('#always_enabled_extensions').append(li);
 		} else {
@@ -53,7 +55,7 @@ function createExtensionLi(extdata) {
 		li.addClass('app');
 
 		//if apps support is disabled don't show them
-		if(config.get('appsSupport') === 'false') {
+		if(CONFIG.get('appsSupport') === 'false') {
 			li.hide();
 		}
 	}
@@ -144,7 +146,7 @@ function newContext(name, imgSrc) {
 		},
 		drop: function(event, ui) {
 			var li = ui.draggable.clone();
-		    
+
 			$(this).append(li);
 			$(this).sortable( "refresh" );
 
@@ -164,6 +166,11 @@ function markDirty() {
 //mark config as saved
 function markClean() {
 	$("#save-button").button( "option", "disabled", true );
+
+	//generates current configuration string - used for import/export
+	configurationBackupExporter.exportConfig(function(exportedConfig) {
+		$('#export_box').val( exportedConfig );
+	});
 }
 
 //save context data and additional options in localStorage
@@ -195,7 +202,7 @@ function save() {
 	});
 
 	localStorage.contexts = JSON.stringify(contextsData);
-	
+
 	var alwaysEnabledExtensionsData = [];
 	var extensions = $('#always_enabled_extensions li');
 
@@ -204,7 +211,7 @@ function save() {
 
 		alwaysEnabledExtensionsData.push(extid);
 	});
-	
+
 	extensionsManager.setAlwaysEnabledExtensionsIds(alwaysEnabledExtensionsData);
 	localStorage.alwaysEnabledExtensions = JSON.stringify(alwaysEnabledExtensionsData);
 
@@ -233,16 +240,16 @@ function displayAdvancedOptions() {
 		var option = advancedOptions[i];
 
 		if($('#'+option).is('[type=checkbox]')) {
-			if(config.get(option) === 'true') {
+			if(CONFIG.get(option) === 'true') {
 				$('#'+option).attr('checked', 'checked');
 			} else {
 				$('#'+option).removeAttr('checked');
 			}
 		} else if($('#'+option).is('select')) {
 			$('#'+option).find('option').removeAttr('selected');
-			$('#'+option).find('option[value='+config.get(option)+']').attr('selected', 'selected');
+			$('#'+option).find('option[value='+CONFIG.get(option)+']').attr('selected', 'selected');
 		} else {
-			$('#'+option).val(config.get(option));
+			$('#'+option).val(CONFIG.get(option));
 		}
 	}
 }
@@ -252,7 +259,7 @@ function pageLoaded() {
 	$('#loader').slideUp('slow', function(){
 		$('#content').slideDown('slow',function(){
 			//display welcome screen if extension was just installed
-			if(config.get('firstRun') == 'yes') {
+			if(CONFIG.get('firstRun') == 'yes') {
 				showWelcomeScreen();
 				localStorage.firstRun = 'no';
 			}
@@ -302,7 +309,7 @@ $(document).ready(function(){
 			markDirty();
 		});
 	});
-	
+
 	$('#help-icon').click(function(){
 		showWelcomeScreen();
 	});
@@ -332,20 +339,20 @@ $(document).ready(function(){
 
 		return false;
 	});
-	
+
 	$('.contextDuplicate').live('click', function(){
 		var context = $(this).closest('.context');
 		var contexts = $('.contextExtensions');
-		
+
 		var oldImageSrc = context.find('.contextExtensions').data('contextImg');
 		var oldName = context.find('.contextExtensions').data('contextName');
 		var newName;
-		
+
 		//generate new, unique name
 		for(var j=1; ; j++) {
 			var isValid = true;
 			var checkName = oldName + j;
-			
+
 			for(var i=0; i<contexts.length; i++) {
 				var otherContext = contexts[i];
 				if($(otherContext).data('contextName') == checkName) {
@@ -353,21 +360,21 @@ $(document).ready(function(){
 					break;
 				}
 			}
-			
+
 			if(isValid) {
 				newName = checkName;
 				break;
 			}
 		}
-		
+
 		var newContext = context.clone();
 		newContext.find('.contextExtensions').data('contextName', newName).data('contextImg', oldImageSrc);
 		newContext.find('.contextTitle').text(newName);
 		$('#contexts').append(newContext);
-		
+
 		newContext.effect('highlight', {}, 'slow');
 		markDirty();
-		
+
 		return false;
 	});
 
@@ -394,7 +401,7 @@ $(document).ready(function(){
 			$('li.app').effect('slide', {mode: 'hide'});
 		}
 	});
-	
+
 	//moving extensions between 'available' section and 'always enabled' section
 	$('#extensions').droppable({
 		activeClass: 'active_dense',
@@ -408,14 +415,14 @@ $(document).ready(function(){
 		drop: function(event, ui) {
 			var li = ui.draggable.detach();
 			$(this).append(li);
-			
+
 			//if extension was moved back from 'always enabled' box to 'available' box there may be some copies of this extension hidden in the contexts, show them
 			$('.context li[data-extid=' + li.data('extid') + ']').effect('slide');
 
 			markDirty();
 		}
 	});
-	
+
 	$('#always_enabled_extensions').droppable({
 		activeClass: 'active_dense',
 		accept: function(element){
@@ -431,15 +438,31 @@ $(document).ready(function(){
 
 			//HACK - contexts stay highlighted after object is dropped - AFAIK it is because draggable is detached not cloned
 			$('.contextExtensions.active').removeClass('active');
-			
+
 			//remove this extension from all contexts as it is redundant there now
 			$('.context li[data-extid=' + li.data('extid') + ']').effect('slide', {mode: 'hide'});
-			
+
 			markDirty();
 		}
 	});
 
 	$('#highlightUngrouped').click(function() {
 		highlightUngrouped();
+	});
+
+	$('#export_box').click(function() {
+		this.select();
+	});
+
+	$('#import_button').click(function() {
+		configurationBackupImporter.importConfig( $('#import_box').val(), function(status, missingExtensions, errors) {
+			console.log( status );
+			console.log( missingExtensions );
+			console.log( errors );
+
+			if( status ) {
+				markClean();
+			}
+		});
 	});
 });

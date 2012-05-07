@@ -9,11 +9,13 @@
 
 	<script src="js/libs/jquery-1.7.1.min.js"></script>
 	<script src="js/libs/jquery-ui-1.8.17.custom.min.js"></script>
+	<script src="js/libs/Base64.js"></script>
 
-	<script src="js/config.js"></script>
-
+	<script src="js/classes/Configuration.class.js"></script>
 	<script src="js/classes/ExtensionsManager.class.js"></script>
 	<script src="js/classes/ContextsManager.class.js"></script>
+	<script src="js/classes/ConfigurationBackupExporter.class.js"></script>
+	<script src="js/classes/ConfigurationBackupImporter.class.js"></script>
 
 	<script src="js/options/main.js"></script>
 	<script src="js/options/firstrun.js"></script>
@@ -80,7 +82,15 @@
 					<li><input type='checkbox' id='showLoadAllBtn' /> <label for='showLoadAllBtn' data-i18n="show_all_extensions_button"></label></li>
 					<li class='hidden_feature'><input type='number' id='extensionEnableDelay' min="0" max="1000" step="100" /> <label for='extensionEnableDelay' data-i18n="delay_after_enabling_extension"></label></li>
 				</ul>
-				
+
+			</div>
+			<h3><a href="#" data-i18n="configuration_import_export"></a></h3>
+			<div>
+				<p data-i18n="configuration_export_description"></p>
+				<textarea id='export_box' readonly="true" wrap="off" class='ui-widget-content ui-corner-all'></textarea>
+				<p data-i18n="configuration_import_description"></p>
+				<textarea id='import_box' wrap="off" class='ui-widget-content ui-corner-all'></textarea>
+				<p><button data-i18n="import" id='import_button'></button></p>
 			</div>
 			<h3><a href="#" data-i18n="about"></a></h3>
 			<div>
@@ -129,7 +139,7 @@
 		<div id="social-buttons">
 			<g:plusone size="medium" href="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka"></g:plusone>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka" data-text="Context - Sort extensions into groups and easily switch between them." data-count="horizontal">&nbsp;</a>
-			<a name="fb_share" id="fb_share" type="button" share_url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka">Share</a> 
+			<a name="fb_share" id="fb_share" type="button" share_url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka">Share</a>
 			<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 		</div>
 	</div>
