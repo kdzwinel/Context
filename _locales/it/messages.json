@@ -1,0 +1,165 @@
+{
+   "locale": {
+      "message": "en",
+      "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
+   },
+   "application_description": {
+      "message": "Ordina le estensioni in gruppi e gestiscili facilmente."
+   },
+   "all_extensions": {
+      "message": "Tutte le estensioni"
+   },
+   "highlight_ungrouped_extensions": {
+      "message": "evidenzia estensioni non raggruppate"
+   },
+   "create_new_context": {
+      "message": "Crea nuovo contesto"
+   },
+   "edit_context": {
+      "message": "Modifica contesto"
+   },
+   "name_field_is_required": {
+      "message": "Il campo nome è richiesto."
+   },
+   "this_name_is_already_in_use": {
+      "message": "Questo nome è già in uso."
+   },
+   "pick_an_icon": {
+      "message": "Seleziona un'icona."
+   },
+   "available_extensions": {
+      "message": "Estensioni disponibili"
+   },
+   "always_enabled_extensions": {
+      "message": "Estensioni sempre abilitate"
+   },
+   "name": {
+      "message": "Nome"
+   },
+   "options": {
+      "message": "Opzioni"
+   },
+   "icon": {
+      "message": "Icona"
+   },
+   "context_will_be_deleted": {
+      "message": "Il contesto verrà eliminato. Sei sicuro?"
+   },
+   "additional_options": {
+      "message": "Opzioni aggiuntive"
+   },
+   "new_context": {
+      "message": "Nuovo contesto"
+   },
+   "save": {
+      "message": "Salva"
+   },
+   "about": {
+      "message": "Informazioni"
+   },
+   "enable_apps_support": {
+      "message": "abilita supporto alle app (di default sono supportate solo le estensioni)"
+   },
+   "show_all_extensions_button": {
+      "message": "mostra il pulsante 'Tutte le estensioni' nel popup"
+   },
+   "delay_after_enabling_extension": {
+      "message": "ritardo in millisecondi dopo l'abilitazione di ogni estensione"
+   },
+   "context_options": {
+      "message": "Contesto - Opzioni"
+   },
+   "remove_context": {
+      "message": "Rimuovere contesto?"
+   },
+   "cancel": {
+      "message": "Annulla"
+   },
+   "edit": {
+      "message": "Modifica"
+   },
+   "create": {
+      "message": "Crea"
+   },
+   "delete": {
+      "message": "Elimina"
+   },
+   "clone": {
+      "message": "Duplica"
+   },
+   "move": {
+      "message": "Sposta"
+   },
+   "extension_is_loading": {
+      "message": "Estensione in caricamento ..."
+   },
+   "new_extension_installed_action": {
+      "message": "dopo che la nuova estensione viene installata"
+   },
+   "ask_what_to_do": {
+      "message": "chiedi cosa fare"
+   },
+   "add_to_all_contexts": {
+      "message": "aggiungi estensione a tutti i contesti"
+   },
+   "add_to_always_enabled": {
+      "message": "aggiungi a 'sempre abilitate'"
+   },
+   "do_nothing": {
+      "message": "non fare nulla"
+   },
+   "extension_installed_1": {
+      "message": "Nuova estensione"
+   },
+   "extension_installed_2": {
+      "message": "installata"
+   },
+   "add_to_contexts": {
+      "message": "Aggiungila ai seguenti contesti"
+   },
+   "or_add_it_to": {
+      "message": "o aggiungila a"
+   },
+   "font": {
+      "message": "Font"
+   },
+   "icons": {
+      "message": "Icone"
+   },
+   "icon_flip_animation": {
+      "message": "Animazione icona"
+   },
+   "programmer": {
+      "message": "Programmatore"
+   },
+   "source_code": {
+      "message": "Codice sorgente"
+   },
+   "translations": {
+      "message": "Traduzioni"
+   },
+   "welcome": {
+      "message": "Benvenuto"
+   },
+   "welcome_step_1": {
+      "message": "Benvenuto! Per iniziare ad usare questa estensione, crea dei contesti (gruppi estensione). Per ogni contesto scegli un nome ed un'icona."
+   },
+   "welcome_step_2": {
+      "message": "Per connettere le estensioni ai contesti, trascinale dall'elenco alfabetico in alto, ad un riquadro rappresentante un contesto."
+   },
+   "welcome_step_3": {
+      "message": "Sposta tutte le estensioni che dovrebbero essere abilitate per ogni contesto, dal riquadro 'Estensioni disponibili' al riquadro 'Estensioni sempre abilitate'."
+   },
+   "welcome_step_4": {
+      "message": "Salva la tua configurazione e sei pronto! Puoi facilmente passare tra i contesti usando l'icona nella barra strumenti. Seleziona il nome del contesto o l'icona nel menu per passare al contesto selezionato. Clicca il pulsante più/meno per attivare/disattivare il contesto scelto così da poter miscelare i contesti tra di loro."
+   },
+   "next": {
+      "message": "Avanti"
+   },
+   "previous": {
+      "message": "Indietro"
+   },
+   "close": {
+      "message": "Chiudi"
+   }
+}
