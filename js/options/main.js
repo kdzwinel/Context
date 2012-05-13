@@ -473,7 +473,7 @@ $(document).ready(function(){
 								}
 							});
 						} else {
-							console.log( errors );
+							console.error( errors );
 
 							showErrorDialog({
 								title: chrome.i18n.getMessage("import_failed"),
