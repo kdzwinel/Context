@@ -94,6 +94,9 @@ class Translation {
 
 $baseTranslationFolder = 'en';
 $baseTranslation = new Translation($baseTranslationFolder . '/messages.json');
+
+echo 'Number of messages: ' . count($baseTranslation->getMessages()) . PHP_EOL;
+
 $baseTranslation->commit();
 
 $currentFolder = new DirectoryIterator(dirname(__FILE__));

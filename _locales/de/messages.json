@@ -1,0 +1,201 @@
+{
+    "locale": {
+        "message": "en",
+        "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
+    },
+    "application_description": {
+        "message": "Sort extensions into groups and easily switch between them."
+    },
+    "all_extensions": {
+        "message": "All extensions"
+    },
+    "highlight_ungrouped_extensions": {
+        "message": "highlight ungrouped extensions"
+    },
+    "create_new_context": {
+        "message": "Create new context"
+    },
+    "edit_context": {
+        "message": "Edit context"
+    },
+    "name_field_is_required": {
+        "message": "Name field is required."
+    },
+    "this_name_is_already_in_use": {
+        "message": "This name is already in use."
+    },
+    "pick_an_icon": {
+        "message": "Pick an icon."
+    },
+    "available_extensions": {
+        "message": "Available extensions"
+    },
+    "always_enabled_extensions": {
+        "message": "Always-enabled extensions"
+    },
+    "name": {
+        "message": "Name"
+    },
+    "options": {
+        "message": "Options"
+    },
+    "icon": {
+        "message": "Icon"
+    },
+    "context_will_be_deleted": {
+        "message": "Context will be deleted. Are you sure?"
+    },
+    "additional_options": {
+        "message": "Additional options"
+    },
+    "new_context": {
+        "message": "New Context"
+    },
+    "save": {
+        "message": "Save"
+    },
+    "about": {
+        "message": "About"
+    },
+    "configuration_import_export": {
+        "message": "Configuration import\/export"
+    },
+    "configuration_import": {
+        "message": "Configuration import"
+    },
+    "configuration_export_description": {
+        "message": "To export all your settings, copy encoded configuration string from the box below."
+    },
+    "configuration_import_description": {
+        "message": "Paste configuration string to the box below and click 'Import' to restore your configuration."
+    },
+    "confirm_configuration_import": {
+        "message": "Import will override your current configuration, be sure to make a backup if you don't want to lose it."
+    },
+    "import": {
+        "message": "Import"
+    },
+    "override_current_settings": {
+        "message": "Override current settings?"
+    },
+    "import_failed": {
+        "message": "Import failed"
+    },
+    "configuration_string_is_invalid": {
+        "message": "Sorry, provided configuration string is invalid. Import failed."
+    },
+    "successful_import": {
+        "message": "Successful import"
+    },
+    "configuration_was_imported_successfuly": {
+        "message": "Configuration was imported successfuly."
+    },
+    "some_extensions_were_ignored": {
+        "message": "Some extensions from imported configuration were ignored because they are not installed:"
+    },
+    "enable_apps_support": {
+        "message": "enable apps support (by default only extensions are supported)"
+    },
+    "show_all_extensions_button": {
+        "message": "show 'All extensions' button in popup"
+    },
+    "delay_after_enabling_extension": {
+        "message": "delay in milliseconds after enabling each extension"
+    },
+    "context_options": {
+        "message": "Context - Options"
+    },
+    "remove_context": {
+        "message": "Remove context?"
+    },
+    "cancel": {
+        "message": "Cancel"
+    },
+    "edit": {
+        "message": "Edit"
+    },
+    "create": {
+        "message": "Create"
+    },
+    "delete": {
+        "message": "Delete"
+    },
+    "clone": {
+        "message": "Clone"
+    },
+    "move": {
+        "message": "Move"
+    },
+    "extension_is_loading": {
+        "message": "Extension is loading ..."
+    },
+    "new_extension_installed_action": {
+        "message": "after new extension is installed"
+    },
+    "ask_what_to_do": {
+        "message": "ask what to do"
+    },
+    "add_to_all_contexts": {
+        "message": "add extension to all contexts"
+    },
+    "add_to_always_enabled": {
+        "message": "add to 'always-enabled'"
+    },
+    "do_nothing": {
+        "message": "do nothing"
+    },
+    "extension_installed_1": {
+        "message": "New extension"
+    },
+    "extension_installed_2": {
+        "message": "installed"
+    },
+    "add_to_contexts": {
+        "message": "Add it to the following contexts"
+    },
+    "or_add_it_to": {
+        "message": "or add it to"
+    },
+    "font": {
+        "message": "Font"
+    },
+    "icons": {
+        "message": "Icons"
+    },
+    "icon_flip_animation": {
+        "message": "Icon flip animation"
+    },
+    "programmer": {
+        "message": "Programmer"
+    },
+    "source_code": {
+        "message": "Source code"
+    },
+    "translations": {
+        "message": "Translations"
+    },
+    "welcome": {
+        "message": "Welcome"
+    },
+    "welcome_step_1": {
+        "message": "Welcome! To start working with this extension, create contexts (extension groups). For each context choose a name and an icon."
+    },
+    "welcome_step_2": {
+        "message": "To connect extensions with contexts, drag them from top alphabetical list to a chosen box representing context."
+    },
+    "welcome_step_3": {
+        "message": "Move all extensions that should be enabled for every context from 'Available extensions' box to 'Always-enabled extensions' box."
+    },
+    "welcome_step_4": {
+        "message": "Save your configuration and you are done! You can easily switch between contexts using icon in the toolbar. Selecting context name or icon on the menu switches to selected context. Clicking on plus\/minus button activates\/deactivates chosen context allowing you to mix contexts with each other."
+    },
+    "next": {
+        "message": "Next"
+    },
+    "previous": {
+        "message": "Previous"
+    },
+    "close": {
+        "message": "Close"
+    }
+}
