@@ -58,40 +58,40 @@
         "message": "Informazioni"
     },
     "configuration_import_export": {
-        "message": "Configuration import\/export"
+        "message": "Importa\/esporta configurazione"
     },
     "configuration_import": {
-        "message": "Configuration import"
+        "message": "Importa configurazione"
     },
     "configuration_export_description": {
-        "message": "To export all your settings, copy encoded configuration string from the box below."
+        "message": "Per esportare tutte le tue impostazioni, copia la stringa di configurazione codificata dal riquadro sottostante."
     },
     "configuration_import_description": {
-        "message": "Paste configuration string to the box below and click 'Import' to restore your configuration."
+        "message": "Incolla la stringa di configurazione nel riquadro sottostante e clicca 'Importa' per ripristinare la tua configurazione."
     },
     "confirm_configuration_import": {
-        "message": "Import will override your current configuration, be sure to make a backup if you don't want to lose it."
+        "message": "L'importazione sovrascriverà l'attuale configurazione, assicurati di fare una copia di sicurezza se non vuoi perderla."
     },
     "import": {
-        "message": "Import"
+        "message": "Importa"
     },
     "override_current_settings": {
-        "message": "Override current settings?"
+        "message": "Sovrascrivere le impostazioni attuali?"
     },
     "import_failed": {
-        "message": "Import failed"
+        "message": "Importazione fallita"
     },
     "configuration_string_is_invalid": {
-        "message": "Sorry, provided configuration string is invalid. Import failed."
+        "message": "Spiacente, la stringa di configurazione fornita non è valida. Importazione fallita."
     },
     "successful_import": {
-        "message": "Successful import"
+        "message": "Importazione terminata"
     },
     "configuration_was_imported_successfuly": {
-        "message": "Configuration was imported successfuly."
+        "message": "La configurazione è stata importata con successo."
     },
     "some_extensions_were_ignored": {
-        "message": "Some extensions from imported configuration were ignored because they are not installed:"
+        "message": "Alcune estensioni presenti nella configurazione importata sono state ignorate perché non sono installate:"
     },
     "enable_apps_support": {
         "message": "abilita supporto alle app (di default sono supportate solo le estensioni)"
