@@ -1,150 +1,201 @@
 {
-   "locale": {
-      "message": "en",
-      "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
-   },
-   "application_description": {
-      "message": "分组排序扩展并轻易切换。"
-   },
-   "all_extensions": {
-      "message": "所有扩展"
-   },
-   "create_new_context": {
-      "message": "建立新的 Context"
-   },
-   "edit_context": {
-      "message": "编辑 Context"
-   },
-   "name_field_is_required": {
-      "message": "必须填写名称。"
-   },
-   "this_name_is_already_in_use": {
-      "message": "这个名称已被使用。"
-   },
-   "pick_an_icon": {
-      "message": "选择一个图标。"
-   },
-   "available_extensions": {
-      "message": "可用扩展"
-   },
-   "always_enabled_extensions": {
-      "message": "保持启用扩展"
-   },
-   "name": {
-      "message": "名称"
-   },
-   "options": {
-      "message": "选项"
-   },
-   "icon": {
-      "message": "图标"
-   },
-   "context_will_be_deleted": {
-      "message": "Context 将被删除，是否确定？"
-   },
-   "additional_options": {
-      "message": "附加选项"
-   },
-   "new_context": {
-      "message": "新建 Context"
-   },
-   "save": {
-      "message": "保存"
-   },
-   "about": {
-      "message": "关于"
-   },
-   "enable_apps_support": {
-      "message": "启用应用支持（默认仅仅支持扩展）"
-   },
-   "show_all_extensions_button": {
-      "message": "弹出菜单显示‘所有扩展’"
-   },
-   "context_options": {
-      "message": "Context - 选项"
-   },
-   "remove_context": {
-      "message": "删除 Context ？"
-   },
-   "cancel": {
-      "message": "取消"
-   },
-   "edit": {
-      "message": "编辑"
-   },
-   "create": {
-      "message": "建立"
-   },
-   "delete": {
-      "message": "删除"
-   },
-   "clone": {
-      "message": "克隆"
-   },
-   "move": {
-      "message": "移动"
-   },
-   "extension_is_loading": {
-      "message": "正在载入扩展。。。"
-   },
-   "new_extension_installed_action": {
-      "message": "安装新的扩展之后"
-   },
-   "ask_what_to_do": {
-      "message": "询问如何处理"
-   },
-   "add_to_all_contexts": {
-      "message": "添加到所有的 Context"
-   },
-   "do_nothing": {
-      "message": "什么也不要做"
-   },
-   "extension_installed_1": {
-      "message": "新的扩展"
-   },
-   "extension_installed_2": {
-      "message": "已经安装"
-   },
-   "add_to_contexts": {
-      "message": "把它添加到以下 Context"
-   },
-   "font": {
-      "message": "字体"
-   },
-   "icons": {
-      "message": "图标"
-   },
-   "icon_flip_animation": {
-      "message": "图标翻转动画"
-   },
-   "programmer": {
-      "message": "开发"
-   },
-   "translations": {
-      "message": "翻译"
-   },
-   "welcome": {
-      "message": "欢迎"
-   },
-   "welcome_step_1": {
-      "message": "欢迎！开始使用这个扩展之前，请先建立 Context （扩展组），并为每个 Context 选择一个名字和一个图标。"
-   },
-   "welcome_step_2": {
-      "message": "分组扩展，请从顶部按字母顺序排列的列表中拖拽扩展到相应的 Context 框中。"
-   },
-   "welcome_step_3": {
-      "message": "从 “可用扩展” 移动那些每个 Context 都应启用的扩展到 “保持启用扩展”。"
-   },
-   "welcome_step_4": {
-      "message": "保存配置即可！你可以使用工具栏上的图标轻易地在 Contexts 之间进行切换。通过选择菜单上的 Context 名称或者图标来切换到相应的 Context。点击 + 或者 - 号按钮激活或者关闭相应的 Context，这允许你混合使用各个不同的 Contexts。"
-   },
-   "next": {
-      "message": "前进"
-   },
-   "previous": {
-      "message": "后退"
-   },
-   "close": {
-      "message": "关闭"
-   }
+    "locale": {
+        "message": "en",
+        "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
+    },
+    "application_description": {
+        "message": "分组排序扩展并轻易切换。"
+    },
+    "all_extensions": {
+        "message": "所有扩展"
+    },
+    "highlight_ungrouped_extensions": {
+        "message": "highlight ungrouped extensions"
+    },
+    "create_new_context": {
+        "message": "建立新的 Context"
+    },
+    "edit_context": {
+        "message": "编辑 Context"
+    },
+    "name_field_is_required": {
+        "message": "必须填写名称。"
+    },
+    "this_name_is_already_in_use": {
+        "message": "这个名称已被使用。"
+    },
+    "pick_an_icon": {
+        "message": "选择一个图标。"
+    },
+    "available_extensions": {
+        "message": "可用扩展"
+    },
+    "always_enabled_extensions": {
+        "message": "保持启用扩展"
+    },
+    "name": {
+        "message": "名称"
+    },
+    "options": {
+        "message": "选项"
+    },
+    "icon": {
+        "message": "图标"
+    },
+    "context_will_be_deleted": {
+        "message": "Context 将被删除，是否确定？"
+    },
+    "additional_options": {
+        "message": "附加选项"
+    },
+    "new_context": {
+        "message": "新建 Context"
+    },
+    "save": {
+        "message": "保存"
+    },
+    "about": {
+        "message": "关于"
+    },
+    "configuration_import_export": {
+        "message": "Configuration import\/export"
+    },
+    "configuration_import": {
+        "message": "Configuration import"
+    },
+    "configuration_export_description": {
+        "message": "To export all your settings, copy encoded configuration string from the box below."
+    },
+    "configuration_import_description": {
+        "message": "Paste configuration string to the box below and click 'Import' to restore your configuration."
+    },
+    "confirm_configuration_import": {
+        "message": "Import will override your current configuration, be sure to make a backup if you don't want to lose it."
+    },
+    "import": {
+        "message": "Import"
+    },
+    "override_current_settings": {
+        "message": "Override current settings?"
+    },
+    "import_failed": {
+        "message": "Import failed"
+    },
+    "configuration_string_is_invalid": {
+        "message": "Sorry, provided configuration string is invalid. Import failed."
+    },
+    "successful_import": {
+        "message": "Successful import"
+    },
+    "configuration_was_imported_successfuly": {
+        "message": "Configuration was imported successfuly."
+    },
+    "some_extensions_were_ignored": {
+        "message": "Some extensions from imported configuration were ignored because they are not installed:"
+    },
+    "enable_apps_support": {
+        "message": "启用应用支持（默认仅仅支持扩展）"
+    },
+    "show_all_extensions_button": {
+        "message": "弹出菜单显示‘所有扩展’"
+    },
+    "delay_after_enabling_extension": {
+        "message": "delay in milliseconds after enabling each extension"
+    },
+    "context_options": {
+        "message": "Context - 选项"
+    },
+    "remove_context": {
+        "message": "删除 Context ？"
+    },
+    "cancel": {
+        "message": "取消"
+    },
+    "edit": {
+        "message": "编辑"
+    },
+    "create": {
+        "message": "建立"
+    },
+    "delete": {
+        "message": "删除"
+    },
+    "clone": {
+        "message": "克隆"
+    },
+    "move": {
+        "message": "移动"
+    },
+    "extension_is_loading": {
+        "message": "正在载入扩展。。。"
+    },
+    "new_extension_installed_action": {
+        "message": "安装新的扩展之后"
+    },
+    "ask_what_to_do": {
+        "message": "询问如何处理"
+    },
+    "add_to_all_contexts": {
+        "message": "添加到所有的 Context"
+    },
+    "add_to_always_enabled": {
+        "message": "add to 'always-enabled'"
+    },
+    "do_nothing": {
+        "message": "什么也不要做"
+    },
+    "extension_installed_1": {
+        "message": "新的扩展"
+    },
+    "extension_installed_2": {
+        "message": "已经安装"
+    },
+    "add_to_contexts": {
+        "message": "把它添加到以下 Context"
+    },
+    "or_add_it_to": {
+        "message": "or add it to"
+    },
+    "font": {
+        "message": "字体"
+    },
+    "icons": {
+        "message": "图标"
+    },
+    "icon_flip_animation": {
+        "message": "图标翻转动画"
+    },
+    "programmer": {
+        "message": "开发"
+    },
+    "source_code": {
+        "message": "Source code"
+    },
+    "translations": {
+        "message": "翻译"
+    },
+    "welcome": {
+        "message": "欢迎"
+    },
+    "welcome_step_1": {
+        "message": "欢迎！开始使用这个扩展之前，请先建立 Context （扩展组），并为每个 Context 选择一个名字和一个图标。"
+    },
+    "welcome_step_2": {
+        "message": "分组扩展，请从顶部按字母顺序排列的列表中拖拽扩展到相应的 Context 框中。"
+    },
+    "welcome_step_3": {
+        "message": "从 “可用扩展” 移动那些每个 Context 都应启用的扩展到 “保持启用扩展”。"
+    },
+    "welcome_step_4": {
+        "message": "保存配置即可！你可以使用工具栏上的图标轻易地在 Contexts 之间进行切换。通过选择菜单上的 Context 名称或者图标来切换到相应的 Context。点击 + 或者 - 号按钮激活或者关闭相应的 Context，这允许你混合使用各个不同的 Contexts。"
+    },
+    "next": {
+        "message": "前进"
+    },
+    "previous": {
+        "message": "后退"
+    },
+    "close": {
+        "message": "关闭"
+    }
 }
