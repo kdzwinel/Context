@@ -8,6 +8,8 @@ function displayExtensions() {
 	//get the processed list back from ExtensionsManager
 	var extensionsList = extensionsManager.getExtensionsList();
 
+	$('#extensions, #always_enabled_extensions').empty();
+
 	for(index in extensionsList) {
 		var extension = extensionsList[index];
 
@@ -24,7 +26,7 @@ function displayExtensions() {
 		zIndex: 1000,
 		helper: 'clone',
 		opacity: 0.75,
-		revert: 'invalid',
+		revert: 'invalid'
 	});
 }
 
@@ -66,6 +68,8 @@ function createExtensionLi(extdata) {
 //display available contexts
 function displayContexts() {
 	var contexts = contextsManager.getContextsList();
+
+	$('#contexts').empty();
 
 	for(gindex in contexts) {
 		var context = contexts[gindex];
@@ -288,17 +292,19 @@ function highlightUngrouped() {
 	}
 }
 
-$(document).ready(function(){
+function loadConfiguration() {
 	contextsManager = new ContextsManager();
 	extensionsManager = new ExtensionsManager(function(){
 		displayExtensions();
 		displayContexts();
 		displayAdvancedOptions();
 		pageLoaded();
+		markClean();
 	});
+}
 
-	markClean();
-
+$(document).ready(function(){
+	loadConfiguration();
 	initNewContextDialog();
 
 	$('button, input[type=submit], input[type=button]').button();
@@ -332,10 +338,10 @@ $(document).ready(function(){
 		$( "#dialog-confirm" ).dialog({
 			title: chrome.i18n.getMessage("remove_context"),
 			resizable: false,
-			height:200,
+			height: 200,
 			modal: true,
 			buttons: buttons
-		});
+		}).find('span.dialog-content').text(chrome.i18n.getMessage("context_will_be_deleted"));
 
 		return false;
 	});
@@ -384,13 +390,13 @@ $(document).ready(function(){
 	});
 
 	/* Additional options */
-	$('#advanced-config').accordion({
+	$('#accordion').accordion({
 		autoHeight: false,
 		collapsible: true,
 		active: false
 	});
 
-	$('#advanced-config').find('input, checkbox, select, textarea').change(function(){
+	$('#additional-options-panel').find('input, checkbox, select, textarea').change(function(){
 		markDirty();
 	});
 
@@ -450,19 +456,47 @@ $(document).ready(function(){
 		highlightUngrouped();
 	});
 
-	$('#export_box').click(function() {
+	$('#export_box, #import_box').click(function() {
 		this.select();
 	});
 
 	$('#import_button').click(function() {
-		configurationBackupImporter.importConfig( $('#import_box').val(), function(status, missingExtensions, errors) {
-			console.log( status );
-			console.log( missingExtensions );
-			console.log( errors );
+		var buttons = {};
+		buttons[chrome.i18n.getMessage("import")] = function() {
+					configurationBackupImporter.importConfig( $('#import_box').val(), function(status, missingExtensions, errors) {
+						if( status ) {
+							importSuccessDialog({
+								missingExtensions: missingExtensions,
+								callback: function() {
+									loadConfiguration();
+									$('#import_box').val('');
+								}
+							});
+						} else {
+							console.log( errors );
 
-			if( status ) {
-				markClean();
-			}
-		});
+							showErrorDialog({
+								title: chrome.i18n.getMessage("import_failed"),
+								content: chrome.i18n.getMessage("configuration_string_is_invalid")
+							});
+						}
+					});
+
+					$( this ).dialog( "close" );
+				};
+		buttons[chrome.i18n.getMessage("cancel")] = function() {
+					$( this ).dialog( "close" );
+				};
+
+		$( "#dialog-confirm" ).dialog({
+			title: chrome.i18n.getMessage("override_current_settings"),
+			resizable: false,
+			width: 300,
+			height: 200,
+			modal: true,
+			buttons: buttons
+		}).find('span.dialog-content').text(chrome.i18n.getMessage("confirm_configuration_import"));
+
+		return false;
 	});
 });

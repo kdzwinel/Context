@@ -17,9 +17,6 @@ function ConfigurationBackupImporter() {
 				errors.push( 'JSON parser error: ' + e.type);
 			}
 
-			console.log('imported json:');
-			console.log(json);
-
 			if(typeof json == "object") {
 				validateStructure( json );
 

@@ -216,9 +216,13 @@ a:visited {
 		margin: 5px;
 	}
 
-#dialog-confirm {
+#dialog-confirm, #dialog-import-success {
 	display:none;
 }
+
+	#dialog-import-success ul {
+		list-style: disc;
+	}
 
 #context-icons {
 	list-style: none;
@@ -410,15 +414,15 @@ a:visited {
 	cursor: pointer;
 }
 
-#advanced-config {
+#accordion {
 	margin-top: 30px;
 }
-	#advanced-config ul {
+	#accordion ul {
 		list-style: none;
 		padding: 0;
 	}
 
-	#advanced-config li {
+	#accordion li {
 		margin-top: 10px;
 	}
 

@@ -20,9 +20,6 @@ function ConfigurationBackupExporter() {
 				}
 			};
 
-			console.log('cleanConfig:');
-			console.log(cleanConfig);
-
 			var encodedConfig = Base64.encode( JSON.stringify( cleanConfig ) );
 
 			if( typeof callback == 'function' ) {

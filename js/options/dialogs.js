@@ -159,3 +159,55 @@ function initNewContextDialog() {
 		return false;
 	});
 }
+
+function showErrorDialog(config) {
+	var buttons = {};
+	buttons[chrome.i18n.getMessage("close")] = function() {
+		$( this ).dialog( "close" );
+	};
+
+	$( "#dialog-confirm" ).dialog({
+		title: config.title,
+		resizable: false,
+		height: 200,
+		modal: true,
+		buttons: buttons
+	}).find('span.dialog-content').text(config.content);
+}
+
+function importSuccessDialog(config) {
+	var dialogElem = $( "#dialog-import-success" );
+	var dialogHeight = 200;
+	var buttons = {};
+	buttons[chrome.i18n.getMessage("close")] = function() {
+		$( this ).dialog( "close" );
+
+		if(typeof config.callback == "function") {
+			config.callback();
+		}
+	};
+
+	if(config.missingExtensions.length > 0) {
+		dialogElem.find('p:eq(1), ul').show();
+		var extensionsList = dialogElem.find('ul');
+		extensionsList.empty();
+
+		$.each(config.missingExtensions, function(i, item){
+			var extensionLink = $('<a>').text(item.name).attr('href', 'https://chrome.google.com/webstore/detail/' + item.id).attr('target', '_blank');
+
+			extensionsList.append($('<li>').append(extensionLink));
+		});
+
+		dialogHeight = 'auto';
+	} else {
+		dialogElem.find('p:eq(1), ul').hide();
+	}
+
+	$( "#dialog-import-success" ).dialog({
+		title: chrome.i18n.getMessage("successful_import"),
+		resizable: false,
+		height: dialogHeight,
+		modal: true,
+		buttons: buttons
+	});
+}

@@ -66,11 +66,17 @@
 			</form>
 		</div>
 		<div id="dialog-confirm">
-			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span data-i18n="context_will_be_deleted"></span></p>
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span class="dialog-content"></span></p>
 		</div>
-		<div id="advanced-config">
+		<div id="dialog-import-success">
+			<p><span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 20px 0;"></span><span data-i18n="configuration_was_imported_successfuly"></span></p>
+			<p><span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 20px 0;"></span><span data-i18n="some_extensions_were_ignored"></span></p>
+			<ul>
+			</ul>
+		</div>
+		<div id="accordion">
 			<h3><a href="#" data-i18n="additional_options"></a></h3>
-			<div>
+			<div id='additional-options-panel'>
 				<ul>
 					<li><input type='checkbox' id='appsSupport' /> <label for='appsSupport' data-i18n="enable_apps_support"></label></li>
 					<li><select id='newExtensionAction'>
@@ -85,7 +91,7 @@
 
 			</div>
 			<h3><a href="#" data-i18n="configuration_import_export"></a></h3>
-			<div>
+			<div id='import-export-panel'>
 				<p data-i18n="configuration_export_description"></p>
 				<textarea id='export_box' readonly="true" wrap="off" class='ui-widget-content ui-corner-all'></textarea>
 				<p data-i18n="configuration_import_description"></p>
@@ -93,7 +99,7 @@
 				<p><button data-i18n="import" id='import_button'></button></p>
 			</div>
 			<h3><a href="#" data-i18n="about"></a></h3>
-			<div>
+			<div id='about-panel'>
 				<ul>
 					<li><span data-i18n="font"></span>: Andika - <a href='http://www.google.com/webfonts/specimen/Andika'>Google Web Fonts</a></li>
 					<li><span data-i18n="icons"></span>: Dortmund - <a href='http://pc.de/icons/'>pc.de</a>, silk icons - <a href='http://www.famfamfam.com/archive/silk-icons-thats-your-lot/'>famfamfam</a></li>
