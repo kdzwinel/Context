@@ -9,7 +9,7 @@ function init() {
 		defaultIcon: "icons/context.png"
 	});
 
-	if(config.get('firstRun') == 'yes') {
+	if(CONFIG.get('firstRun') == 'yes') {
 		openConfig();
 	}
 }
@@ -18,7 +18,7 @@ function init() {
 function reloadConfiguration(callback) {
 	//show animation
 	iconAnimation.animate("icons/context_cog.png");
-	
+
 	//reload list of all extensions and always enabled extensions
 	extensionsManager.init(callback);
 }
@@ -39,31 +39,31 @@ function changeContext(selectedContext) {
 	reloadConfiguration(function() {
 		//change context
 		var context = contextsManager.getContext(selectedContext);
-	    
+
 		if(context) {
 			var allExtensions = extensionsManager.getExtensionsList();
 			var enableList = new Array();
 			var disableList = new Array();
-		
+
 			//check which extensions should be enabled and which should be disabled
 			for(i in allExtensions) {
 				var extension = allExtensions[i];
 				var found = false;
-		    
+
 				//first, check if extension should be always enabled, if not, check if it is enabled in given context
 				if(extensionsManager.isAlwaysEnabled(extension.id)) {
 					found = true;
 				} else {
 					found = contextsManager.isInContext(context, extension);
 				}
-		    
+
 				if(found) {
 					enableList.push(extension);
 				} else {
 					disableList.push(extension);
 				}
 			}
-		
+
 			//disable extensions first, then enable extensions
 			extensionsManager.disableExtensions(disableList, function(){
 				extensionsManager.enableExtensions(enableList);
@@ -76,28 +76,28 @@ function activateContext(selectedContext) {
 	reloadConfiguration(function() {
 		//activate context
 		var context = contextsManager.getContext(selectedContext);
-    
+
 		if(context){
 			var allExtensions = extensionsManager.getExtensionsList();
 			var enableList = new Array();
-		
+
 			//check which extensions should be enabled
 			for(i in allExtensions) {
 				var extension = allExtensions[i];
 				var found = false;
-		    
+
 				//first, check if extension should be always enabled, if not, check if it is enabled in given context
 				if(extensionsManager.isAlwaysEnabled(extension.id)) {
 					found = true;
 				} else {
 					found = contextsManager.isInContext(context, extension);
 				}
-		    
+
 				if(found) {
 					enableList.push(extension);
 				}
 			}
-		
+
 			//enable extensions
 			extensionsManager.enableExtensions(enableList);
 		}
@@ -108,28 +108,28 @@ function deactivateContext(selectedContext) {
 	reloadConfiguration(function() {
 		//activate context
 		var context = contextsManager.getContext(selectedContext);
-    
+
 		if(context){
 			var allExtensions = extensionsManager.getExtensionsList();
 			var disableList = new Array();
-		
+
 			//check which extensions should be disabled
 			for(i in allExtensions) {
 				var extension = allExtensions[i];
 				var found = false;
-		    
+
 				//skip allways enabled extensions
 				if(extensionsManager.isAlwaysEnabled(extension.id)) {
 					continue;
 				} else {
 					found = contextsManager.isInContext(context, extension);
 				}
-		    
+
 				if(found) {
 					disableList.push(extension);
 				}
 			}
-		
+
 			//disable extensions first
 			extensionsManager.disableExtensions(disableList);
 		}
@@ -152,7 +152,7 @@ function getNewestExtension() {
 
 chrome.management.onInstalled.addListener(function(extdata) {
 	//if app support is disabled do nothing
-	if(extdata.isApp && config.get('appsSupport') !== 'true') {
+	if(extdata.isApp && CONFIG.get('appsSupport') !== 'true') {
 		return;
 	}
 
@@ -163,18 +163,18 @@ chrome.management.onInstalled.addListener(function(extdata) {
 
 	var contexts = contextsManager.getContextsList();
 
-	if(contexts.length > 0 && config.get('newExtensionAction') == 'add_to_all') {
+	if(contexts.length > 0 && CONFIG.get('newExtensionAction') == 'add_to_all') {
 		for(i in contexts) {
 			contextsManager.addExtensionToContext( contexts[i], extdata.id );
 		}
 
 		contextsManager.save();
 		configUpdated();
-	} else if(config.get('newExtensionAction') == 'add_to_always_enabled') {
+	} else if(CONFIG.get('newExtensionAction') == 'add_to_always_enabled') {
 		extensionsManager.addExtensionToAlwaysEnabled( extdata.id );
 		extensionsManager.save();
 		configUpdated();
-	} else if(contexts.length > 0 && config.get('newExtensionAction') == 'ask') {
+	} else if(contexts.length > 0 && CONFIG.get('newExtensionAction') == 'ask') {
 		var notification = webkitNotifications.createHTMLNotification('notification.html');
 
 		newestExtension = extdata;

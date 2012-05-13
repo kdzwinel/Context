@@ -1,6 +1,4 @@
 function IconAnimation(config) {
-	var that = this;
-
 	var animationFrames = 36,
 	animationSpeed = 10,//ms
 	rotation = 0,

@@ -1,12 +1,12 @@
 function createContextLi(name, title, imgSrc) {
 	var img = $('<img>').attr('src', imgSrc);
 	var span = $('<span>').append(title);
-	
+
 	var activate = $("<div class='list-button activate ui-widget-content ui-corner-all'><span class='ui-icon ui-icon-plusthick'></span></div>");
 	var deactivate = $("<div class='list-button deactivate ui-widget-content ui-corner-all'><span class='ui-icon ui-icon-minusthick'></span></div>");
-	
+
 	var context = $('<div>').attr('class', 'list-context ui-widget-content ui-corner-all').append(img).append(span);
-	
+
 	return $('<li>').attr('class', 'clearfix').append(context).append(activate).append(deactivate).data('contextName', name);
 }
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
 	});
 
 	//create a context activating all extensions
-	if(config.get('showLoadAllBtn') === 'true') {
+	if(CONFIG.get('showLoadAllBtn') === 'true') {
 		allBtn = createContextLi('all', chrome.i18n.getMessage("all_extensions"), 'icons/plugin.png');
 		$('ul').append(allBtn);
 	}
@@ -37,10 +37,10 @@ $(document).ready(function(){
 
 		$('ul li div.list-context, ul li div.list-button').not($(this)).addClass('ui-state-disabled');
 		$(this).addClass('ui-state-active');
-		
+
 		var li = $(this).closest('li');
 		var buttonClicked = 'switch';
-		
+
 		if($(this).is('.activate')) {
 			buttonClicked = 'activate';
 		} else if($(this).is('.deactivate')) {
