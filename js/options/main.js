@@ -275,20 +275,17 @@ function pageLoaded() {
 function highlightUngrouped() {
 	var enabled = $('#highlightUngrouped').is(':checked');
 
-	//remove .ungrouped class from all extensions and fade them back to full visibility
-	$('.extensions_list li:visible, .contextExtensions li:visible').removeClass('ungrouped').fadeTo('fast', 1);
+	//remove .ui-state-active class from all extensions in contexts, always-enabled box and available extensions box
+	$('.extensions_list li.ui-state-active, .contextExtensions li.ui-state-active').removeClass('ui-state-active');
 
 	if( enabled ) {
 		$.each($('#extensions li'), function(i, extensionElem) {
 			var extid = $(extensionElem).data('extid');
 
 			if( $('.context li:visible[data-extid=' + extid + ']').length == 0 ) {
-				$(extensionElem).addClass('ungrouped');
+				$(extensionElem).addClass('ui-state-active');
 			}
 		});
-
-		//make all extensions that are grouped opaque to expose ungrouped extensions
-		$('#extensions li:visible:not(.ungrouped)').stop().fadeTo('fast', .4);
 	}
 }
 
@@ -402,9 +399,9 @@ $(document).ready(function(){
 
 	$('#appsSupport').change(function() {
 		if($(this).is(':checked')) {
-			$('li.app').effect('slide');
+			$('li.app').effect('slide', {}, 'normal', markDirty);
 		} else {
-			$('li.app').effect('slide', {mode: 'hide'});
+			$('li.app').effect('slide', {mode: 'hide'}, 'normal', markDirty);
 		}
 	});
 

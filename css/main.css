@@ -323,6 +323,10 @@ a:visited {
 			display: none;
 		}
 
+	.extensions_list li.ui-state-active {
+		font-weight: normal;
+	}
+
 #contexts {
 	list-style: none;
 	margin: 0;
