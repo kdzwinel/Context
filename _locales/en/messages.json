@@ -88,7 +88,7 @@
         "message": "Successful import"
     },
     "configuration_was_imported_successfuly": {
-        "message": "Configuration was imported successfuly."
+        "message": "Configuration was imported successfully."
     },
     "some_extensions_were_ignored": {
         "message": "Some extensions from imported configuration were ignored because they are not installed:"
