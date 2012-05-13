@@ -89,7 +89,7 @@ function ExtensionsManager(onLoadCallback) {
 			that.enableExtension(extension, true, function() {
 				window.setTimeout(function(){
 					that.enableExtensions(list, callback);
-				}, config.get('extensionEnableDelay'));
+				}, CONFIG.get('extensionEnableDelay'));
 			});
 		}
 
@@ -101,7 +101,7 @@ function ExtensionsManager(onLoadCallback) {
 	//enable (or disable) single extension
 	this.enableExtension = function(extension, enable, callback) {
 		if(
-			(!extension.isApp || config.get('appsSupport') === 'true') && //check if extension is an app and continue only if we support apps
+			(!extension.isApp || CONFIG.get('appsSupport') === 'true') && //check if extension is an app and continue only if we support apps
 			((enable == true && !extension.enabled) || (enable == false && extension.enabled && extension.mayDisable)) && //enable extension if it is not already enabled, disable extension if it can be disabled and is not already disabled
 			(extension.id != chrome.i18n.getMessage("@@extension_id")) //do not enable/disable current extension (Context)
 		) {
