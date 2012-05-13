@@ -95,6 +95,13 @@ function ConfigurationBackupImporter() {
 		var extension = extensionsManager.getExtensionData( extid );
 
 		if( !extension ) {
+			//check if extension is not already on a list of missing extensions
+			for(index in missingExtensions) {
+				if(missingExtensions[index].id == extid) {
+					return false;
+				}
+			}
+
 			missingExtensions.push({
 				id: extid,
 				name: dictionary.hasOwnProperty(extid) ? dictionary[extid] : '-unknown-'
