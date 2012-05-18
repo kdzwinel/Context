@@ -10,7 +10,7 @@
         "message": "Toutes les extensions"
     },
     "highlight_ungrouped_extensions": {
-        "message": "highlight ungrouped extensions"
+        "message": "Mettre en évidence les extensions non groupées"
     },
     "create_new_context": {
         "message": "Créer un nouveau context"
@@ -58,40 +58,40 @@
         "message": "À propos"
     },
     "configuration_import_export": {
-        "message": "Configuration import\/export"
+        "message": "Import\/Export de la configuration"
     },
     "configuration_import": {
-        "message": "Configuration import"
+        "message": "Importer la configuration"
     },
     "configuration_export_description": {
-        "message": "To export all your settings, copy encoded configuration string from the box below."
+        "message": "Pour exporter tous vos paramètres, copiez la chaîne de configuration codée à partir de la boîte ci-dessous."
     },
     "configuration_import_description": {
-        "message": "Paste configuration string to the box below and click 'Import' to restore your configuration."
+        "message": "Collez la chaîne de configuration dans la boîte ci-dessous et cliquez sur \"Importer\" pour restaurer votre configuration."
     },
     "confirm_configuration_import": {
-        "message": "Import will override your current configuration, be sure to make a backup if you don't want to lose it."
+        "message": "L'importation remplacera votre configuration actuelle. Pensez à faire une sauvegarde si vous ne voulez pas la perdre."
     },
     "import": {
-        "message": "Import"
+        "message": "Importer"
     },
     "override_current_settings": {
-        "message": "Override current settings?"
+        "message": "Remplacer les paramètres actuels ?"
     },
     "import_failed": {
-        "message": "Import failed"
+        "message": "Échec de l'importation"
     },
     "configuration_string_is_invalid": {
-        "message": "Sorry, provided configuration string is invalid. Import failed."
+        "message": "Désolé, la chaîne de configuration fournie n'est pas valide. Échec de l'importation."
     },
     "successful_import": {
-        "message": "Successful import"
+        "message": "Importation réussie"
     },
     "configuration_was_imported_successfuly": {
-        "message": "Configuration was imported successfuly."
+        "message": "La configuration a été importée avec succès."
     },
     "some_extensions_were_ignored": {
-        "message": "Some extensions from imported configuration were ignored because they are not installed:"
+        "message": "Certaines extensions ont été ignorées lors de l'importation de la configuration, car elles ne sont pas installées:"
     },
     "enable_apps_support": {
         "message": "Activer le support des applications (par défaut, seules les extensions sont supportées)"
@@ -100,7 +100,7 @@
         "message": "Afficher le bouton ‘Toutes les extensions’ dans le popup"
     },
     "delay_after_enabling_extension": {
-        "message": "delay in milliseconds after enabling each extension"
+        "message": "délai en millisecondes après l'activation de chaque extension"
     },
     "context_options": {
         "message": "Context - Options"
@@ -127,7 +127,7 @@
         "message": "Déplacer"
     },
     "extension_is_loading": {
-        "message": "Chargement de l’extension ..."
+        "message": "Chargement de l’extension..."
     },
     "new_extension_installed_action": {
         "message": "après l’installation d’une nouvelle extension"
@@ -139,7 +139,7 @@
         "message": "ajouter l'extension à tous les contexts"
     },
     "add_to_always_enabled": {
-        "message": "add to 'always-enabled'"
+        "message": "ajouter à ‘toujours activées’"
     },
     "do_nothing": {
         "message": "ne rien faire"
@@ -154,7 +154,7 @@
         "message": "Ajoutez-la aux contexts suivants"
     },
     "or_add_it_to": {
-        "message": "or add it to"
+        "message": "ou ajoutez-la à"
     },
     "font": {
         "message": "Police"
@@ -169,7 +169,7 @@
         "message": "Programmeur"
     },
     "source_code": {
-        "message": "Source code"
+        "message": "Code source"
     },
     "translations": {
         "message": "Traductions"

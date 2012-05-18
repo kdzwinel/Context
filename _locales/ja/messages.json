@@ -10,7 +10,7 @@
         "message": "すべての拡張機能"
     },
     "highlight_ungrouped_extensions": {
-        "message": "highlight ungrouped extensions"
+        "message": "グループに追加されていない拡張機能をハイライト表示する"
     },
     "create_new_context": {
         "message": "新しいグループを作成"
@@ -58,40 +58,40 @@
         "message": "Contextについて"
     },
     "configuration_import_export": {
-        "message": "Configuration import\/export"
+        "message": "設定のインポート\/エクスポート"
     },
     "configuration_import": {
-        "message": "Configuration import"
+        "message": "設定のインポート"
     },
     "configuration_export_description": {
-        "message": "To export all your settings, copy encoded configuration string from the box below."
+        "message": "設定をすべてエクスポートするには、下記ボックスに表示されるエンコードされた文字列をコピーします。"
     },
     "configuration_import_description": {
-        "message": "Paste configuration string to the box below and click 'Import' to restore your configuration."
+        "message": "設定の文字列を下記ボックスに貼り付け、「インポート」をクリックすると設定が反映されます。"
     },
     "confirm_configuration_import": {
-        "message": "Import will override your current configuration, be sure to make a backup if you don't want to lose it."
+        "message": "インポートすると現在の設定が無効になります。現在の設定を残しておきたい場合はバックアップを取っておいてください。"
     },
     "import": {
-        "message": "Import"
+        "message": "インポート"
     },
     "override_current_settings": {
-        "message": "Override current settings?"
+        "message": "現在の設定を無効にしますか？"
     },
     "import_failed": {
-        "message": "Import failed"
+        "message": "インポートに失敗しました"
     },
     "configuration_string_is_invalid": {
-        "message": "Sorry, provided configuration string is invalid. Import failed."
+        "message": "ごめんなさい、いただいた設定の文字列は無効です。インポートに失敗しました。"
     },
     "successful_import": {
-        "message": "Successful import"
+        "message": "インポートに成功しました"
     },
     "configuration_was_imported_successfuly": {
-        "message": "Configuration was imported successfuly."
+        "message": "設定のインポートに成功しました。"
     },
     "some_extensions_were_ignored": {
-        "message": "Some extensions from imported configuration were ignored because they are not installed:"
+        "message": "設定がインポートされた拡張機能のうち、いくつかはインポートが無視されました。インポートが無視された設定は、拡張機能がインストールされていないようです。:"
     },
     "enable_apps_support": {
         "message": "Chrome WEBアプリも対象にする (デフォルトは拡張機能のみ対象)"
@@ -130,16 +130,16 @@
         "message": "拡張機能を読み込んでいます。 ..."
     },
     "new_extension_installed_action": {
-        "message": "新しい拡張機能をインストールした後の動作設定"
+        "message": "新しい拡張機能をインストールした直後の動作設定"
     },
     "ask_what_to_do": {
-        "message": "何をしたら良いか尋ねる"
+        "message": "何をしたら良いか通知する"
     },
     "add_to_all_contexts": {
         "message": "この拡張機能をすべてのグループへ追加"
     },
     "add_to_always_enabled": {
-        "message": "add to 'always-enabled'"
+        "message": "「常時有効にする拡張機能」へ追加'"
     },
     "do_nothing": {
         "message": "何もしない"
@@ -154,7 +154,7 @@
         "message": "この拡張機能を以下のグループへ追加"
     },
     "or_add_it_to": {
-        "message": "or add it to"
+        "message": "または追加"
     },
     "font": {
         "message": "フォント"
@@ -169,7 +169,7 @@
         "message": "プログラマー"
     },
     "source_code": {
-        "message": "Source code"
+        "message": "ソースコード"
     },
     "translations": {
         "message": "翻訳"
@@ -178,13 +178,13 @@
         "message": "はじめに"
     },
     "welcome_step_1": {
-        "message": "インストールしてくれてありがとう！ これからこの拡張機能で、拡張機能のグループ（コンテクスト）を作成します。いずれのグループも、作成する際に名前とアイコンを選びます。"
+        "message": "インストールしてくれてありがとう！ これからこの拡張機能で、拡張機能のグループ（コンテクスト）を作成します。いずれのグループも、作成する際に名前とアイコンを選ぶことができます。"
     },
     "welcome_step_2": {
-        "message": "グループを作成したら、拡張機能をグループへ追加しましょう。グループへの追加はドラッグアンドドロップでおこなえます。Google Chromeに追加されている拡張機能は、上部のボックスにアルファベット順に並んでいます。ここから下のグループごとのボックスへ拡張機能を追加します。"
+        "message": "グループを作成したら、拡張機能をグループへ追加しましょう。グループへの追加はドラッグアンドドロップでおこなえます。Google Chromeに追加されている拡張機能は、上部のボックスにアルファベット順に並んでいます。ここから下にあるグループごとのボックスへ拡張機能を追加します。"
     },
     "welcome_step_3": {
-        "message": "「利用可能な拡張機能」ボックスから「常時有効にする拡張機能」ボックスへすべての拡張機能を移動させることによって、すべてのグループで有効にすることができます。"
+        "message": "「利用可能な拡張機能」ボックスから「常時有効にする拡張機能」ボックスへ、すべての拡張機能を移動させることによって、すべてのグループで移動させた拡張機能を有効にすることができます。"
     },
     "welcome_step_4": {
         "message": "設定を保存することで、ツールバーのアイコンからカンタンにグループを変更することができます。メニューボタンに表示するグループ名とアイコンを選択し、＋\/ーボタンを押すことで　有効\/無効 を切り替えることができます。複数のグループを同時に選択することも可能です。"
