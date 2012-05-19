@@ -1,6 +1,6 @@
 {
    "name": "Context",
-   "version": "0.300",
+   "version": "0.301",
    "permissions": [ "management", "notifications", "tabs" ],
    "background_page": "background.html",
    "options_page": "options.html",
