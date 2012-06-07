@@ -1,0 +1,7 @@
+Dai un'occhiata alle tue estensioni. Davvero le usi tutte quante e per tutto il tempo? Non credo. Lo sai che queste estensioni non utilizzate sottraggono risorse e spazio? Inoltre possono distrarti con animazioni e notifiche. Con Context puoi porre fine a tutto ciò. Ti basta mettere le estensioni che usi per lavoro, divertimento, shopping, socializzazione, ecc. in gruppi ("contesti") differenti e con un solo click passare da un gruppo all'altro.
+
+Extra:
+- puoi miscelare i contesti tra di loro usando i pulsanti +/-
+- quando vengono installate nuove estensioni, Context ti permetterà di assegnarle ai gruppi più appropriati, tramite finestra di notifica - senza la necessità di aprire la pagina di configurazione
+- gruppi differenti - temi differenti (supporto limitato - Chrome memorizza solo gli ultimi 3 temi)
+- tutorial passo-passo al primo avvio
