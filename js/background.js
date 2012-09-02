@@ -220,3 +220,7 @@ function openConfig() {
 		}
 	});
 }
+
+$(document).ready(function() {
+	init();
+});

@@ -1,8 +1,11 @@
 {
    "name": "Context",
    "version": "0.301",
+   "manifest_version": 2,
    "permissions": [ "management", "notifications", "tabs" ],
-   "background_page": "background.html",
+   "background": {
+      "page": "background.html"
+   },
    "options_page": "options.html",
    "browser_action": {
       "default_icon": "icons/context.png",
@@ -16,5 +19,6 @@
       "19": "icons/context.png",
       "48": "icons/context-48.png",
       "64": "icons/context-64.png"
-   }
+   },
+  "content_security_policy": "script-src 'self' https://apis.google.com https://platform.twitter.com https://www.facebook.com; object-src 'self'"
 }

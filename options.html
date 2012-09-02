@@ -138,24 +138,18 @@
 		<!-- FORMS AND DIALOGS -->
 
 		<div id="footer">
-			<button id="new-context-button" onclick="openNewContextDialog()" data-i18n="new_context"></button>
-			<button id="save-button" onclick="save()" data-i18n="save"></button>
+			<button id="new-context-button" data-i18n="new_context"></button>
+			<button id="save-button" data-i18n="save"></button>
 		</div>
 
 		<div id="social-buttons">
 			<g:plusone size="medium" href="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka"></g:plusone>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka" data-text="Context - Sort extensions into groups and easily switch between them." data-count="horizontal">&nbsp;</a>
-			<a name="fb_share" id="fb_share" type="button" share_url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka">Share</a>
-			<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+			<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Faalnjolghjkkogicompabhhbbkljnlka&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px;" allowTransparency="true"></iframe>
 		</div>
 	</div>
 </div>
-<script>
-$('[data-i18n]').each(function(i, item){
-	$(item).text(chrome.i18n.getMessage($(item).data('i18n')));
-});
-</script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
 </body>
 </html>

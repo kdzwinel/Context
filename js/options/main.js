@@ -300,8 +300,15 @@ function loadConfiguration() {
 	});
 }
 
+function loadTranslations() {
+	$('[data-i18n]').each(function(i, item){
+		$(item).text(chrome.i18n.getMessage($(item).data('i18n')));
+	});
+}
+
 $(document).ready(function(){
 	loadConfiguration();
+	loadTranslations();
 	initNewContextDialog();
 
 	$('button, input[type=submit], input[type=button]').button();
@@ -495,5 +502,12 @@ $(document).ready(function(){
 		}).find('span.dialog-content').text(chrome.i18n.getMessage("confirm_configuration_import"));
 
 		return false;
+	});
+
+	$('#new-context-button').click(function(){
+		openNewContextDialog();
+	});
+	$('#save-button').click(function(){
+		save();
 	});
 });

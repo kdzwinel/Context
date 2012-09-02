@@ -22,10 +22,5 @@
 	<p><span data-i18n="or_add_it_to"></span>: <span id='always_enabled' class="inline-selectable ui-widget-content ui-corner-all" data-i18n="always_enabled_extensions"></span></p>
 	<button id='save' data-i18n="save"></button>
 	<button id='do_nothing' data-i18n="cancel"></button>
-<script>
-$('[data-i18n]').each(function(i, item){
-	$(item).text(chrome.i18n.getMessage($(item).data('i18n')));
-});
-</script>
 </body>
 </html>

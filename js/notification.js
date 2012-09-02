@@ -2,6 +2,11 @@ var contextsManager = new ContextsManager();
 var extensionsManager = new ExtensionsManager();
 
 $(document).ready(function(){
+	//load translations
+	$('[data-i18n]').each(function(i, item){
+		$(item).text(chrome.i18n.getMessage($(item).data('i18n')));
+	});
+
 	//gather information about extension that was just installed
 	var extdata = chrome.extension.getBackgroundPage().getNewestExtension();
 
