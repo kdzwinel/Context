@@ -51,7 +51,7 @@ Author
 **Konrad Dzwinel**
 
 + https://github.com/kdzwinel
-+ http://www.goldenline.pl/konrad-dzwinel
++ http://www.linkedin.com/pub/konrad-dzwinel/53/599/366/en
 
 License
 -------
