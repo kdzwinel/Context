@@ -496,15 +496,31 @@ a:visited {
 		}
 		
 			ul.simple-list li div.list-context {
-				padding: 2px;
+				padding: 2px 2px 2px 4px;
 				cursor: pointer;
 				float: left;
-				width: 150px;
+				width: 145px;
 			}
 			
 				ul.simple-list li div.list-context span {
 					margin-left: 5px;
 				}
+			
+			ul.simple-list li div.list-context.all-context {
+				padding-left: 6px;
+			}
+			
+			ul.simple-list li div.list-context.single-context {
+				border-left: solid 3px #FFA6A6;
+			}
+			
+			ul.simple-list li.status-partial div.list-context {
+				border-left-color: #FFCE3B;
+			}
+			
+			ul.simple-list li.status-all  div.list-context {
+				border-left-color: #00C700;
+			}
 			
 			ul.simple-list li div.list-button {
 				cursor: pointer;
@@ -595,6 +611,10 @@ a:visited {
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+/* Color by status */
+.status-enabled { border-left: solid 3px #00C700 !important; }
+.status-disabled { border-left: solid 3px #FFA6A6 !important; }
 
 
 

@@ -51,7 +51,8 @@ function createExtensionLi(extdata) {
 	var span = $('<span/>').addClass('extensionName').text(extdata.name);
 	var removeImg = $('<span />').attr('class', 'ui-icon ui-icon-circle-close');
 	var removeBtn = $('<div />').addClass('removeBtn').append(removeImg);
-	var li = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all').attr('data-extid', extdata.id).append(img).append(span).append(removeBtn);
+	var status = 'status-' + ((extdata.enabled == true) ? 'enabled' : 'disabled');
+	var li = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all ' + status).attr('data-extid', extdata.id).append(img).append(span).append(removeBtn);
 
 	if(extdata.isApp) {
 		li.addClass('app');
