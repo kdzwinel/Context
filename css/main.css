@@ -615,6 +615,7 @@ a:visited {
 /* Color by status */
 .status-enabled { border-left: solid 3px #00C700 !important; }
 .status-disabled { border-left: solid 3px #FFA6A6 !important; }
+.float-left { float: left; }
 
 
 

@@ -97,6 +97,17 @@ function ContextsManager() {
 		}
 	}
 
+	this.newContext = function(name, img) {
+		var contextObj = {
+			'name' : name,
+			'imgSrc': img,
+			'extensions': new Array()
+		};
+		contextsList.push(contextObj);
+		that.save();
+		chrome.extension.getBackgroundPage().configUpdated();
+	}
+
 	this.save = function() {
 		localStorage.contexts = JSON.stringify(contextsList);
 	}
