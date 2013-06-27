@@ -196,14 +196,14 @@ a:visited {
 #new-context-form {
 }
 
-	#new-context-form label {
+	#new-context-form .dialog-label {
 		font-weight: bold;
 		display: block;
 		margin-top: 15px;
 		margin-bottom: 5px;
 	}
 
-	#new-context-form input {
+	#new-context-form input.text {
 		width: 100%;
 		padding: 5px;
 	}

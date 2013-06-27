@@ -20,7 +20,8 @@ $(document).ready(function(){
 	var contexts = contextsManager.getContextsList();
 
 	$.each(contexts, function(i, context) {
-		$('ul').append(createContextLi(context.name, context.name, context.imgSrc));
+		var icon = (context.icon == 'show_extension') ? context.extensions[0].icon : context.imgSrc;
+		$('ul').append(createContextLi(context.name, context.name, icon));
 	});
 
 	//create a context activating all extensions
