@@ -290,6 +290,10 @@ a:visited {
 	.extensions_list.active_dense {
 		background: url('ui-lightness/images/ui-bg_diagonals-thick.png') top left repeat;
 	}
+	
+	.extensions_list.active_hover, ul.contextExtensions.active_hover {
+		background: url('ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png') top left repeat;
+	}
 
 	ul.contextExtensions li:first-child {
 		margin-top: 0;

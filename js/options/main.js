@@ -142,6 +142,7 @@ function newContext(name, imgSrc) {
 
 	contextUl.droppable({
 		activeClass: 'active',
+		hoverClass: 'active_hover',
 		accept: function(element){
 			if(element.is('#extensions li') && !isInContext($(this), element)) {
 				return true;
@@ -416,6 +417,7 @@ $(document).ready(function(){
 	//moving extensions between 'available' section and 'always enabled' section
 	$('#extensions').droppable({
 		activeClass: 'active_dense',
+		hoverClass: 'active_hover',
 		accept: function(element){
 			if(element.is('#always_enabled_extensions li')) {
 				return true;
@@ -436,6 +438,7 @@ $(document).ready(function(){
 
 	$('#always_enabled_extensions').droppable({
 		activeClass: 'active_dense',
+		hoverClass: 'active_hover',
 		accept: function(element){
 			if(element.is('#extensions li')) {
 				return true;
