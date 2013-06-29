@@ -125,13 +125,14 @@ function isInContext(context, newExtension) {
 function newContext(name, imgSrc, showIcon) {
 	var contextImg = $('<img/>').addClass('contextIcon').attr('src', imgSrc);
 	var contextSpan = $('<span/>').addClass('contextTitle').text(name);
+	var contextIcon = (showIcon || false);
 	var contextMenu = $('<div class="contextMenu">' +
 		'<div class="contextGrip"><span class="ui-icon ui-icon-arrow-4-diag" title="' + chrome.i18n.getMessage("move") + '"></span></div>' +
 		'<a href="#" class="contextDuplicate"><span class="ui-icon ui-icon-copy" title="' + chrome.i18n.getMessage("clone") + '"></span></a>' +
 		'<a href="#" class="contextEdit"><span class="ui-icon ui-icon-wrench" title="' + chrome.i18n.getMessage("edit") + '"></span></a>' +
 		'<a href="#" class="contextDelete"><span class="ui-icon ui-icon-closethick" title="' + chrome.i18n.getMessage("delete") + '"></span></a>' +
 		'</div>');
-	var contextUl = $('<ul>').addClass('contextExtensions').data('contextName', name).data('contextImg', imgSrc).data('contextIcon', showIcon);
+	var contextUl = $('<ul>').addClass('contextExtensions').data('contextName', name).data('contextImg', imgSrc).data('contextIcon', contextIcon);
 	var contextLi = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all').addClass('context').append(contextImg).append(contextSpan).append(contextMenu).append(contextUl);
 
 	contextUl.sortable({

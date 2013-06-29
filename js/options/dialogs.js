@@ -57,7 +57,7 @@ function openNewContextDialog() {
 function openEditContextDialog(context) {
 	var contextName = context.find('.contextExtensions').data('contextName');
 	var contextImg = context.find('.contextExtensions').data('contextImg');
-	var contextIcon = context.find('.contextExtensions').data('contextIcon');
+	var contextIcon = context.find('.contextExtensions').data('contextIcon') || 'show_context';
 
 	$( '#new-context-form' ).find('input[name=context-name]').val(contextName);
 	$( '#new-context-form' ).find('img[src="'+contextImg+'"]').parent().addClass('ui-selected');
@@ -167,7 +167,7 @@ function initNewContextDialog() {
 		}
 	}).find('form').submit(function(){
 		return false;
-	}).find('input[name=context-icon][value="show_context"]').prop('checked', true);
+	});
 }
 
 function showErrorDialog(config) {

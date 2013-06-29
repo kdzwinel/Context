@@ -20,7 +20,7 @@ $(document).ready(function(){
 	var contexts = contextsManager.getContextsList();
 
 	$.each(contexts, function(i, context) {
-		var icon = (context.icon == 'show_extension') ? context.extensions[0].icon : context.imgSrc;
+		var icon = (context.icon == 'show_extension' && context.extensions[0]) ? (context.extensions[0].icon || context.imgSrc) : context.imgSrc;
 		$('ul').append(createContextLi(context.name, context.name, icon));
 	});
 
