@@ -56,12 +56,15 @@
 			<div class="ui-state-highlight ui-corner-all errors"></div>
 			<form>
 			<fieldset>
-				<label for="context-name" data-i18n="name"></label>
+				<div class="dialog-label" data-i18n="name"></div>
 				<input type="text" name="context-name" id="context-name" class="text ui-widget-content ui-corner-all" />
 
-				<label for="context-icons" data-i18n="icon"></label>
+				<div class="dialog-label" data-i18n="icon"></div>
 				<ul id='context-icons' class='clearfix'>
 				</ul>
+				<div class="dialog-label" data-i18n="popup"></div>
+				<div><input type='radio' id='showContextIcon' name='context-icon' value='show_context' checked='true' /> <label for='showContextIcon' data-i18n="show_context_icon"></label></div>
+				<div><input type='radio' id='showExtensionIcon' name='context-icon' value='show_extension' /> <label for='showExtensionIcon' data-i18n="show_extension_icon"></label></div>
 			</fieldset>
 			</form>
 		</div>

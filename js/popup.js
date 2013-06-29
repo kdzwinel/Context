@@ -1,11 +1,12 @@
 function createContextLi(name, title, imgSrc) {
 	var img = $('<img>').attr('src', imgSrc);
 	var span = $('<span>').append(title);
+	var all = ((name == 'all') ? 'all' : 'single') + '-context';
 
 	var activate = $("<div class='list-button activate ui-widget-content ui-corner-all'><span class='ui-icon ui-icon-plusthick'></span></div>");
 	var deactivate = $("<div class='list-button deactivate ui-widget-content ui-corner-all'><span class='ui-icon ui-icon-minusthick'></span></div>");
 
-	var context = $('<div>').attr('class', 'list-context ui-widget-content ui-corner-all').append(img).append(span);
+	var context = $('<div>').attr('class', 'list-context ui-widget-content ui-corner-all ' + all).append(img).append(span);
 
 	return $('<li>').attr('class', 'clearfix').append(context).append(activate).append(deactivate).data('contextName', name);
 }
@@ -19,7 +20,8 @@ $(document).ready(function(){
 	var contexts = contextsManager.getContextsList();
 
 	$.each(contexts, function(i, context) {
-		$('ul').append(createContextLi(context.name, context.name, context.imgSrc));
+		var icon = (context.icon == 'show_extension' && context.extensions[0]) ? (context.extensions[0].icon || context.imgSrc) : context.imgSrc;
+		$('ul').append(createContextLi(context.name, context.name, icon));
 	});
 
 	//create a context activating all extensions
