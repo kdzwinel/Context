@@ -88,12 +88,6 @@ function displayContexts() {
 			}
 		}
 
-		contextUl.sortable({
-			revert: true,
-			forcePlaceholderSize: true,
-			placeholder: 'ui-widget-content ui-corner-all ui-state-highlight'
-		});
-
 		$('#contexts').append(contextObj);
 	}
 
@@ -138,6 +132,10 @@ function newContext(name, imgSrc, showIcon) {
 	var contextLi = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all').addClass('context').append(contextGrip).append(contextMenu).append(contextUl);
 
 	contextUl.sortable({
+		placeholder: 'ui-widget-content ui-corner-all ui-state-highlight',
+		forcePlaceholderSize: true,
+		tolerance: 'pointer',
+		revert: true,
 		change: function() {
 			markDirty();
 		}
@@ -154,9 +152,11 @@ function newContext(name, imgSrc, showIcon) {
 			return false;
 		},
 		drop: function(event, ui) {
-			var li = ui.draggable.clone();
-
-			$(this).append(li);
+			if (ui.draggable.parent().is("#extensions")) {
+				var li = ui.draggable.clone();
+				$(this).append(li);
+			}
+			
 			$(this).sortable( "refresh" );
 
 			markDirty();
