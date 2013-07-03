@@ -31,9 +31,11 @@ function openNewContextDialog() {
 					isValid = false;
 					addDialogError($(this), chrome.i18n.getMessage("pick_an_icon"));
 				}
+				
+				var showIcon = $("input:radio[name='context-icon']:checked").val();
 
 				if ( isValid ) {
-					var context = newContext(contextName, selectedIcon.attr('src'));
+					var context = newContext(contextName, selectedIcon.attr('src'), showIcon);
 					$('#contexts').append(context);
 					context.effect('highlight', {}, 'slow');
 					$( this ).dialog( "close" );
@@ -55,9 +57,11 @@ function openNewContextDialog() {
 function openEditContextDialog(context) {
 	var contextName = context.find('.contextExtensions').data('contextName');
 	var contextImg = context.find('.contextExtensions').data('contextImg');
+	var contextIcon = context.find('.contextExtensions').data('contextIcon') || 'show_context';
 
 	$( '#new-context-form' ).find('input[name=context-name]').val(contextName);
 	$( '#new-context-form' ).find('img[src="'+contextImg+'"]').parent().addClass('ui-selected');
+	$( '#new-context-form' ).find('input[name=context-icon][value="'+contextIcon+'"]').prop('checked', true);
 
 	var buttons = {};
 	buttons[chrome.i18n.getMessage("edit")] = function() {
@@ -90,10 +94,13 @@ function openEditContextDialog(context) {
 					isValid = false;
 					addDialogError($(this), chrome.i18n.getMessage("pick_an_icon"));
 				}
+				
+				var showIcon = $("input:radio[name='context-icon']:checked").val();
 
 				if ( isValid ) {
 					context.find('.contextExtensions').data('contextName', contextName);
 					context.find('.contextExtensions').data('contextImg', selectedIcon.attr('src'));
+					context.find('.contextExtensions').data('contextIcon', showIcon);
 
 					context.find('.contextTitle').text(contextName);
 					context.find('.contextIcon').attr('src', selectedIcon.attr('src'));
@@ -110,8 +117,11 @@ function openEditContextDialog(context) {
 		};
 
 	$( '#new-context-form' )
-		.dialog( "option", "title", chrome.i18n.getMessage("edit_context") )
-		.dialog( "option", "buttons", buttons)
+		.dialog( "option", {
+			title: chrome.i18n.getMessage("edit_context"),
+			buttons: buttons,
+			width: 370
+		})
 		.dialog( "open" );
 }
 
@@ -146,14 +156,14 @@ function initNewContextDialog() {
 	$( "#new-context-form" ).dialog({
 		autoOpen: false,
 		resizable: false,
-		height: 390,
 		width: 370,
 		modal: true,
 		close: function() {
 			clearDialogErrors($(this));
 			$(this).find('.ui-selected').removeClass("ui-selected");
-			$(this).find('input').val( "" ).removeClass("ui-state-error");
+			$(this).find('input:text').val( "" ).removeClass("ui-state-error");
 			$(this).find('ul').removeClass( "ui-state-error" );
+			$(this).find('input[name=context-icon][value="show_context"]').prop('checked', true);
 		}
 	}).find('form').submit(function(){
 		return false;

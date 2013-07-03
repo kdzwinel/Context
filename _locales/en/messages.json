@@ -197,5 +197,14 @@
     },
     "close": {
         "message": "Close"
+    },
+    "popup": {
+        "message": "Popup"
+    },
+    "show_context_icon": {
+        "message": "Show Context icon"
+    },
+    "show_extension_icon": {
+        "message": "Show first extension icon"
     }
 }

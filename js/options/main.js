@@ -51,7 +51,8 @@ function createExtensionLi(extdata) {
 	var span = $('<span/>').addClass('extensionName').text(extdata.name);
 	var removeImg = $('<span />').attr('class', 'ui-icon ui-icon-circle-close');
 	var removeBtn = $('<div />').addClass('removeBtn').append(removeImg);
-	var li = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all').attr('data-extid', extdata.id).append(img).append(span).append(removeBtn);
+	var status = 'status-' + ((extdata.enabled == true) ? 'enabled' : 'disabled');
+	var li = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all ' + status).attr('data-extid', extdata.id).attr('data-exticon', iconSrc).append(img).append(span).append(removeBtn);
 
 	if(extdata.isApp) {
 		li.addClass('app');
@@ -73,7 +74,7 @@ function displayContexts() {
 
 	for(gindex in contexts) {
 		var context = contexts[gindex];
-		var contextObj = newContext(context.name, context.imgSrc);
+		var contextObj = newContext(context.name, context.imgSrc, context.icon);
 
 		var contextUl = contextObj.find('ul');
 
@@ -86,10 +87,6 @@ function displayContexts() {
 				contextUl.append(extLi);
 			}
 		}
-
-		contextUl.sortable({
-			revert: true
-		});
 
 		$('#contexts').append(contextObj);
 	}
@@ -121,19 +118,24 @@ function isInContext(context, newExtension) {
 }
 
 //create new list object representing context
-function newContext(name, imgSrc) {
+function newContext(name, imgSrc, showIcon) {
 	var contextImg = $('<img/>').addClass('contextIcon').attr('src', imgSrc);
 	var contextSpan = $('<span/>').addClass('contextTitle').text(name);
+	var contextIcon = (showIcon || false);
+	var contextGrip = $('<div/>').attr('title', chrome.i18n.getMessage("move")).addClass('contextGrip').append(contextImg).append(contextSpan);
 	var contextMenu = $('<div class="contextMenu">' +
-		'<div class="contextGrip"><span class="ui-icon ui-icon-arrow-4-diag" title="' + chrome.i18n.getMessage("move") + '"></span></div>' +
 		'<a href="#" class="contextDuplicate"><span class="ui-icon ui-icon-copy" title="' + chrome.i18n.getMessage("clone") + '"></span></a>' +
 		'<a href="#" class="contextEdit"><span class="ui-icon ui-icon-wrench" title="' + chrome.i18n.getMessage("edit") + '"></span></a>' +
 		'<a href="#" class="contextDelete"><span class="ui-icon ui-icon-closethick" title="' + chrome.i18n.getMessage("delete") + '"></span></a>' +
 		'</div>');
-	var contextUl = $('<ul>').addClass('contextExtensions').data('contextName', name).data('contextImg', imgSrc);
-	var contextLi = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all').addClass('context').append(contextImg).append(contextSpan).append(contextMenu).append(contextUl);
+	var contextUl = $('<ul>').addClass('contextExtensions').data('contextName', name).data('contextImg', imgSrc).data('contextIcon', contextIcon);
+	var contextLi = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all').addClass('context').append(contextGrip).append(contextMenu).append(contextUl);
 
 	contextUl.sortable({
+		placeholder: 'ui-widget-content ui-corner-all ui-state-highlight',
+		forcePlaceholderSize: true,
+		tolerance: 'pointer',
+		revert: true,
 		change: function() {
 			markDirty();
 		}
@@ -141,6 +143,7 @@ function newContext(name, imgSrc) {
 
 	contextUl.droppable({
 		activeClass: 'active',
+		hoverClass: 'active_hover',
 		accept: function(element){
 			if(element.is('#extensions li') && !isInContext($(this), element)) {
 				return true;
@@ -149,9 +152,11 @@ function newContext(name, imgSrc) {
 			return false;
 		},
 		drop: function(event, ui) {
-			var li = ui.draggable.clone();
-
-			$(this).append(li);
+			if (ui.draggable.parent().is("#extensions")) {
+				var li = ui.draggable.clone();
+				$(this).append(li);
+			}
+			
 			$(this).sortable( "refresh" );
 
 			markDirty();
@@ -185,9 +190,11 @@ function save() {
 	$.each(contexts, function(i,context){
 		var contextName = $(context).data('contextName');
 		var contextImg = $(context).data('contextImg');
+		var contextIcon = $(context).data('contextIcon');
 		var contextObj = {
 			'name' : contextName,
 			'imgSrc': contextImg,
+			'icon': contextIcon,
 			'extensions': new Array()
 		};
 
@@ -195,8 +202,10 @@ function save() {
 
 		$.each(extensions, function(i, extension) {
 			var extid = $(extension).data('extid');
+			var exticon = $(extension).data('exticon');
 			var extObj = {
-				id: extid
+				id: extid,
+				icon: exticon
 			};
 
 			contextObj.extensions.push(extObj);
@@ -356,6 +365,7 @@ $(document).ready(function(){
 
 		var oldImageSrc = context.find('.contextExtensions').data('contextImg');
 		var oldName = context.find('.contextExtensions').data('contextName');
+		var oldIcon = context.find('.contextExtensions').data('contextIcon');
 		var newName;
 
 		//generate new, unique name
@@ -378,7 +388,7 @@ $(document).ready(function(){
 		}
 
 		var newContext = context.clone();
-		newContext.find('.contextExtensions').data('contextName', newName).data('contextImg', oldImageSrc);
+		newContext.find('.contextExtensions').data('contextName', newName).data('contextImg', oldImageSrc).data('contextIcon', oldIcon);
 		newContext.find('.contextTitle').text(newName);
 		$('#contexts').append(newContext);
 
@@ -415,6 +425,7 @@ $(document).ready(function(){
 	//moving extensions between 'available' section and 'always enabled' section
 	$('#extensions').droppable({
 		activeClass: 'active_dense',
+		hoverClass: 'active_hover',
 		accept: function(element){
 			if(element.is('#always_enabled_extensions li')) {
 				return true;
@@ -435,6 +446,7 @@ $(document).ready(function(){
 
 	$('#always_enabled_extensions').droppable({
 		activeClass: 'active_dense',
+		hoverClass: 'active_hover',
 		accept: function(element){
 			if(element.is('#extensions li')) {
 				return true;

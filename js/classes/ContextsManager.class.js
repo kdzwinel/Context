@@ -1,13 +1,41 @@
 function ContextsManager() {
 	var that = this;
 	var contextsList = [];
+	var countTested = [];
+	var countEnabled = [];
 
 	this.init = function() {
-		if(localStorage.contexts) {
-			that.setContextsList( JSON.parse(localStorage.contexts) );
+		if (localStorage.contexts) {
+			var list = JSON.parse(localStorage.contexts)
+
+			for(j in list) {
+				countEnabled[j] = 0;
+				countTested[j] = 0;
+				for(i in list[j].extensions) {
+					chrome.management.get(list[j].extensions[i].id, 
+							(function(j) {						
+								return function(ext) {
+									countTested[j]++;
+									countEnabled[j] = countEnabled[j] + ext.enabled;
+									if (countTested[j] == list[j].extensions.length) {										
+										that.setContextsStatus(j);
+									}
+								};
+							})(j)
+					);
+				}								
+			}
+			that.setContextsList(list);
 		}
 	}
 
+	this.setContextsStatus = function(j) {
+		if (countEnabled[j] > 0) {
+			var status = 'status-' + ((countEnabled[j] == contextsList[j].extensions.length) ? "all" : "partial");
+			$('ul li:eq('+j+')').addClass(status);
+		}
+	}
+	
 	this.setContextsList = function(list) {
 		contextsList = list;
 	}
@@ -67,6 +95,17 @@ function ContextsManager() {
 				return (item.id != extid);
 			});
 		}
+	}
+
+	this.newContext = function(name, img) {
+		var contextObj = {
+			'name' : name,
+			'imgSrc': img,
+			'extensions': new Array()
+		};
+		contextsList.push(contextObj);
+		that.save();
+		chrome.extension.getBackgroundPage().configUpdated();
 	}
 
 	this.save = function() {
