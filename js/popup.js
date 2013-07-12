@@ -33,7 +33,7 @@ $(document).ready(function(){
 	$('ul li div.list-context, ul li div.list-button').click(function(){
 		//make sure that user won't change the context while other context is loading
 		if(blocked) {
-			return;
+			return false;
 		}
 		blocked = true;
 

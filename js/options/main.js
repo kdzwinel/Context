@@ -145,11 +145,7 @@ function newContext(name, imgSrc, showIcon) {
 		activeClass: 'active',
 		hoverClass: 'active_hover',
 		accept: function(element){
-			if(element.is('#extensions li') && !isInContext($(this), element)) {
-				return true;
-			}
-
-			return false;
+			return element.is('#extensions li') && !isInContext($(this), element);
 		},
 		drop: function(event, ui) {
 			if (ui.draggable.parent().is("#extensions")) {
@@ -195,7 +191,7 @@ function save() {
 			'name' : contextName,
 			'imgSrc': contextImg,
 			'icon': contextIcon,
-			'extensions': new Array()
+			'extensions': []
 		};
 
 		var extensions = $(context).find('li:visible');
@@ -410,7 +406,7 @@ $(document).ready(function(){
 		active: false
 	});
 
-	$('#additional-options-panel').find('input, checkbox, select, textarea').change(function(){
+	$('#additional-options-panel').find('input, select, textarea').change(function(){
 		markDirty();
 	});
 
@@ -427,11 +423,7 @@ $(document).ready(function(){
 		activeClass: 'active_dense',
 		hoverClass: 'active_hover',
 		accept: function(element){
-			if(element.is('#always_enabled_extensions li')) {
-				return true;
-			}
-
-			return false;
+			return element.is('#always_enabled_extensions li');
 		},
 		drop: function(event, ui) {
 			var li = ui.draggable.detach();
@@ -448,11 +440,7 @@ $(document).ready(function(){
 		activeClass: 'active_dense',
 		hoverClass: 'active_hover',
 		accept: function(element){
-			if(element.is('#extensions li')) {
-				return true;
-			}
-
-			return false;
+			return element.is('#extensions li');
 		},
 		drop: function(event, ui) {
 			var li = ui.draggable.detach();

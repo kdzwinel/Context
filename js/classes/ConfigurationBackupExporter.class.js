@@ -1,32 +1,32 @@
 function ConfigurationBackupExporter() {
 	var extensionsManager;
 
-	this.exportConfig = function(callback) {
-		var contextsManager = new ContextsManager();
-		extensionsManager = new ExtensionsManager(function() {
-			var contexts = contextsManager.getContextsList();
-			var alwaysEnabledExtensions = extensionsManager.getAlwaysEnabledExtensionsIds();
-			var extensionsNamesDictionary = createExtensionsNamesDictionary(contexts, alwaysEnabledExtensions);
+	this.exportConfig = function (callback) {
+        var contextsManager = new ContextsManager();
+        extensionsManager = new ExtensionsManager(function () {
+            var contexts = contextsManager.getContextsList();
+            var alwaysEnabledExtensions = extensionsManager.getAlwaysEnabledExtensionsIds();
+            var extensionsNamesDictionary = createExtensionsNamesDictionary(contexts, alwaysEnabledExtensions);
 
-			var cleanConfig = {
-				"version": CONFIG.get("configBackupFormatVersion"),
-				"contexts": contexts,
-				"alwaysEnabledExtensions": alwaysEnabledExtensions,
-				"extensionsNamesDictionary": extensionsNamesDictionary,
-				"advancedOptions": {
-					"appsSupport": CONFIG.get("appsSupport"),
-					"newExtensionAction": CONFIG.get("newExtensionAction"),
-					"showLoadAllBtn": CONFIG.get("showLoadAllBtn")
-				}
-			};
+            var cleanConfig = {
+                "version": CONFIG.get("configBackupFormatVersion"),
+                "contexts": contexts,
+                "alwaysEnabledExtensions": alwaysEnabledExtensions,
+                "extensionsNamesDictionary": extensionsNamesDictionary,
+                "advancedOptions": {
+                    "appsSupport": CONFIG.get("appsSupport"),
+                    "newExtensionAction": CONFIG.get("newExtensionAction"),
+                    "showLoadAllBtn": CONFIG.get("showLoadAllBtn")
+                }
+            };
 
-			var encodedConfig = Base64.encode( JSON.stringify( cleanConfig ) );
+            var encodedConfig = Base64.encode(JSON.stringify(cleanConfig));
 
-			if( typeof callback == 'function' ) {
-				callback( encodedConfig );
-			}
-		});
-	}
+            if (typeof callback == 'function') {
+                callback(encodedConfig);
+            }
+        });
+    };
 
 	var createExtensionsNamesDictionary = function(contexts, alwaysEnabledExtensions) {
 		var extensionsNamesDictionary = {};

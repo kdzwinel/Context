@@ -226,9 +226,7 @@ a:visited {
 
 #context-icons {
 	list-style: none;
-	padding: 0;
-	padding-right: 5px;
-	padding-bottom: 5px;
+    padding: 0 5px 5px 0;
 }
 
 	#context-icons li {
@@ -266,11 +264,8 @@ a:visited {
 
 .extensions_list {
 	list-style: none;
-	padding:0;
-	margin: 0;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-bottom: 10px;
+    padding: 5px 0;
+    margin: 0 0 10px;
 }
 
 	.extensions_list li, ul.contextExtensions li {
@@ -389,7 +384,6 @@ a:visited {
 
 	ul.contextExtensions{
 		list-style: none;
-		padding:0;
 		margin: 10px 10px 10px 0;
 		min-height: 16px;
 		padding: 5px;
@@ -407,7 +401,7 @@ a:visited {
 			border: none;
 			margin: 0;
 			padding: 0;
-			background-color: none;
+			background-color: transparent;
 			cursor: pointer;
 		}
 

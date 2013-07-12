@@ -42,8 +42,8 @@ function changeContext(selectedContext) {
 
 		if(context) {
 			var allExtensions = extensionsManager.getExtensionsList();
-			var enableList = new Array();
-			var disableList = new Array();
+			var enableList = [];
+			var disableList = [];
 
 			//check which extensions should be enabled and which should be disabled
 			for(i in allExtensions) {
@@ -79,7 +79,7 @@ function activateContext(selectedContext) {
 
 		if(context){
 			var allExtensions = extensionsManager.getExtensionsList();
-			var enableList = new Array();
+			var enableList = [];
 
 			//check which extensions should be enabled
 			for(i in allExtensions) {
@@ -111,7 +111,7 @@ function deactivateContext(selectedContext) {
 
 		if(context){
 			var allExtensions = extensionsManager.getExtensionsList();
-			var disableList = new Array();
+			var disableList = [];
 
 			//check which extensions should be disabled
 			for(i in allExtensions) {
