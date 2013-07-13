@@ -320,6 +320,11 @@ $(document).ready(function () {
 	loadTranslations();
 	initNewContextDialog();
 
+	//remove social icons if user is offline
+	if(!navigator.onLine) {
+		$('#social-buttons').empty();
+	}
+
 	$('button, input[type=submit], input[type=button]').button();
 
 	$('.removeBtn').live('click', function () {
