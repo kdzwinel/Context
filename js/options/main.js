@@ -10,12 +10,12 @@ function displayExtensions() {
 
 	$('#extensions, #always_enabled_extensions').empty();
 
-	for(index in extensionsList) {
+	for (var index in extensionsList) {
 		var extension = extensionsList[index];
 
-		li = createExtensionLi(extension);
+		var li = createExtensionLi(extension);
 
-		if(extensionsManager.isAlwaysEnabled(extension.id)) {
+		if (extensionsManager.isAlwaysEnabled(extension.id)) {
 			$('#always_enabled_extensions').append(li);
 		} else {
 			$('#extensions').append(li);
@@ -34,13 +34,13 @@ function displayExtensions() {
 function createExtensionLi(extdata) {
 	var iconSrc = 'icons/plugin.png';
 
-	if(extdata.icons) {
+	if (extdata.icons) {
 		var iconSize = 1024;
 
-		for(iconIndex in extdata.icons) {
+		for (var iconIndex in extdata.icons) {
 			var icon = extdata.icons[iconIndex];
 
-			if(icon.size < iconSize) {
+			if (icon.size < iconSize) {
 				iconSrc = icon.url;
 				iconSize = icon.size;
 			}
@@ -54,11 +54,11 @@ function createExtensionLi(extdata) {
 	var status = 'status-' + ((extdata.enabled == true) ? 'enabled' : 'disabled');
 	var li = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all ' + status).attr('data-extid', extdata.id).attr('data-exticon', iconSrc).append(img).append(span).append(removeBtn);
 
-	if(extdata.isApp) {
+	if (extdata.isApp) {
 		li.addClass('app');
 
 		//if apps support is disabled don't show them
-		if(CONFIG.get('appsSupport') === 'false') {
+		if (CONFIG.get('appsSupport') === 'false') {
 			li.hide();
 		}
 	}
@@ -72,17 +72,17 @@ function displayContexts() {
 
 	$('#contexts').empty();
 
-	for(gindex in contexts) {
+	for (var gindex in contexts) {
 		var context = contexts[gindex];
 		var contextObj = newContext(context.name, context.imgSrc, context.icon);
 
 		var contextUl = contextObj.find('ul');
 
-		for(eindex in context.extensions) {
+		for (var eindex in context.extensions) {
 			var extension = context.extensions[eindex];
 			var extData = extensionsManager.getExtensionData(extension.id);
 
-			if(extData) {
+			if (extData) {
 				var extLi = createExtensionLi(extData);
 				contextUl.append(extLi);
 			}
@@ -96,7 +96,7 @@ function displayContexts() {
 		handle: '.contextGrip',
 		placeholder: 'context ui-state-highlight',
 		tolerance: 'pointer',
-		change: function(event, ui) {
+		change: function (event, ui) {
 			markDirty();
 		}
 	});
@@ -108,8 +108,8 @@ function isInContext(context, newExtension) {
 	var exists = false;
 	var newExtId = newExtension.data('extid');
 
-	$.each(extensions, function(i, extension){
-		if($(extension).data('extid') == newExtId) {
+	$.each(extensions, function (i, extension) {
+		if ($(extension).data('extid') == newExtId) {
 			exists = true;
 		}
 	});
@@ -136,7 +136,7 @@ function newContext(name, imgSrc, showIcon) {
 		forcePlaceholderSize: true,
 		tolerance: 'pointer',
 		revert: true,
-		change: function() {
+		change: function () {
 			markDirty();
 		}
 	});
@@ -144,16 +144,16 @@ function newContext(name, imgSrc, showIcon) {
 	contextUl.droppable({
 		activeClass: 'active',
 		hoverClass: 'active_hover',
-		accept: function(element){
+		accept: function (element) {
 			return element.is('#extensions li') && !isInContext($(this), element);
 		},
-		drop: function(event, ui) {
+		drop: function (event, ui) {
 			if (ui.draggable.parent().is("#extensions")) {
 				var li = ui.draggable.clone();
 				$(this).append(li);
 			}
-			
-			$(this).sortable( "refresh" );
+
+			$(this).sortable("refresh");
 
 			markDirty();
 		}
@@ -164,17 +164,17 @@ function newContext(name, imgSrc, showIcon) {
 
 //mark config as modified
 function markDirty() {
-	$("#save-button").button( "option", "disabled", false );
+	$("#save-button").button("option", "disabled", false);
 	highlightUngrouped();
 }
 
 //mark config as saved
 function markClean() {
-	$("#save-button").button( "option", "disabled", true );
+	$("#save-button").button("option", "disabled", true);
 
 	//generates current configuration string - used for import/export
-	configurationBackupExporter.exportConfig(function(exportedConfig) {
-		$('#export_box').val( exportedConfig );
+	configurationBackupExporter.exportConfig(function (exportedConfig) {
+		$('#export_box').val(exportedConfig);
 	});
 }
 
@@ -183,12 +183,12 @@ function save() {
 	var contextsData = [];
 
 	var contexts = $('.contextExtensions');
-	$.each(contexts, function(i,context){
+	$.each(contexts, function (i, context) {
 		var contextName = $(context).data('contextName');
 		var contextImg = $(context).data('contextImg');
 		var contextIcon = $(context).data('contextIcon');
 		var contextObj = {
-			'name' : contextName,
+			'name': contextName,
 			'imgSrc': contextImg,
 			'icon': contextIcon,
 			'extensions': []
@@ -196,7 +196,7 @@ function save() {
 
 		var extensions = $(context).find('li:visible');
 
-		$.each(extensions, function(i, extension) {
+		$.each(extensions, function (i, extension) {
 			var extid = $(extension).data('extid');
 			var exticon = $(extension).data('exticon');
 			var extObj = {
@@ -215,7 +215,7 @@ function save() {
 	var alwaysEnabledExtensionsData = [];
 	var extensions = $('#always_enabled_extensions li');
 
-	$.each(extensions, function(i, extension) {
+	$.each(extensions, function (i, extension) {
 		var extid = $(extension).data('extid');
 
 		alwaysEnabledExtensionsData.push(extid);
@@ -233,42 +233,42 @@ function save() {
 var advancedOptions = ['appsSupport', 'newExtensionAction', 'showLoadAllBtn', 'extensionEnableDelay'];
 
 function saveAdvancedOptions() {
-	for(i in advancedOptions) {
+	for (var i in advancedOptions) {
 		var option = advancedOptions[i];
 
-		if($('#'+option).is('[type=checkbox]')) {
-			localStorage[option] = $('#'+option).is(':checked');
+		if ($('#' + option).is('[type=checkbox]')) {
+			localStorage[option] = $('#' + option).is(':checked');
 		} else {
-			localStorage[option] = $('#'+option).val();
+			localStorage[option] = $('#' + option).val();
 		}
 	}
 }
 
 function displayAdvancedOptions() {
-	for(i in advancedOptions) {
+	for (var i in advancedOptions) {
 		var option = advancedOptions[i];
 
-		if($('#'+option).is('[type=checkbox]')) {
-			if(CONFIG.get(option) === 'true') {
-				$('#'+option).attr('checked', 'checked');
+		if ($('#' + option).is('[type=checkbox]')) {
+			if (CONFIG.get(option) === 'true') {
+				$('#' + option).attr('checked', 'checked');
 			} else {
-				$('#'+option).removeAttr('checked');
+				$('#' + option).removeAttr('checked');
 			}
-		} else if($('#'+option).is('select')) {
-			$('#'+option).find('option').removeAttr('selected');
-			$('#'+option).find('option[value='+CONFIG.get(option)+']').attr('selected', 'selected');
+		} else if ($('#' + option).is('select')) {
+			$('#' + option).find('option').removeAttr('selected');
+			$('#' + option).find('option[value=' + CONFIG.get(option) + ']').attr('selected', 'selected');
 		} else {
-			$('#'+option).val(CONFIG.get(option));
+			$('#' + option).val(CONFIG.get(option));
 		}
 	}
 }
 
-//actions peformed after config page is fully loaded
+//actions performed after config page is fully loaded
 function pageLoaded() {
-	$('#loader').slideUp('slow', function(){
-		$('#content').slideDown('slow',function(){
+	$('#loader').slideUp('slow', function () {
+		$('#content').slideDown('slow', function () {
 			//display welcome screen if extension was just installed
-			if(CONFIG.get('firstRun') == 'yes') {
+			if (CONFIG.get('firstRun') == 'yes') {
 				showWelcomeScreen();
 				localStorage.firstRun = 'no';
 			}
@@ -276,18 +276,18 @@ function pageLoaded() {
 	});
 }
 
-//higlights ungrouped extensions inside 'Available extensions' box
+//highlights not grouped extensions inside 'Available extensions' box
 function highlightUngrouped() {
 	var enabled = $('#highlightUngrouped').is(':checked');
 
 	//remove .ui-state-active class from all extensions in contexts, always-enabled box and available extensions box
 	$('.extensions_list li.ui-state-active, .contextExtensions li.ui-state-active').removeClass('ui-state-active');
 
-	if( enabled ) {
-		$.each($('#extensions li'), function(i, extensionElem) {
+	if (enabled) {
+		$.each($('#extensions li'), function (i, extensionElem) {
 			var extid = $(extensionElem).data('extid');
 
-			if( $('.context li:visible[data-extid=' + extid + ']').length == 0 ) {
+			if ($('.context li:visible[data-extid=' + extid + ']').length == 0) {
 				$(extensionElem).addClass('ui-state-active');
 			}
 		});
@@ -296,7 +296,7 @@ function highlightUngrouped() {
 
 function loadConfiguration() {
 	contextsManager = new ContextsManager();
-	extensionsManager = new ExtensionsManager(function(){
+	extensionsManager = new ExtensionsManager(function () {
 		displayExtensions();
 		displayContexts();
 		displayAdvancedOptions();
@@ -306,45 +306,45 @@ function loadConfiguration() {
 }
 
 function loadTranslations() {
-	$('[data-i18n]').each(function(i, item){
+	$('[data-i18n]').each(function (i, item) {
 		$(item).text(chrome.i18n.getMessage($(item).data('i18n')));
 	});
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
 	loadConfiguration();
 	loadTranslations();
 	initNewContextDialog();
 
 	$('button, input[type=submit], input[type=button]').button();
 
-	$('.removeBtn').live('click', function(){
-		$(this).closest('li').effect('slide', {mode: 'hide'}, 'normal', function(){
+	$('.removeBtn').live('click', function () {
+		$(this).closest('li').effect('slide', {mode: 'hide'}, 'normal', function () {
 			$(this).remove();
 			markDirty();
 		});
 	});
 
-	$('#help-icon').click(function(){
+	$('#help-icon').click(function () {
 		showWelcomeScreen();
 	});
 
-	$('.contextDelete').live('click', function() {
+	$('.contextDelete').live('click', function () {
 		var context = $(this).closest('.context');
 		var buttons = {};
-		buttons[chrome.i18n.getMessage("delete")] = function() {
-					context.effect('puff',{},'slow',function(){
-						$(this).remove();
-					});
-					markDirty();
+		buttons[chrome.i18n.getMessage("delete")] = function () {
+			context.effect('puff', {}, 'slow', function () {
+				$(this).remove();
+			});
+			markDirty();
 
-					$( this ).dialog( "close" );
-				};
-		buttons[chrome.i18n.getMessage("cancel")] = function() {
-					$( this ).dialog( "close" );
-				};
+			$(this).dialog("close");
+		};
+		buttons[chrome.i18n.getMessage("cancel")] = function () {
+			$(this).dialog("close");
+		};
 
-		$( "#dialog-confirm" ).dialog({
+		$("#dialog-confirm").dialog({
 			title: chrome.i18n.getMessage("remove_context"),
 			resizable: false,
 			height: 200,
@@ -355,46 +355,45 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$('.contextDuplicate').live('click', function(){
-		var context = $(this).closest('.context');
-		var contexts = $('.contextExtensions');
+	$('.contextDuplicate').live('click', function () {
+		var original = $(this).closest('.context');
+		var contextsContainer = $('.contextExtensions');
 
-		var oldImageSrc = context.find('.contextExtensions').data('contextImg');
-		var oldName = context.find('.contextExtensions').data('contextName');
-		var oldIcon = context.find('.contextExtensions').data('contextIcon');
+		var oldImageSrc = original.find('.contextExtensions').data('contextImg');
+		var oldName = original.find('.contextExtensions').data('contextName');
+		var oldIcon = original.find('.contextExtensions').data('contextIcon');
 		var newName;
 
 		//generate new, unique name
-		for(var j=1; ; j++) {
+		for (var j = 1; ; j++) {
 			var isValid = true;
 			var checkName = oldName + j;
 
-			for(var i=0; i<contexts.length; i++) {
-				var otherContext = contexts[i];
-				if($(otherContext).data('contextName') == checkName) {
+			for (var i = 0; i < contextsContainer.length; i++) {
+				var otherContext = contextsContainer[i];
+				if ($(otherContext).data('contextName') == checkName) {
 					isValid = false;
 					break;
 				}
 			}
 
-			if(isValid) {
+			if (isValid) {
 				newName = checkName;
 				break;
 			}
 		}
 
-		var newContext = context.clone();
-		newContext.find('.contextExtensions').data('contextName', newName).data('contextImg', oldImageSrc).data('contextIcon', oldIcon);
-		newContext.find('.contextTitle').text(newName);
-		$('#contexts').append(newContext);
+		var clone = newContext(newName, oldImageSrc, oldIcon);//create new context with same icon but new name
+		clone.find('.contextExtensions').append(original.find('.contextExtensions li').clone());//copy extensions from original context to clone
+		$('#contexts').append(clone);
 
-		newContext.effect('highlight', {}, 'slow');
+		clone.effect('highlight', {}, 'slow');
 		markDirty();
 
 		return false;
 	});
 
-	$('.contextEdit').live('click', function() {
+	$('.contextEdit').live('click', function () {
 		openEditContextDialog($(this).closest('.context'));
 		return false;
 	});
@@ -406,12 +405,12 @@ $(document).ready(function(){
 		active: false
 	});
 
-	$('#additional-options-panel').find('input, select, textarea').change(function(){
+	$('#additional-options-panel').find('input, select, textarea').change(function () {
 		markDirty();
 	});
 
-	$('#appsSupport').change(function() {
-		if($(this).is(':checked')) {
+	$('#appsSupport').change(function () {
+		if ($(this).is(':checked')) {
 			$('li.app').effect('slide', {}, 'normal', markDirty);
 		} else {
 			$('li.app').effect('slide', {mode: 'hide'}, 'normal', markDirty);
@@ -422,10 +421,10 @@ $(document).ready(function(){
 	$('#extensions').droppable({
 		activeClass: 'active_dense',
 		hoverClass: 'active_hover',
-		accept: function(element){
+		accept: function (element) {
 			return element.is('#always_enabled_extensions li');
 		},
-		drop: function(event, ui) {
+		drop: function (event, ui) {
 			var li = ui.draggable.detach();
 			$(this).append(li);
 
@@ -439,10 +438,10 @@ $(document).ready(function(){
 	$('#always_enabled_extensions').droppable({
 		activeClass: 'active_dense',
 		hoverClass: 'active_hover',
-		accept: function(element){
+		accept: function (element) {
 			return element.is('#extensions li');
 		},
-		drop: function(event, ui) {
+		drop: function (event, ui) {
 			var li = ui.draggable.detach();
 			$(this).append(li);
 
@@ -456,43 +455,43 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#highlightUngrouped').click(function() {
+	$('#highlightUngrouped').click(function () {
 		highlightUngrouped();
 	});
 
-	$('#export_box, #import_box').click(function() {
+	$('#export_box, #import_box').click(function () {
 		this.select();
 	});
 
-	$('#import_button').click(function() {
+	$('#import_button').click(function () {
 		var buttons = {};
-		buttons[chrome.i18n.getMessage("import")] = function() {
-					configurationBackupImporter.importConfig( $('#import_box').val(), function(status, missingExtensions, errors) {
-						if( status ) {
-							importSuccessDialog({
-								missingExtensions: missingExtensions,
-								callback: function() {
-									loadConfiguration();
-									$('#import_box').val('');
-								}
-							});
-						} else {
-							console.error( errors );
-
-							showErrorDialog({
-								title: chrome.i18n.getMessage("import_failed"),
-								content: chrome.i18n.getMessage("configuration_string_is_invalid")
-							});
+		buttons[chrome.i18n.getMessage("import")] = function () {
+			configurationBackupImporter.importConfig($('#import_box').val(), function (status, missingExtensions, errors) {
+				if (status) {
+					importSuccessDialog({
+						missingExtensions: missingExtensions,
+						callback: function () {
+							loadConfiguration();
+							$('#import_box').val('');
 						}
 					});
+				} else {
+					console.error(errors);
 
-					$( this ).dialog( "close" );
-				};
-		buttons[chrome.i18n.getMessage("cancel")] = function() {
-					$( this ).dialog( "close" );
-				};
+					showErrorDialog({
+						title: chrome.i18n.getMessage("import_failed"),
+						content: chrome.i18n.getMessage("configuration_string_is_invalid")
+					});
+				}
+			});
 
-		$( "#dialog-confirm" ).dialog({
+			$(this).dialog("close");
+		};
+		buttons[chrome.i18n.getMessage("cancel")] = function () {
+			$(this).dialog("close");
+		};
+
+		$("#dialog-confirm").dialog({
 			title: chrome.i18n.getMessage("override_current_settings"),
 			resizable: false,
 			width: 300,
@@ -504,10 +503,10 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$('#new-context-button').click(function(){
+	$('#new-context-button').click(function () {
 		openNewContextDialog();
 	});
-	$('#save-button').click(function(){
+	$('#save-button').click(function () {
 		save();
 	});
 });
