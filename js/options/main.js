@@ -247,18 +247,19 @@ function saveAdvancedOptions() {
 function displayAdvancedOptions() {
 	for (var i in advancedOptions) {
 		var option = advancedOptions[i];
+		var $option = $('#' + option);
 
-		if ($('#' + option).is('[type=checkbox]')) {
+		if ($option.is('[type=checkbox]')) {
 			if (CONFIG.get(option) === 'true') {
-				$('#' + option).attr('checked', 'checked');
+				$option.attr('checked', 'checked');
 			} else {
-				$('#' + option).removeAttr('checked');
+				$option.removeAttr('checked');
 			}
-		} else if ($('#' + option).is('select')) {
-			$('#' + option).find('option').removeAttr('selected');
-			$('#' + option).find('option[value=' + CONFIG.get(option) + ']').attr('selected', 'selected');
+		} else if ($option.is('select')) {
+			$option.find('option').removeAttr('selected');
+			$option.find('option[value=' + CONFIG.get(option) + ']').attr('selected', 'selected');
 		} else {
-			$('#' + option).val(CONFIG.get(option));
+			$option.val(CONFIG.get(option));
 		}
 	}
 }
@@ -287,7 +288,7 @@ function highlightUngrouped() {
 		$.each($('#extensions li'), function (i, extensionElem) {
 			var extid = $(extensionElem).data('extid');
 
-			if ($('.context li:visible[data-extid=' + extid + ']').length == 0) {
+			if ($('.context li[data-extid=' + extid + ']').length === 0) {
 				$(extensionElem).addClass('ui-state-active');
 			}
 		});
@@ -301,6 +302,9 @@ function loadConfiguration() {
 		displayContexts();
 		displayAdvancedOptions();
 		pageLoaded();
+		if(localStorage.highlightUngroupedExtensions === 'true') {
+			highlightUngrouped();
+		}
 		markClean();
 	});
 }
@@ -335,8 +339,8 @@ $(document).ready(function () {
 		buttons[chrome.i18n.getMessage("delete")] = function () {
 			context.effect('puff', {}, 'slow', function () {
 				$(this).remove();
+				markDirty();
 			});
-			markDirty();
 
 			$(this).dialog("close");
 		};
@@ -457,7 +461,11 @@ $(document).ready(function () {
 
 	$('#highlightUngrouped').click(function () {
 		highlightUngrouped();
+		localStorage.highlightUngroupedExtensions = $(this).is(':checked') ? 'true' : 'false';
 	});
+	if(localStorage.highlightUngroupedExtensions === 'true') {
+		$('#highlightUngrouped').attr('checked', 'checked');
+	}
 
 	$('#export_box, #import_box').click(function () {
 		this.select();

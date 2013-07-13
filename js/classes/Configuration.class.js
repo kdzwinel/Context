@@ -1,4 +1,4 @@
-var CONFIG = new function Configuration() {
+function Configuration() {
 	var constants = {
 		iconsPath: 'icons/dortmund/',
 		icons: ['home', 'search', 'world', 'heart', 'lightbulb', 'basket', 'customers', 'hire-me', 'administrative-docs', 'comment', 'config', 'finished-work', 'settings', 'star'],
@@ -11,10 +11,13 @@ var CONFIG = new function Configuration() {
 		extensionEnableDelay: 200,//ms
 		showLoadAllBtn: 'true',
 		newExtensionAction: 'ask',
-		firstRun: 'yes'
+		firstRun: 'yes',
+		highlightUngroupedExtensions: 'false'
 	};
 
 	this.get = function(name) {
 		return constants[name] || localStorage[name] || defaults[name] || null;
-	}
-};
+	};
+}
+
+var CONFIG = new Configuration();
