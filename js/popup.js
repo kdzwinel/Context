@@ -1,4 +1,4 @@
-function createContextLi(name, title, imgSrc) {
+function createContextLi(name, title, imgSrc, status) {
 	var img = $('<img>').attr('src', imgSrc);
 	var span = $('<span>').append(title);
 	var all = ((name == 'all') ? 'all' : 'single') + '-context';
@@ -8,7 +8,15 @@ function createContextLi(name, title, imgSrc) {
 
 	var context = $('<div>').attr('class', 'list-context ui-widget-content ui-corner-all ' + all).append(img).append(span);
 
-	return $('<li>').attr('class', 'clearfix').append(context).append(activate).append(deactivate).data('contextName', name);
+	var li = $('<li>').addClass('clearfix').append(context).append(activate).append(deactivate).data('contextName', name);
+
+	if(status === 'enabled') {
+		li.addClass('status-all');
+	} else if(status === 'partial') {
+		li.addClass('status-partial');
+	}
+
+	return li;
 }
 
 var contextsManager = new ContextsManager();
@@ -16,28 +24,29 @@ var blocked = false;
 var allBtn;
 
 $(document).ready(function(){
-	//load and display avaiable contexts
-	var contexts = contextsManager.getContextsList();
 
-	$.each(contexts, function(i, context) {
-		var icon = (context.icon == 'show_extension' && context.extensions[0]) ? (context.extensions[0].icon || context.imgSrc) : context.imgSrc;
-		$('ul').append(createContextLi(context.name, context.name, icon));
+	//update statuses of all contexts
+	contextsManager.getContextsListWithStatuses(function(contexts){
+		contexts.forEach(function(context) {
+			var icon = (context.icon == 'show_extension' && context.extensions[0]) ? (context.extensions[0].icon || context.imgSrc) : context.imgSrc;
+			$('ul').append(createContextLi(context.name, context.name, icon, context.status));
+		});
+
+		//create a context activating all extensions
+		if(CONFIG.get('showLoadAllBtn') === 'true') {
+			allBtn = createContextLi('all', chrome.i18n.getMessage("all_extensions"), 'icons/plugin.png');
+			$('ul').append(allBtn);
+		}
 	});
 
-	//create a context activating all extensions
-	if(CONFIG.get('showLoadAllBtn') === 'true') {
-		allBtn = createContextLi('all', chrome.i18n.getMessage("all_extensions"), 'icons/plugin.png');
-		$('ul').append(allBtn);
-	}
-
-	$('ul li div.list-context, ul li div.list-button').click(function(){
+	$('body').on('click', 'div.list-context, div.list-button', function(){
 		//make sure that user won't change the context while other context is loading
 		if(blocked) {
 			return false;
 		}
 		blocked = true;
 
-		$('ul li div.list-context, ul li div.list-button').not($(this)).addClass('ui-state-disabled');
+		$('div.list-context, div.list-button').not($(this)).addClass('ui-state-disabled');
 		$(this).addClass('ui-state-active');
 
 		var li = $(this).closest('li');
