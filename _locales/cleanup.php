@@ -9,6 +9,43 @@
 * REQUIRES PHP 5 >= 5.4 to run
 */
 
+function json_readable_encode($in, $indent = 0, $from_array = false) {
+    $_myself = __FUNCTION__;
+    $_escape = function($str) {
+        return preg_replace("!([\b\t\n\r\f\"])!", "\\\\\\1", $str);
+    };
+    $indentWith = "    ";
+
+    $out = '';
+
+    foreach($in as $key=>$value) {
+        $out .= str_repeat($indentWith, $indent + 1);
+        $out .= "\"" . $_escape((string)$key)."\": ";
+
+        if(is_object($value) || is_array($value)) {
+            $out .= "\n";
+            $out .= $_myself($value, $indent+1);
+        } elseif(is_null($value)) {
+            $out .= 'null';
+        } elseif(is_string($value)) {
+            $out .= "\"".$_escape($value) . "\"";
+        } else {
+            $out .= $value;
+        }
+
+        $out.= ",\n";
+    }
+
+    if(!empty($out)) {
+        $out = substr($out, 0, -2);
+    }
+
+    $out = str_repeat($indentWith, $indent) . "{\n" . $out;
+    $out .= "\n" . str_repeat($indentWith, $indent) . "}";
+
+    return $out;
+}
+
 class Translation {
 	private $filePath;
 	private $messages;
@@ -80,7 +117,7 @@ class Translation {
 			throw new Exception('File is not writable.');
 		}
 
-		$json = json_encode($this->messages, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+		$json = json_readable_encode($this->messages);
 
 		if($json === FALSE) {
 			throw new Exception('JSON cannot be encoded.');

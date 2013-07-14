@@ -1,201 +1,307 @@
 {
-    "locale": {
+    "locale": 
+    {
         "message": "zh_CN",
         "description": "浏览器内建 @@_ui_locale 变量，显示语言的变体如 en_GB 、en_US 等，我们并不需要。"
     },
-    "application_description": {
+    "application_description": 
+    {
         "message": "分组排序扩展并轻易切换。"
     },
-    "all_extensions": {
+    "all_extensions": 
+    {
         "message": "所有扩展"
     },
-    "highlight_ungrouped_extensions": {
+    "highlight_ungrouped_extensions": 
+    {
         "message": "高亮尚未分组的扩展"
     },
-    "create_new_context": {
+    "create_new_context": 
+    {
         "message": "建立新的 Context"
     },
-    "edit_context": {
+    "edit_context": 
+    {
         "message": "编辑 Context"
     },
-    "name_field_is_required": {
+    "name_field_is_required": 
+    {
         "message": "必须填写名称。"
     },
-    "this_name_is_already_in_use": {
+    "this_name_is_already_in_use": 
+    {
         "message": "这个名称已被使用。"
     },
-    "pick_an_icon": {
+    "pick_an_icon": 
+    {
         "message": "选择一个图标。"
     },
-    "available_extensions": {
+    "available_extensions": 
+    {
         "message": "可用扩展"
     },
-    "always_enabled_extensions": {
+    "always_enabled_extensions": 
+    {
         "message": "保持启用扩展"
     },
-    "name": {
+    "name": 
+    {
         "message": "名称"
     },
-    "options": {
+    "options": 
+    {
         "message": "选项"
     },
-    "icon": {
+    "icon": 
+    {
         "message": "图标"
     },
-    "context_will_be_deleted": {
+    "context_will_be_deleted": 
+    {
         "message": "Context 将被删除，是否确定？"
     },
-    "additional_options": {
+    "additional_options": 
+    {
         "message": "附加选项"
     },
-    "new_context": {
+    "new_context": 
+    {
         "message": "新建 Context"
     },
-    "save": {
+    "save": 
+    {
         "message": "保存"
     },
-    "about": {
+    "about": 
+    {
         "message": "关于"
     },
-    "configuration_import_export": {
-        "message": "导入\/导出配置"
+    "configuration_import_export": 
+    {
+        "message": "导入/导出配置"
     },
-    "configuration_import": {
+    "configuration_import": 
+    {
         "message": "配置导入"
     },
-    "configuration_export_description": {
+    "configuration_export_description": 
+    {
         "message": "要导出你的配置，从下面的文本框复制经过编码的配置字符串。"
     },
-    "configuration_import_description": {
+    "configuration_import_description": 
+    {
         "message": "粘帖配置字符串到下面的文本框并点击 ‘导入’ 来还原你的配置。"
     },
-    "confirm_configuration_import": {
+    "confirm_configuration_import": 
+    {
         "message": "导入操作会覆盖你当前配置，请确保执行备份以免丢失。"
     },
-    "import": {
+    "import": 
+    {
         "message": "导入"
     },
-    "override_current_settings": {
+    "override_current_settings": 
+    {
         "message": "覆盖当前设置？"
     },
-    "import_failed": {
+    "import_failed": 
+    {
         "message": "导入失败"
     },
-    "configuration_string_is_invalid": {
+    "configuration_string_is_invalid": 
+    {
         "message": "抱歉，所提供的配置字符串无效。导入失败！"
     },
-    "successful_import": {
+    "successful_import": 
+    {
         "message": "导入成功"
     },
-    "configuration_was_imported_successfuly": {
+    "configuration_was_imported_successfuly": 
+    {
         "message": "配置成功导入。"
     },
-    "some_extensions_were_ignored": {
+    "some_extensions_were_ignored": 
+    {
         "message": "您所导入配置中的一些扩展由于还没有安装而被忽略："
     },
-    "enable_apps_support": {
+    "override_server_settings": 
+    {
+        "message": "Override configuration on server?"
+    },
+    "confirm_chrome_sync_configuration_export": 
+    {
+        "message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+    },
+    "manual": 
+    {
+        "message": "Manual"
+    },
+    "chrome_sync": 
+    {
+        "message": "Chrome Sync"
+    },
+    "save_on_server": 
+    {
+        "message": "Save on server"
+    },
+    "load_from_server": 
+    {
+        "message": "Load from server"
+    },
+    "saved": 
+    {
+        "message": "Saved"
+    },
+    "enable_apps_support": 
+    {
         "message": "启用应用支持（默认仅仅支持扩展）"
     },
-    "show_all_extensions_button": {
+    "show_all_extensions_button": 
+    {
         "message": "弹出菜单显示‘所有扩展’"
     },
-    "delay_after_enabling_extension": {
+    "delay_after_enabling_extension": 
+    {
         "message": "启用每个扩展后等待的毫秒数"
     },
-    "context_options": {
+    "context_options": 
+    {
         "message": "Context - 选项"
     },
-    "remove_context": {
+    "remove_context": 
+    {
         "message": "删除 Context ？"
     },
-    "cancel": {
+    "cancel": 
+    {
         "message": "取消"
     },
-    "edit": {
+    "edit": 
+    {
         "message": "编辑"
     },
-    "create": {
+    "create": 
+    {
         "message": "建立"
     },
-    "delete": {
+    "delete": 
+    {
         "message": "删除"
     },
-    "clone": {
+    "clone": 
+    {
         "message": "克隆"
     },
-    "move": {
+    "move": 
+    {
         "message": "移动"
     },
-    "extension_is_loading": {
+    "extension_is_loading": 
+    {
         "message": "正在载入扩展。。。"
     },
-    "new_extension_installed_action": {
+    "new_extension_installed_action": 
+    {
         "message": "安装新的扩展之后"
     },
-    "ask_what_to_do": {
+    "ask_what_to_do": 
+    {
         "message": "询问如何处理"
     },
-    "add_to_all_contexts": {
+    "add_to_all_contexts": 
+    {
         "message": "添加到所有的 Context"
     },
-    "add_to_always_enabled": {
+    "add_to_always_enabled": 
+    {
         "message": "添加到 '永远启用'"
     },
-    "do_nothing": {
+    "do_nothing": 
+    {
         "message": "什么也不要做"
     },
-    "extension_installed_1": {
+    "extension_installed_1": 
+    {
         "message": "新的扩展"
     },
-    "extension_installed_2": {
+    "extension_installed_2": 
+    {
         "message": "已经安装"
     },
-    "add_to_contexts": {
+    "add_to_contexts": 
+    {
         "message": "把它添加到以下 Context"
     },
-    "or_add_it_to": {
+    "or_add_it_to": 
+    {
         "message": "或者添加到"
     },
-    "font": {
+    "font": 
+    {
         "message": "字体"
     },
-    "icons": {
+    "icons": 
+    {
         "message": "图标"
     },
-    "icon_flip_animation": {
+    "icon_flip_animation": 
+    {
         "message": "图标翻转动画"
     },
-    "programmer": {
+    "programmer": 
+    {
         "message": "开发"
     },
-    "source_code": {
+    "source_code": 
+    {
         "message": "源代码"
     },
-    "translations": {
+    "translations": 
+    {
         "message": "翻译"
     },
-    "welcome": {
+    "welcome": 
+    {
         "message": "欢迎"
     },
-    "welcome_step_1": {
+    "welcome_step_1": 
+    {
         "message": "欢迎！开始使用这个扩展之前，请先建立 Context （扩展组），并为每个 Context 选择一个名字和一个图标。"
     },
-    "welcome_step_2": {
+    "welcome_step_2": 
+    {
         "message": "分组扩展，请从顶部按字母顺序排列的列表中拖拽扩展到相应的 Context 框中。"
     },
-    "welcome_step_3": {
+    "welcome_step_3": 
+    {
         "message": "从 “可用扩展” 移动那些每个 Context 都应启用的扩展到 “保持启用扩展”。"
     },
-    "welcome_step_4": {
+    "welcome_step_4": 
+    {
         "message": "保存配置即可！你可以使用工具栏上的图标轻易地在 Contexts 之间进行切换。通过选择菜单上的 Context 名称或者图标来切换到相应的 Context。点击 + 或者 - 号按钮激活或者关闭相应的 Context，这允许你混合使用各个不同的 Contexts。"
     },
-    "next": {
+    "next": 
+    {
         "message": "前进"
     },
-    "previous": {
+    "previous": 
+    {
         "message": "后退"
     },
-    "close": {
+    "close": 
+    {
         "message": "关闭"
+    },
+    "popup": 
+    {
+        "message": "Popup"
+    },
+    "show_context_icon": 
+    {
+        "message": "Show Context icon"
+    },
+    "show_extension_icon": 
+    {
+        "message": "Show first extension icon"
     }
 }

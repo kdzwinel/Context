@@ -1,201 +1,307 @@
 {
-    "locale": {
+    "locale": 
+    {
         "message": "en",
         "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
     },
-    "application_description": {
+    "application_description": 
+    {
         "message": "Ordina le estensioni in gruppi e gestiscili facilmente."
     },
-    "all_extensions": {
+    "all_extensions": 
+    {
         "message": "Tutte le estensioni"
     },
-    "highlight_ungrouped_extensions": {
+    "highlight_ungrouped_extensions": 
+    {
         "message": "evidenzia estensioni non raggruppate"
     },
-    "create_new_context": {
+    "create_new_context": 
+    {
         "message": "Crea nuovo contesto"
     },
-    "edit_context": {
+    "edit_context": 
+    {
         "message": "Modifica contesto"
     },
-    "name_field_is_required": {
+    "name_field_is_required": 
+    {
         "message": "Il campo nome è richiesto."
     },
-    "this_name_is_already_in_use": {
+    "this_name_is_already_in_use": 
+    {
         "message": "Questo nome è già in uso."
     },
-    "pick_an_icon": {
+    "pick_an_icon": 
+    {
         "message": "Seleziona un'icona."
     },
-    "available_extensions": {
+    "available_extensions": 
+    {
         "message": "Estensioni disponibili"
     },
-    "always_enabled_extensions": {
+    "always_enabled_extensions": 
+    {
         "message": "Estensioni sempre abilitate"
     },
-    "name": {
+    "name": 
+    {
         "message": "Nome"
     },
-    "options": {
+    "options": 
+    {
         "message": "Opzioni"
     },
-    "icon": {
+    "icon": 
+    {
         "message": "Icona"
     },
-    "context_will_be_deleted": {
+    "context_will_be_deleted": 
+    {
         "message": "Il contesto verrà eliminato. Sei sicuro?"
     },
-    "additional_options": {
+    "additional_options": 
+    {
         "message": "Opzioni aggiuntive"
     },
-    "new_context": {
+    "new_context": 
+    {
         "message": "Nuovo contesto"
     },
-    "save": {
+    "save": 
+    {
         "message": "Salva"
     },
-    "about": {
+    "about": 
+    {
         "message": "Informazioni"
     },
-    "configuration_import_export": {
-        "message": "Importa\/esporta configurazione"
+    "configuration_import_export": 
+    {
+        "message": "Importa/esporta configurazione"
     },
-    "configuration_import": {
+    "configuration_import": 
+    {
         "message": "Importa configurazione"
     },
-    "configuration_export_description": {
+    "configuration_export_description": 
+    {
         "message": "Per esportare tutte le tue impostazioni, copia la stringa di configurazione codificata dal riquadro sottostante."
     },
-    "configuration_import_description": {
+    "configuration_import_description": 
+    {
         "message": "Incolla la stringa di configurazione nel riquadro sottostante e clicca 'Importa' per ripristinare la tua configurazione."
     },
-    "confirm_configuration_import": {
+    "confirm_configuration_import": 
+    {
         "message": "L'importazione sovrascriverà l'attuale configurazione, assicurati di fare una copia di sicurezza se non vuoi perderla."
     },
-    "import": {
+    "import": 
+    {
         "message": "Importa"
     },
-    "override_current_settings": {
+    "override_current_settings": 
+    {
         "message": "Sovrascrivere le impostazioni attuali?"
     },
-    "import_failed": {
+    "import_failed": 
+    {
         "message": "Importazione fallita"
     },
-    "configuration_string_is_invalid": {
+    "configuration_string_is_invalid": 
+    {
         "message": "Spiacente, la stringa di configurazione fornita non è valida. Importazione fallita."
     },
-    "successful_import": {
+    "successful_import": 
+    {
         "message": "Importazione terminata"
     },
-    "configuration_was_imported_successfuly": {
+    "configuration_was_imported_successfuly": 
+    {
         "message": "La configurazione è stata importata con successo."
     },
-    "some_extensions_were_ignored": {
+    "some_extensions_were_ignored": 
+    {
         "message": "Alcune estensioni presenti nella configurazione importata sono state ignorate perché non sono installate:"
     },
-    "enable_apps_support": {
+    "override_server_settings": 
+    {
+        "message": "Override configuration on server?"
+    },
+    "confirm_chrome_sync_configuration_export": 
+    {
+        "message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+    },
+    "manual": 
+    {
+        "message": "Manual"
+    },
+    "chrome_sync": 
+    {
+        "message": "Chrome Sync"
+    },
+    "save_on_server": 
+    {
+        "message": "Save on server"
+    },
+    "load_from_server": 
+    {
+        "message": "Load from server"
+    },
+    "saved": 
+    {
+        "message": "Saved"
+    },
+    "enable_apps_support": 
+    {
         "message": "abilita supporto alle app (di default sono supportate solo le estensioni)"
     },
-    "show_all_extensions_button": {
+    "show_all_extensions_button": 
+    {
         "message": "mostra il pulsante 'Tutte le estensioni' nel popup"
     },
-    "delay_after_enabling_extension": {
+    "delay_after_enabling_extension": 
+    {
         "message": "ritardo in millisecondi dopo l'abilitazione di ogni estensione"
     },
-    "context_options": {
+    "context_options": 
+    {
         "message": "Context - Opzioni"
     },
-    "remove_context": {
+    "remove_context": 
+    {
         "message": "Rimuovere contesto?"
     },
-    "cancel": {
+    "cancel": 
+    {
         "message": "Annulla"
     },
-    "edit": {
+    "edit": 
+    {
         "message": "Modifica"
     },
-    "create": {
+    "create": 
+    {
         "message": "Crea"
     },
-    "delete": {
+    "delete": 
+    {
         "message": "Elimina"
     },
-    "clone": {
+    "clone": 
+    {
         "message": "Duplica"
     },
-    "move": {
+    "move": 
+    {
         "message": "Sposta"
     },
-    "extension_is_loading": {
+    "extension_is_loading": 
+    {
         "message": "Estensione in caricamento ..."
     },
-    "new_extension_installed_action": {
+    "new_extension_installed_action": 
+    {
         "message": "dopo che la nuova estensione viene installata"
     },
-    "ask_what_to_do": {
+    "ask_what_to_do": 
+    {
         "message": "chiedi cosa fare"
     },
-    "add_to_all_contexts": {
+    "add_to_all_contexts": 
+    {
         "message": "aggiungi estensione a tutti i contesti"
     },
-    "add_to_always_enabled": {
+    "add_to_always_enabled": 
+    {
         "message": "aggiungi a 'sempre abilitate'"
     },
-    "do_nothing": {
+    "do_nothing": 
+    {
         "message": "non fare nulla"
     },
-    "extension_installed_1": {
+    "extension_installed_1": 
+    {
         "message": "Nuova estensione"
     },
-    "extension_installed_2": {
+    "extension_installed_2": 
+    {
         "message": "installata"
     },
-    "add_to_contexts": {
+    "add_to_contexts": 
+    {
         "message": "Aggiungila ai seguenti contesti"
     },
-    "or_add_it_to": {
+    "or_add_it_to": 
+    {
         "message": "o aggiungila a"
     },
-    "font": {
+    "font": 
+    {
         "message": "Font"
     },
-    "icons": {
+    "icons": 
+    {
         "message": "Icone"
     },
-    "icon_flip_animation": {
+    "icon_flip_animation": 
+    {
         "message": "Animazione icona"
     },
-    "programmer": {
+    "programmer": 
+    {
         "message": "Programmatore"
     },
-    "source_code": {
+    "source_code": 
+    {
         "message": "Codice sorgente"
     },
-    "translations": {
+    "translations": 
+    {
         "message": "Traduzioni"
     },
-    "welcome": {
+    "welcome": 
+    {
         "message": "Benvenuto"
     },
-    "welcome_step_1": {
+    "welcome_step_1": 
+    {
         "message": "Benvenuto! Per iniziare ad usare questa estensione, crea dei contesti (gruppi estensione). Per ogni contesto scegli un nome ed un'icona."
     },
-    "welcome_step_2": {
+    "welcome_step_2": 
+    {
         "message": "Per connettere le estensioni ai contesti, trascinale dall'elenco alfabetico in alto, ad un riquadro rappresentante un contesto."
     },
-    "welcome_step_3": {
+    "welcome_step_3": 
+    {
         "message": "Sposta tutte le estensioni che dovrebbero essere abilitate per ogni contesto, dal riquadro 'Estensioni disponibili' al riquadro 'Estensioni sempre abilitate'."
     },
-    "welcome_step_4": {
-        "message": "Salva la tua configurazione e sei pronto! Puoi facilmente passare tra i contesti usando l'icona nella barra strumenti. Seleziona il nome del contesto o l'icona nel menu per passare al contesto selezionato. Clicca il pulsante più\/meno per attivare\/disattivare il contesto scelto così da poter miscelare i contesti tra di loro."
+    "welcome_step_4": 
+    {
+        "message": "Salva la tua configurazione e sei pronto! Puoi facilmente passare tra i contesti usando l'icona nella barra strumenti. Seleziona il nome del contesto o l'icona nel menu per passare al contesto selezionato. Clicca il pulsante più/meno per attivare/disattivare il contesto scelto così da poter miscelare i contesti tra di loro."
     },
-    "next": {
+    "next": 
+    {
         "message": "Avanti"
     },
-    "previous": {
+    "previous": 
+    {
         "message": "Indietro"
     },
-    "close": {
+    "close": 
+    {
         "message": "Chiudi"
+    },
+    "popup": 
+    {
+        "message": "Popup"
+    },
+    "show_context_icon": 
+    {
+        "message": "Show Context icon"
+    },
+    "show_extension_icon": 
+    {
+        "message": "Show first extension icon"
     }
 }
