@@ -1,210 +1,307 @@
 {
-    "locale": {
-        "message": "en",
-        "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
-    },
-    "application_description": {
-        "message": "Separe as extensões em grupos e facilmente alterne entre eles."
-    },
-    "all_extensions": {
-        "message": "Todas as extensões"
-    },
-    "highlight_ungrouped_extensions": {
-        "message": "destacar extensões sem grupo"
-    },
-    "create_new_context": {
-        "message": "Criar novo contexto"
-    },
-    "edit_context": {
-        "message": "Editar contexto"
-    },
-    "name_field_is_required": {
-        "message": "O campo Nome é obrigatório."
-    },
-    "this_name_is_already_in_use": {
-        "message": "Esse nome já está em uso."
-    },
-    "pick_an_icon": {
-        "message": "Escolha um ícone."
-    },
-    "available_extensions": {
-        "message": "Extensões disponíveis"
-    },
-    "always_enabled_extensions": {
-        "message": "Extensões sempre ativas"
-    },
-    "name": {
-        "message": "Nome"
-    },
-    "options": {
-        "message": "Opções"
-    },
-    "icon": {
-        "message": "Ícone"
-    },
-    "context_will_be_deleted": {
-        "message": "O contexto será excluído. Você tem certeza?"
-    },
-    "additional_options": {
-        "message": "Opções adicionais"
-    },
-    "new_context": {
-        "message": "Novo Contexto"
-    },
-    "save": {
-        "message": "Salvar"
-    },
-    "about": {
-        "message": "Sobre"
-    },
-    "configuration_import_export": {
-        "message": "Importar\/exportar as configurações"
-    },
-    "configuration_import": {
-        "message": "Importar configuração"
-    },
-    "configuration_export_description": {
-        "message": "Para exportar todas as suas configurações, copie o código de configuração na caixa abaixo."
-    },
-    "configuration_import_description": {
-        "message": "Cole o código de configuração na caixa abaixo e clique em 'Importar' para restaurar sua configuração."
-    },
-    "confirm_configuration_import": {
-        "message": "A importação irá sobrescrever a sua configuração atual, certifique-se de que fez um backup se você não quer perdê-la."
-    },
-    "import": {
-        "message": "Importar"
-    },
-    "override_current_settings": {
-        "message": "Sobrescrever a configuração atual?"
-    },
-    "import_failed": {
-        "message": "Falha na importação"
-    },
-    "configuration_string_is_invalid": {
-        "message": "Desculpe, o código de configuração informado é inválido. A importação falhou."
-    },
-    "successful_import": {
-        "message": "Importação concluída"
-    },
-    "configuration_was_imported_successfuly": {
-        "message": "A configuração foi importada com sucesso."
-    },
-    "some_extensions_were_ignored": {
-        "message": "Algumas extensões da configuração importada foram ignoradas porque não estão mais instaladas:"
-    },
-    "enable_apps_support": {
-        "message": "ativar suporte a aplicativos (por padrão, somente extensões são suportadas)"
-    },
-    "show_all_extensions_button": {
-        "message": "mostrar o botão 'Todas as extensões' no popup"
-    },
-    "delay_after_enabling_extension": {
-        "message": "espera em milisegundos após ativar cada extensão"
-    },
-    "context_options": {
-        "message": "Contexto - Opções"
-    },
-    "remove_context": {
-        "message": "Remover contexto?"
-    },
-    "cancel": {
-        "message": "Cancelar"
-    },
-    "edit": {
-        "message": "Editar"
-    },
-    "create": {
-        "message": "Criar"
-    },
-    "delete": {
-        "message": "Excluir"
-    },
-    "clone": {
-        "message": "Clonar"
-    },
-    "move": {
-        "message": "Mover"
-    },
-    "extension_is_loading": {
-        "message": "Carregando extensão..."
-    },
-    "new_extension_installed_action": {
-        "message": "quando nova extensão for instalada"
-    },
-    "ask_what_to_do": {
-        "message": "perguntar o que fazer"
-    },
-    "add_to_all_contexts": {
-        "message": "incluir a extensão em todos os contextos"
-    },
-    "add_to_always_enabled": {
-        "message": "incluir em 'sempre ativas'"
-    },
-    "do_nothing": {
-        "message": "não fazer nada"
-    },
-    "extension_installed_1": {
-        "message": "Nova extensão"
-    },
-    "extension_installed_2": {
-        "message": "instalada"
-    },
-    "add_to_contexts": {
-        "message": "Incluí-la nos seguintes contextos"
-    },
-    "or_add_it_to": {
-        "message": "ou incluí-la em"
-    },
-    "font": {
-        "message": "Fonte"
-    },
-    "icons": {
-        "message": "Ícones"
-    },
-    "icon_flip_animation": {
-        "message": "Animação do ícone"
-    },
-    "programmer": {
-        "message": "Programador"
-    },
-    "source_code": {
-        "message": "Código fonte"
-    },
-    "translations": {
-        "message": "Traduções"
-    },
-    "welcome": {
-        "message": "Bem vindo"
-    },
-    "welcome_step_1": {
-        "message": "Bem vindo! Para começar a trabalhar com essa extensão, crie os contextos (grupos de extensões). Para cada contexto escolha um nome e um ícone."
-    },
-    "welcome_step_2": {
-        "message": "Para conectar extensões aos contextos, arraste-as da listagem alfabética no topo da página para a caixa representando o contexto escolhido."
-    },
-    "welcome_step_3": {
-        "message": "Mova todas as extensões que deverão estar ativas em todos os contextos da caixa 'Extensões disponíveis' para a caixa 'Extensões sempre ativas'."
-    },
-    "welcome_step_4": {
-        "message": "Salve suas configurações e você terminou! Você pode alterar facilmente entre os contextos usando o ícone na barra de tarefas. Selecionando no menu o nome ou o ícone do contexto alterna para o contexto. Clicando nos botões mais\/menos é possível ativar\/desativar os contextos, permitindo mesclar um contexto com outros."
-    },
-    "next": {
-        "message": "Próximo"
-    },
-    "previous": {
-        "message": "Anterior"
-    },
-    "close": {
-        "message": "Fechar"
-    },
-    "popup": {
-        "message": "Popup"
-    },
-    "show_context_icon": {
-        "message": "Exibir ícone do contexto"
-    },
-    "show_extension_icon": {
-        "message": "Exibir ícone da primeira extensão"
-    }
+	"locale": 
+	{
+		"message": "en",
+		"description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don\'t want that."
+	},
+	"application_description": 
+	{
+		"message": "Separe as extensões em grupos e facilmente alterne entre eles."
+	},
+	"all_extensions": 
+	{
+		"message": "Todas as extensões"
+	},
+	"highlight_ungrouped_extensions": 
+	{
+		"message": "destacar extensões sem grupo"
+	},
+	"create_new_context": 
+	{
+		"message": "Criar novo contexto"
+	},
+	"edit_context": 
+	{
+		"message": "Editar contexto"
+	},
+	"name_field_is_required": 
+	{
+		"message": "O campo Nome é obrigatório."
+	},
+	"this_name_is_already_in_use": 
+	{
+		"message": "Esse nome já está em uso."
+	},
+	"pick_an_icon": 
+	{
+		"message": "Escolha um ícone."
+	},
+	"available_extensions": 
+	{
+		"message": "Extensões disponíveis"
+	},
+	"always_enabled_extensions": 
+	{
+		"message": "Extensões sempre ativas"
+	},
+	"name": 
+	{
+		"message": "Nome"
+	},
+	"options": 
+	{
+		"message": "Opções"
+	},
+	"icon": 
+	{
+		"message": "Ícone"
+	},
+	"context_will_be_deleted": 
+	{
+		"message": "O contexto será excluído. Você tem certeza?"
+	},
+	"additional_options": 
+	{
+		"message": "Opções adicionais"
+	},
+	"new_context": 
+	{
+		"message": "Novo Contexto"
+	},
+	"save": 
+	{
+		"message": "Salvar"
+	},
+	"about": 
+	{
+		"message": "Sobre"
+	},
+	"configuration_import_export": 
+	{
+		"message": "Importar/exportar as configurações"
+	},
+	"configuration_import": 
+	{
+		"message": "Importar configuração"
+	},
+	"configuration_export_description": 
+	{
+		"message": "Para exportar todas as suas configurações, copie o código de configuração na caixa abaixo."
+	},
+	"configuration_import_description": 
+	{
+		"message": "Cole o código de configuração na caixa abaixo e clique em \'Importar\' para restaurar sua configuração."
+	},
+	"confirm_configuration_import": 
+	{
+		"message": "A importação irá sobrescrever a sua configuração atual, certifique-se de que fez um backup se você não quer perdê-la."
+	},
+	"import": 
+	{
+		"message": "Importar"
+	},
+	"override_current_settings": 
+	{
+		"message": "Sobrescrever a configuração atual?"
+	},
+	"import_failed": 
+	{
+		"message": "Falha na importação"
+	},
+	"configuration_string_is_invalid": 
+	{
+		"message": "Desculpe, o código de configuração informado é inválido. A importação falhou."
+	},
+	"successful_import": 
+	{
+		"message": "Importação concluída"
+	},
+	"configuration_was_imported_successfuly": 
+	{
+		"message": "A configuração foi importada com sucesso."
+	},
+	"some_extensions_were_ignored": 
+	{
+		"message": "Algumas extensões da configuração importada foram ignoradas porque não estão mais instaladas:"
+	},
+	"override_server_settings": 
+	{
+		"message": "Override configuration on server?"
+	},
+	"confirm_chrome_sync_configuration_export": 
+	{
+		"message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+	},
+	"manual": 
+	{
+		"message": "Manual"
+	},
+	"chrome_sync": 
+	{
+		"message": "Chrome Sync"
+	},
+	"save_on_server": 
+	{
+		"message": "Save on server"
+	},
+	"load_from_server": 
+	{
+		"message": "Load from server"
+	},
+	"saved": 
+	{
+		"message": "Saved"
+	},
+	"enable_apps_support": 
+	{
+		"message": "ativar suporte a aplicativos (por padrão, somente extensões são suportadas)"
+	},
+	"show_all_extensions_button": 
+	{
+		"message": "mostrar o botão \'Todas as extensões\' no popup"
+	},
+	"delay_after_enabling_extension": 
+	{
+		"message": "espera em milisegundos após ativar cada extensão"
+	},
+	"context_options": 
+	{
+		"message": "Contexto - Opções"
+	},
+	"remove_context": 
+	{
+		"message": "Remover contexto?"
+	},
+	"cancel": 
+	{
+		"message": "Cancelar"
+	},
+	"edit": 
+	{
+		"message": "Editar"
+	},
+	"create": 
+	{
+		"message": "Criar"
+	},
+	"delete": 
+	{
+		"message": "Excluir"
+	},
+	"clone": 
+	{
+		"message": "Clonar"
+	},
+	"move": 
+	{
+		"message": "Mover"
+	},
+	"extension_is_loading": 
+	{
+		"message": "Carregando extensão..."
+	},
+	"new_extension_installed_action": 
+	{
+		"message": "quando nova extensão for instalada"
+	},
+	"ask_what_to_do": 
+	{
+		"message": "perguntar o que fazer"
+	},
+	"add_to_all_contexts": 
+	{
+		"message": "incluir a extensão em todos os contextos"
+	},
+	"add_to_always_enabled": 
+	{
+		"message": "incluir em \'sempre ativas\'"
+	},
+	"do_nothing": 
+	{
+		"message": "não fazer nada"
+	},
+	"extension_installed_1": 
+	{
+		"message": "Nova extensão"
+	},
+	"extension_installed_2": 
+	{
+		"message": "instalada"
+	},
+	"add_to_contexts": 
+	{
+		"message": "Incluí-la nos seguintes contextos"
+	},
+	"or_add_it_to": 
+	{
+		"message": "ou incluí-la em"
+	},
+	"font": 
+	{
+		"message": "Fonte"
+	},
+	"icons": 
+	{
+		"message": "Ícones"
+	},
+	"icon_flip_animation": 
+	{
+		"message": "Animação do ícone"
+	},
+	"programmer": 
+	{
+		"message": "Programador"
+	},
+	"source_code": 
+	{
+		"message": "Código fonte"
+	},
+	"translations": 
+	{
+		"message": "Traduções"
+	},
+	"welcome": 
+	{
+		"message": "Bem vindo"
+	},
+	"welcome_step_1": 
+	{
+		"message": "Bem vindo! Para começar a trabalhar com essa extensão, crie os contextos (grupos de extensões). Para cada contexto escolha um nome e um ícone."
+	},
+	"welcome_step_2": 
+	{
+		"message": "Para conectar extensões aos contextos, arraste-as da listagem alfabética no topo da página para a caixa representando o contexto escolhido."
+	},
+	"welcome_step_3": 
+	{
+		"message": "Mova todas as extensões que deverão estar ativas em todos os contextos da caixa \'Extensões disponíveis\' para a caixa \'Extensões sempre ativas\'."
+	},
+	"welcome_step_4": 
+	{
+		"message": "Salve suas configurações e você terminou! Você pode alterar facilmente entre os contextos usando o ícone na barra de tarefas. Selecionando no menu o nome ou o ícone do contexto alterna para o contexto. Clicando nos botões mais/menos é possível ativar/desativar os contextos, permitindo mesclar um contexto com outros."
+	},
+	"next": 
+	{
+		"message": "Próximo"
+	},
+	"previous": 
+	{
+		"message": "Anterior"
+	},
+	"close": 
+	{
+		"message": "Fechar"
+	},
+	"popup": 
+	{
+		"message": "Popup"
+	},
+	"show_context_icon": 
+	{
+		"message": "Exibir ícone do contexto"
+	},
+	"show_extension_icon": 
+	{
+		"message": "Exibir ícone da primeira extensão"
+	}
 }

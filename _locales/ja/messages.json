@@ -1,201 +1,307 @@
 {
-    "locale": {
-        "message": "en",
-        "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
-    },
-    "application_description": {
-        "message": "Chrome拡張機能をグループ化し、用途によってカンタンに切り替えられます。"
-    },
-    "all_extensions": {
-        "message": "すべての拡張機能"
-    },
-    "highlight_ungrouped_extensions": {
-        "message": "グループに追加されていない拡張機能をハイライト表示する"
-    },
-    "create_new_context": {
-        "message": "新しいグループを作成"
-    },
-    "edit_context": {
-        "message": "グループを編集"
-    },
-    "name_field_is_required": {
-        "message": "グループ名の入力は必須です。"
-    },
-    "this_name_is_already_in_use": {
-        "message": "この名前はすでに使用されています。"
-    },
-    "pick_an_icon": {
-        "message": "アイコンを選んで下さい。"
-    },
-    "available_extensions": {
-        "message": "利用可能な拡張機能"
-    },
-    "always_enabled_extensions": {
-        "message": "常時有効にする拡張機能"
-    },
-    "name": {
-        "message": "グループ名"
-    },
-    "options": {
-        "message": "オプション"
-    },
-    "icon": {
-        "message": "アイコン"
-    },
-    "context_will_be_deleted": {
-        "message": "Contextが消去されます。よろしいですか？"
-    },
-    "additional_options": {
-        "message": "追加オプション"
-    },
-    "new_context": {
-        "message": "新しいグループ"
-    },
-    "save": {
-        "message": "保存"
-    },
-    "about": {
-        "message": "Contextについて"
-    },
-    "configuration_import_export": {
-        "message": "設定のインポート\/エクスポート"
-    },
-    "configuration_import": {
-        "message": "設定のインポート"
-    },
-    "configuration_export_description": {
-        "message": "設定をすべてエクスポートするには、下記ボックスに表示されるエンコードされた文字列をコピーします。"
-    },
-    "configuration_import_description": {
-        "message": "設定の文字列を下記ボックスに貼り付け、「インポート」をクリックすると設定が反映されます。"
-    },
-    "confirm_configuration_import": {
-        "message": "インポートすると現在の設定が無効になります。現在の設定を残しておきたい場合はバックアップを取っておいてください。"
-    },
-    "import": {
-        "message": "インポート"
-    },
-    "override_current_settings": {
-        "message": "現在の設定を無効にしますか？"
-    },
-    "import_failed": {
-        "message": "インポートに失敗しました"
-    },
-    "configuration_string_is_invalid": {
-        "message": "ごめんなさい、いただいた設定の文字列は無効です。インポートに失敗しました。"
-    },
-    "successful_import": {
-        "message": "インポートに成功しました"
-    },
-    "configuration_was_imported_successfuly": {
-        "message": "設定のインポートに成功しました。"
-    },
-    "some_extensions_were_ignored": {
-        "message": "設定がインポートされた拡張機能のうち、いくつかはインポートが無視されました。インポートが無視された設定は、拡張機能がインストールされていないようです。:"
-    },
-    "enable_apps_support": {
-        "message": "Chrome WEBアプリも対象にする (デフォルトは拡張機能のみ対象)"
-    },
-    "show_all_extensions_button": {
-        "message": "ポップアップメニューに「すべての拡張機能」を表示する"
-    },
-    "delay_after_enabling_extension": {
-        "message": "各拡張機能を有効にした後、数ミリ秒間遅らせる"
-    },
-    "context_options": {
-        "message": "Context - オプション"
-    },
-    "remove_context": {
-        "message": "グループを削除しますか？"
-    },
-    "cancel": {
-        "message": "キャンセル"
-    },
-    "edit": {
-        "message": "編集"
-    },
-    "create": {
-        "message": "作成"
-    },
-    "delete": {
-        "message": "削除"
-    },
-    "clone": {
-        "message": "複製する"
-    },
-    "move": {
-        "message": "移動する"
-    },
-    "extension_is_loading": {
-        "message": "拡張機能を読み込んでいます。 ..."
-    },
-    "new_extension_installed_action": {
-        "message": "新しい拡張機能をインストールした直後の動作設定"
-    },
-    "ask_what_to_do": {
-        "message": "何をしたら良いか通知する"
-    },
-    "add_to_all_contexts": {
-        "message": "この拡張機能をすべてのグループへ追加"
-    },
-    "add_to_always_enabled": {
-        "message": "「常時有効にする拡張機能」へ追加'"
-    },
-    "do_nothing": {
-        "message": "何もしない"
-    },
-    "extension_installed_1": {
-        "message": "新しい拡張機能がインストールされました"
-    },
-    "extension_installed_2": {
-        "message": "インストールされました"
-    },
-    "add_to_contexts": {
-        "message": "この拡張機能を以下のグループへ追加"
-    },
-    "or_add_it_to": {
-        "message": "または追加"
-    },
-    "font": {
-        "message": "フォント"
-    },
-    "icons": {
-        "message": "アイコン"
-    },
-    "icon_flip_animation": {
-        "message": "アイコンフリップ アニメーション"
-    },
-    "programmer": {
-        "message": "プログラマー"
-    },
-    "source_code": {
-        "message": "ソースコード"
-    },
-    "translations": {
-        "message": "翻訳"
-    },
-    "welcome": {
-        "message": "はじめに"
-    },
-    "welcome_step_1": {
-        "message": "インストールしてくれてありがとう！ これからこの拡張機能で、拡張機能のグループ（コンテクスト）を作成します。いずれのグループも、作成する際に名前とアイコンを選ぶことができます。"
-    },
-    "welcome_step_2": {
-        "message": "グループを作成したら、拡張機能をグループへ追加しましょう。グループへの追加はドラッグアンドドロップでおこなえます。Google Chromeに追加されている拡張機能は、上部のボックスにアルファベット順に並んでいます。ここから下にあるグループごとのボックスへ拡張機能を追加します。"
-    },
-    "welcome_step_3": {
-        "message": "「利用可能な拡張機能」ボックスから「常時有効にする拡張機能」ボックスへ、すべての拡張機能を移動させることによって、すべてのグループで移動させた拡張機能を有効にすることができます。"
-    },
-    "welcome_step_4": {
-        "message": "設定を保存することで、ツールバーのアイコンからカンタンにグループを変更することができます。メニューボタンに表示するグループ名とアイコンを選択し、＋\/ーボタンを押すことで　有効\/無効 を切り替えることができます。複数のグループを同時に選択することも可能です。"
-    },
-    "next": {
-        "message": "次へ"
-    },
-    "previous": {
-        "message": "前へ"
-    },
-    "close": {
-        "message": "閉じる"
-    }
+	"locale": 
+	{
+		"message": "en",
+		"description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don\'t want that."
+	},
+	"application_description": 
+	{
+		"message": "Chrome拡張機能をグループ化し、用途によってカンタンに切り替えられます。"
+	},
+	"all_extensions": 
+	{
+		"message": "すべての拡張機能"
+	},
+	"highlight_ungrouped_extensions": 
+	{
+		"message": "グループに追加されていない拡張機能をハイライト表示する"
+	},
+	"create_new_context": 
+	{
+		"message": "新しいグループを作成"
+	},
+	"edit_context": 
+	{
+		"message": "グループを編集"
+	},
+	"name_field_is_required": 
+	{
+		"message": "グループ名の入力は必須です。"
+	},
+	"this_name_is_already_in_use": 
+	{
+		"message": "この名前はすでに使用されています。"
+	},
+	"pick_an_icon": 
+	{
+		"message": "アイコンを選んで下さい。"
+	},
+	"available_extensions": 
+	{
+		"message": "利用可能な拡張機能"
+	},
+	"always_enabled_extensions": 
+	{
+		"message": "常時有効にする拡張機能"
+	},
+	"name": 
+	{
+		"message": "グループ名"
+	},
+	"options": 
+	{
+		"message": "オプション"
+	},
+	"icon": 
+	{
+		"message": "アイコン"
+	},
+	"context_will_be_deleted": 
+	{
+		"message": "Contextが消去されます。よろしいですか？"
+	},
+	"additional_options": 
+	{
+		"message": "追加オプション"
+	},
+	"new_context": 
+	{
+		"message": "新しいグループ"
+	},
+	"save": 
+	{
+		"message": "保存"
+	},
+	"about": 
+	{
+		"message": "Contextについて"
+	},
+	"configuration_import_export": 
+	{
+		"message": "設定のインポート/エクスポート"
+	},
+	"configuration_import": 
+	{
+		"message": "設定のインポート"
+	},
+	"configuration_export_description": 
+	{
+		"message": "設定をすべてエクスポートするには、下記ボックスに表示されるエンコードされた文字列をコピーします。"
+	},
+	"configuration_import_description": 
+	{
+		"message": "設定の文字列を下記ボックスに貼り付け、「インポート」をクリックすると設定が反映されます。"
+	},
+	"confirm_configuration_import": 
+	{
+		"message": "インポートすると現在の設定が無効になります。現在の設定を残しておきたい場合はバックアップを取っておいてください。"
+	},
+	"import": 
+	{
+		"message": "インポート"
+	},
+	"override_current_settings": 
+	{
+		"message": "現在の設定を無効にしますか？"
+	},
+	"import_failed": 
+	{
+		"message": "インポートに失敗しました"
+	},
+	"configuration_string_is_invalid": 
+	{
+		"message": "ごめんなさい、いただいた設定の文字列は無効です。インポートに失敗しました。"
+	},
+	"successful_import": 
+	{
+		"message": "インポートに成功しました"
+	},
+	"configuration_was_imported_successfuly": 
+	{
+		"message": "設定のインポートに成功しました。"
+	},
+	"some_extensions_were_ignored": 
+	{
+		"message": "設定がインポートされた拡張機能のうち、いくつかはインポートが無視されました。インポートが無視された設定は、拡張機能がインストールされていないようです。:"
+	},
+	"override_server_settings": 
+	{
+		"message": "Override configuration on server?"
+	},
+	"confirm_chrome_sync_configuration_export": 
+	{
+		"message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+	},
+	"manual": 
+	{
+		"message": "Manual"
+	},
+	"chrome_sync": 
+	{
+		"message": "Chrome Sync"
+	},
+	"save_on_server": 
+	{
+		"message": "Save on server"
+	},
+	"load_from_server": 
+	{
+		"message": "Load from server"
+	},
+	"saved": 
+	{
+		"message": "Saved"
+	},
+	"enable_apps_support": 
+	{
+		"message": "Chrome WEBアプリも対象にする (デフォルトは拡張機能のみ対象)"
+	},
+	"show_all_extensions_button": 
+	{
+		"message": "ポップアップメニューに「すべての拡張機能」を表示する"
+	},
+	"delay_after_enabling_extension": 
+	{
+		"message": "各拡張機能を有効にした後、数ミリ秒間遅らせる"
+	},
+	"context_options": 
+	{
+		"message": "Context - オプション"
+	},
+	"remove_context": 
+	{
+		"message": "グループを削除しますか？"
+	},
+	"cancel": 
+	{
+		"message": "キャンセル"
+	},
+	"edit": 
+	{
+		"message": "編集"
+	},
+	"create": 
+	{
+		"message": "作成"
+	},
+	"delete": 
+	{
+		"message": "削除"
+	},
+	"clone": 
+	{
+		"message": "複製する"
+	},
+	"move": 
+	{
+		"message": "移動する"
+	},
+	"extension_is_loading": 
+	{
+		"message": "拡張機能を読み込んでいます。 ..."
+	},
+	"new_extension_installed_action": 
+	{
+		"message": "新しい拡張機能をインストールした直後の動作設定"
+	},
+	"ask_what_to_do": 
+	{
+		"message": "何をしたら良いか通知する"
+	},
+	"add_to_all_contexts": 
+	{
+		"message": "この拡張機能をすべてのグループへ追加"
+	},
+	"add_to_always_enabled": 
+	{
+		"message": "「常時有効にする拡張機能」へ追加\'"
+	},
+	"do_nothing": 
+	{
+		"message": "何もしない"
+	},
+	"extension_installed_1": 
+	{
+		"message": "新しい拡張機能がインストールされました"
+	},
+	"extension_installed_2": 
+	{
+		"message": "インストールされました"
+	},
+	"add_to_contexts": 
+	{
+		"message": "この拡張機能を以下のグループへ追加"
+	},
+	"or_add_it_to": 
+	{
+		"message": "または追加"
+	},
+	"font": 
+	{
+		"message": "フォント"
+	},
+	"icons": 
+	{
+		"message": "アイコン"
+	},
+	"icon_flip_animation": 
+	{
+		"message": "アイコンフリップ アニメーション"
+	},
+	"programmer": 
+	{
+		"message": "プログラマー"
+	},
+	"source_code": 
+	{
+		"message": "ソースコード"
+	},
+	"translations": 
+	{
+		"message": "翻訳"
+	},
+	"welcome": 
+	{
+		"message": "はじめに"
+	},
+	"welcome_step_1": 
+	{
+		"message": "インストールしてくれてありがとう！ これからこの拡張機能で、拡張機能のグループ（コンテクスト）を作成します。いずれのグループも、作成する際に名前とアイコンを選ぶことができます。"
+	},
+	"welcome_step_2": 
+	{
+		"message": "グループを作成したら、拡張機能をグループへ追加しましょう。グループへの追加はドラッグアンドドロップでおこなえます。Google Chromeに追加されている拡張機能は、上部のボックスにアルファベット順に並んでいます。ここから下にあるグループごとのボックスへ拡張機能を追加します。"
+	},
+	"welcome_step_3": 
+	{
+		"message": "「利用可能な拡張機能」ボックスから「常時有効にする拡張機能」ボックスへ、すべての拡張機能を移動させることによって、すべてのグループで移動させた拡張機能を有効にすることができます。"
+	},
+	"welcome_step_4": 
+	{
+		"message": "設定を保存することで、ツールバーのアイコンからカンタンにグループを変更することができます。メニューボタンに表示するグループ名とアイコンを選択し、＋/ーボタンを押すことで　有効/無効 を切り替えることができます。複数のグループを同時に選択することも可能です。"
+	},
+	"next": 
+	{
+		"message": "次へ"
+	},
+	"previous": 
+	{
+		"message": "前へ"
+	},
+	"close": 
+	{
+		"message": "閉じる"
+	},
+	"popup": 
+	{
+		"message": "Popup"
+	},
+	"show_context_icon": 
+	{
+		"message": "Show Context icon"
+	},
+	"show_extension_icon": 
+	{
+		"message": "Show first extension icon"
+	}
 }
