@@ -1,307 +1,307 @@
 {
-	"locale": 
-	{
-		"message": "en",
-		"description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don\'t want that."
-	},
-	"application_description": 
-	{
-		"message": "Organisez vos extensions dans des groupes et basculez facilement entre eux."
-	},
-	"all_extensions": 
-	{
-		"message": "Toutes les extensions"
-	},
-	"highlight_ungrouped_extensions": 
-	{
-		"message": "Mettre en évidence les extensions non groupées"
-	},
-	"create_new_context": 
-	{
-		"message": "Créer un nouveau context"
-	},
-	"edit_context": 
-	{
-		"message": "Editer le context"
-	},
-	"name_field_is_required": 
-	{
-		"message": "Le champ Nom est obligatoire."
-	},
-	"this_name_is_already_in_use": 
-	{
-		"message": "Ce nom est déjà utilisé."
-	},
-	"pick_an_icon": 
-	{
-		"message": "Choisissez une icône."
-	},
-	"available_extensions": 
-	{
-		"message": "Extensions disponibles"
-	},
-	"always_enabled_extensions": 
-	{
-		"message": "Extensions toujours activées"
-	},
-	"name": 
-	{
-		"message": "Nom"
-	},
-	"options": 
-	{
-		"message": "Options"
-	},
-	"icon": 
-	{
-		"message": "Icône"
-	},
-	"context_will_be_deleted": 
-	{
-		"message": "Ce context sera supprimé. Êtes-vous sûr ?"
-	},
-	"additional_options": 
-	{
-		"message": "Options supplémentaires"
-	},
-	"new_context": 
-	{
-		"message": "Nouveau Context"
-	},
-	"save": 
-	{
-		"message": "Sauvegarder"
-	},
-	"about": 
-	{
-		"message": "À propos"
-	},
-	"configuration_import_export": 
-	{
-		"message": "Import/Export de la configuration"
-	},
-	"configuration_import": 
-	{
-		"message": "Importer la configuration"
-	},
-	"configuration_export_description": 
-	{
-		"message": "Pour exporter tous vos paramètres, copiez la chaîne de configuration codée à partir de la boîte ci-dessous."
-	},
-	"configuration_import_description": 
-	{
-		"message": "Collez la chaîne de configuration dans la boîte ci-dessous et cliquez sur \"Importer\" pour restaurer votre configuration."
-	},
-	"confirm_configuration_import": 
-	{
-		"message": "L\'importation remplacera votre configuration actuelle. Pensez à faire une sauvegarde si vous ne voulez pas la perdre."
-	},
-	"import": 
-	{
-		"message": "Importer"
-	},
-	"override_current_settings": 
-	{
-		"message": "Remplacer les paramètres actuels ?"
-	},
-	"import_failed": 
-	{
-		"message": "Échec de l\'importation"
-	},
-	"configuration_string_is_invalid": 
-	{
-		"message": "Désolé, la chaîne de configuration fournie n\'est pas valide. Échec de l\'importation."
-	},
-	"successful_import": 
-	{
-		"message": "Importation réussie"
-	},
-	"configuration_was_imported_successfuly": 
-	{
-		"message": "La configuration a été importée avec succès."
-	},
-	"some_extensions_were_ignored": 
-	{
-		"message": "Certaines extensions ont été ignorées lors de l\'importation de la configuration, car elles ne sont pas installées:"
-	},
-	"override_server_settings": 
-	{
-		"message": "Override configuration on server?"
-	},
-	"confirm_chrome_sync_configuration_export": 
-	{
-		"message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
-	},
-	"manual": 
-	{
-		"message": "Manual"
-	},
-	"chrome_sync": 
-	{
-		"message": "Chrome Sync"
-	},
-	"save_on_server": 
-	{
-		"message": "Save on server"
-	},
-	"load_from_server": 
-	{
-		"message": "Load from server"
-	},
-	"saved": 
-	{
-		"message": "Saved"
-	},
-	"enable_apps_support": 
-	{
-		"message": "Activer le support des applications (par défaut, seules les extensions sont supportées)"
-	},
-	"show_all_extensions_button": 
-	{
-		"message": "Afficher le bouton ‘Toutes les extensions’ dans le popup"
-	},
-	"delay_after_enabling_extension": 
-	{
-		"message": "délai en millisecondes après l\'activation de chaque extension"
-	},
-	"context_options": 
-	{
-		"message": "Context - Options"
-	},
-	"remove_context": 
-	{
-		"message": "Supprimer le context ?"
-	},
-	"cancel": 
-	{
-		"message": "Annuler"
-	},
-	"edit": 
-	{
-		"message": "Editer"
-	},
-	"create": 
-	{
-		"message": "Créer"
-	},
-	"delete": 
-	{
-		"message": "Supprimer"
-	},
-	"clone": 
-	{
-		"message": "Dupliquer"
-	},
-	"move": 
-	{
-		"message": "Déplacer"
-	},
-	"extension_is_loading": 
-	{
-		"message": "Chargement de l’extension..."
-	},
-	"new_extension_installed_action": 
-	{
-		"message": "après l’installation d’une nouvelle extension"
-	},
-	"ask_what_to_do": 
-	{
-		"message": "demander ce qu\'il faut faire"
-	},
-	"add_to_all_contexts": 
-	{
-		"message": "ajouter l\'extension à tous les contexts"
-	},
-	"add_to_always_enabled": 
-	{
-		"message": "ajouter à ‘toujours activées’"
-	},
-	"do_nothing": 
-	{
-		"message": "ne rien faire"
-	},
-	"extension_installed_1": 
-	{
-		"message": "Nouvelle extension"
-	},
-	"extension_installed_2": 
-	{
-		"message": "installée"
-	},
-	"add_to_contexts": 
-	{
-		"message": "Ajoutez-la aux contexts suivants"
-	},
-	"or_add_it_to": 
-	{
-		"message": "ou ajoutez-la à"
-	},
-	"font": 
-	{
-		"message": "Police"
-	},
-	"icons": 
-	{
-		"message": "Icônes"
-	},
-	"icon_flip_animation": 
-	{
-		"message": "Icône de rotation animée"
-	},
-	"programmer": 
-	{
-		"message": "Programmeur"
-	},
-	"source_code": 
-	{
-		"message": "Code source"
-	},
-	"translations": 
-	{
-		"message": "Traductions"
-	},
-	"welcome": 
-	{
-		"message": "Bienvenue"
-	},
-	"welcome_step_1": 
-	{
-		"message": "Bienvenue ! Pour commencer à travailler avec cette extension, créez des contexts (groupes d\'extensions). Pour chaque context, choisissez un nom et une icône."
-	},
-	"welcome_step_2": 
-	{
-		"message": "Pour connecter des extensions aux différents contexts, glissez-les depuis la liste alphabétique supérieure jusqu\'à la boîte représentant le context de votre choix."
-	},
-	"welcome_step_3": 
-	{
-		"message": "Déplacez, de la boîte ‘Extensions disponibles’ à la boîte ‘Extensions toujours activées’, les extensions que vous souhaitez activer dans tous les contexts."
-	},
-	"welcome_step_4": 
-	{
-		"message": "Sauvegardez votre configuration et vous avez terminé ! Vous pouvez facilement basculer d\'un context à un autre en utilisant l\'icône dans la barre d\'outils. La sélection d\'un context s\'effectue en cliquant sur son nom ou son icône dans le menu. Un clic sur le bouton plus/moins (activer/désactiver) permet de mélanger les contexts entre eux."
-	},
-	"next": 
-	{
-		"message": "Suivant"
-	},
-	"previous": 
-	{
-		"message": "Précédent"
-	},
-	"close": 
-	{
-		"message": "Fermer"
-	},
-	"popup": 
-	{
-		"message": "Popup"
-	},
-	"show_context_icon": 
-	{
-		"message": "Show Context icon"
-	},
-	"show_extension_icon": 
-	{
-		"message": "Show first extension icon"
-	}
+    "locale": 
+    {
+        "message": "en",
+        "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
+    },
+    "application_description": 
+    {
+        "message": "Organisez vos extensions dans des groupes et basculez facilement entre eux."
+    },
+    "all_extensions": 
+    {
+        "message": "Toutes les extensions"
+    },
+    "highlight_ungrouped_extensions": 
+    {
+        "message": "Mettre en évidence les extensions non groupées"
+    },
+    "create_new_context": 
+    {
+        "message": "Créer un nouveau context"
+    },
+    "edit_context": 
+    {
+        "message": "Editer le context"
+    },
+    "name_field_is_required": 
+    {
+        "message": "Le champ Nom est obligatoire."
+    },
+    "this_name_is_already_in_use": 
+    {
+        "message": "Ce nom est déjà utilisé."
+    },
+    "pick_an_icon": 
+    {
+        "message": "Choisissez une icône."
+    },
+    "available_extensions": 
+    {
+        "message": "Extensions disponibles"
+    },
+    "always_enabled_extensions": 
+    {
+        "message": "Extensions toujours activées"
+    },
+    "name": 
+    {
+        "message": "Nom"
+    },
+    "options": 
+    {
+        "message": "Options"
+    },
+    "icon": 
+    {
+        "message": "Icône"
+    },
+    "context_will_be_deleted": 
+    {
+        "message": "Ce context sera supprimé. Êtes-vous sûr ?"
+    },
+    "additional_options": 
+    {
+        "message": "Options supplémentaires"
+    },
+    "new_context": 
+    {
+        "message": "Nouveau Context"
+    },
+    "save": 
+    {
+        "message": "Sauvegarder"
+    },
+    "about": 
+    {
+        "message": "À propos"
+    },
+    "configuration_import_export": 
+    {
+        "message": "Import/Export de la configuration"
+    },
+    "configuration_import": 
+    {
+        "message": "Importer la configuration"
+    },
+    "configuration_export_description": 
+    {
+        "message": "Pour exporter tous vos paramètres, copiez la chaîne de configuration codée à partir de la boîte ci-dessous."
+    },
+    "configuration_import_description": 
+    {
+        "message": "Collez la chaîne de configuration dans la boîte ci-dessous et cliquez sur \"Importer\" pour restaurer votre configuration."
+    },
+    "confirm_configuration_import": 
+    {
+        "message": "L'importation remplacera votre configuration actuelle. Pensez à faire une sauvegarde si vous ne voulez pas la perdre."
+    },
+    "import": 
+    {
+        "message": "Importer"
+    },
+    "override_current_settings": 
+    {
+        "message": "Remplacer les paramètres actuels ?"
+    },
+    "import_failed": 
+    {
+        "message": "Échec de l'importation"
+    },
+    "configuration_string_is_invalid": 
+    {
+        "message": "Désolé, la chaîne de configuration fournie n'est pas valide. Échec de l'importation."
+    },
+    "successful_import": 
+    {
+        "message": "Importation réussie"
+    },
+    "configuration_was_imported_successfuly": 
+    {
+        "message": "La configuration a été importée avec succès."
+    },
+    "some_extensions_were_ignored": 
+    {
+        "message": "Certaines extensions ont été ignorées lors de l'importation de la configuration, car elles ne sont pas installées:"
+    },
+    "override_server_settings": 
+    {
+        "message": "Override configuration on server?"
+    },
+    "confirm_chrome_sync_configuration_export": 
+    {
+        "message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+    },
+    "manual": 
+    {
+        "message": "Manual"
+    },
+    "chrome_sync": 
+    {
+        "message": "Chrome Sync"
+    },
+    "save_on_server": 
+    {
+        "message": "Save on server"
+    },
+    "load_from_server": 
+    {
+        "message": "Load from server"
+    },
+    "saved": 
+    {
+        "message": "Saved"
+    },
+    "enable_apps_support": 
+    {
+        "message": "Activer le support des applications (par défaut, seules les extensions sont supportées)"
+    },
+    "show_all_extensions_button": 
+    {
+        "message": "Afficher le bouton ‘Toutes les extensions’ dans le popup"
+    },
+    "delay_after_enabling_extension": 
+    {
+        "message": "délai en millisecondes après l'activation de chaque extension"
+    },
+    "context_options": 
+    {
+        "message": "Context - Options"
+    },
+    "remove_context": 
+    {
+        "message": "Supprimer le context ?"
+    },
+    "cancel": 
+    {
+        "message": "Annuler"
+    },
+    "edit": 
+    {
+        "message": "Editer"
+    },
+    "create": 
+    {
+        "message": "Créer"
+    },
+    "delete": 
+    {
+        "message": "Supprimer"
+    },
+    "clone": 
+    {
+        "message": "Dupliquer"
+    },
+    "move": 
+    {
+        "message": "Déplacer"
+    },
+    "extension_is_loading": 
+    {
+        "message": "Chargement de l’extension..."
+    },
+    "new_extension_installed_action": 
+    {
+        "message": "après l’installation d’une nouvelle extension"
+    },
+    "ask_what_to_do": 
+    {
+        "message": "demander ce qu'il faut faire"
+    },
+    "add_to_all_contexts": 
+    {
+        "message": "ajouter l'extension à tous les contexts"
+    },
+    "add_to_always_enabled": 
+    {
+        "message": "ajouter à ‘toujours activées’"
+    },
+    "do_nothing": 
+    {
+        "message": "ne rien faire"
+    },
+    "extension_installed_1": 
+    {
+        "message": "Nouvelle extension"
+    },
+    "extension_installed_2": 
+    {
+        "message": "installée"
+    },
+    "add_to_contexts": 
+    {
+        "message": "Ajoutez-la aux contexts suivants"
+    },
+    "or_add_it_to": 
+    {
+        "message": "ou ajoutez-la à"
+    },
+    "font": 
+    {
+        "message": "Police"
+    },
+    "icons": 
+    {
+        "message": "Icônes"
+    },
+    "icon_flip_animation": 
+    {
+        "message": "Icône de rotation animée"
+    },
+    "programmer": 
+    {
+        "message": "Programmeur"
+    },
+    "source_code": 
+    {
+        "message": "Code source"
+    },
+    "translations": 
+    {
+        "message": "Traductions"
+    },
+    "welcome": 
+    {
+        "message": "Bienvenue"
+    },
+    "welcome_step_1": 
+    {
+        "message": "Bienvenue ! Pour commencer à travailler avec cette extension, créez des contexts (groupes d'extensions). Pour chaque context, choisissez un nom et une icône."
+    },
+    "welcome_step_2": 
+    {
+        "message": "Pour connecter des extensions aux différents contexts, glissez-les depuis la liste alphabétique supérieure jusqu'à la boîte représentant le context de votre choix."
+    },
+    "welcome_step_3": 
+    {
+        "message": "Déplacez, de la boîte ‘Extensions disponibles’ à la boîte ‘Extensions toujours activées’, les extensions que vous souhaitez activer dans tous les contexts."
+    },
+    "welcome_step_4": 
+    {
+        "message": "Sauvegardez votre configuration et vous avez terminé ! Vous pouvez facilement basculer d'un context à un autre en utilisant l'icône dans la barre d'outils. La sélection d'un context s'effectue en cliquant sur son nom ou son icône dans le menu. Un clic sur le bouton plus/moins (activer/désactiver) permet de mélanger les contexts entre eux."
+    },
+    "next": 
+    {
+        "message": "Suivant"
+    },
+    "previous": 
+    {
+        "message": "Précédent"
+    },
+    "close": 
+    {
+        "message": "Fermer"
+    },
+    "popup": 
+    {
+        "message": "Popup"
+    },
+    "show_context_icon": 
+    {
+        "message": "Show Context icon"
+    },
+    "show_extension_icon": 
+    {
+        "message": "Show first extension icon"
+    }
 }

@@ -1,307 +1,307 @@
 {
-	"locale": 
-	{
-		"message": "en",
-		"description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don\'t want that."
-	},
-	"application_description": 
-	{
-		"message": "Extensiones para clasificar en grupos y cambiar fácilmente entre ellas."
-	},
-	"all_extensions": 
-	{
-		"message": "Todas las extensiones"
-	},
-	"highlight_ungrouped_extensions": 
-	{
-		"message": "highlight ungrouped extensions"
-	},
-	"create_new_context": 
-	{
-		"message": "Crear nuevo grupo"
-	},
-	"edit_context": 
-	{
-		"message": "Editar grupo"
-	},
-	"name_field_is_required": 
-	{
-		"message": "Campo nombre es obligatorio."
-	},
-	"this_name_is_already_in_use": 
-	{
-		"message": "Este nombre ya está en uso."
-	},
-	"pick_an_icon": 
-	{
-		"message": "Elige un icono."
-	},
-	"available_extensions": 
-	{
-		"message": "Extensiones disponibles"
-	},
-	"always_enabled_extensions": 
-	{
-		"message": "Extensiones siempre activadas"
-	},
-	"name": 
-	{
-		"message": "Nombre"
-	},
-	"options": 
-	{
-		"message": "Opciones"
-	},
-	"icon": 
-	{
-		"message": "Icono"
-	},
-	"context_will_be_deleted": 
-	{
-		"message": "Los grupos serán borrados. ¿Está seguro?"
-	},
-	"additional_options": 
-	{
-		"message": "Opciones adicionales"
-	},
-	"new_context": 
-	{
-		"message": "Nuevo grupo"
-	},
-	"save": 
-	{
-		"message": "Guardar"
-	},
-	"about": 
-	{
-		"message": "Sobre"
-	},
-	"configuration_import_export": 
-	{
-		"message": "Configuration import/export"
-	},
-	"configuration_import": 
-	{
-		"message": "Configuration import"
-	},
-	"configuration_export_description": 
-	{
-		"message": "To export all your settings, copy encoded configuration string from the box below."
-	},
-	"configuration_import_description": 
-	{
-		"message": "Paste configuration string to the box below and click \'Import\' to restore your configuration."
-	},
-	"confirm_configuration_import": 
-	{
-		"message": "Import will override your current configuration, be sure to make a backup if you don\'t want to lose it."
-	},
-	"import": 
-	{
-		"message": "Import"
-	},
-	"override_current_settings": 
-	{
-		"message": "Override current settings?"
-	},
-	"import_failed": 
-	{
-		"message": "Import failed"
-	},
-	"configuration_string_is_invalid": 
-	{
-		"message": "Sorry, provided configuration string is invalid. Import failed."
-	},
-	"successful_import": 
-	{
-		"message": "Successful import"
-	},
-	"configuration_was_imported_successfuly": 
-	{
-		"message": "Configuration was imported successfuly."
-	},
-	"some_extensions_were_ignored": 
-	{
-		"message": "Some extensions from imported configuration were ignored because they are not installed:"
-	},
-	"override_server_settings": 
-	{
-		"message": "Override configuration on server?"
-	},
-	"confirm_chrome_sync_configuration_export": 
-	{
-		"message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
-	},
-	"manual": 
-	{
-		"message": "Manual"
-	},
-	"chrome_sync": 
-	{
-		"message": "Chrome Sync"
-	},
-	"save_on_server": 
-	{
-		"message": "Save on server"
-	},
-	"load_from_server": 
-	{
-		"message": "Load from server"
-	},
-	"saved": 
-	{
-		"message": "Saved"
-	},
-	"enable_apps_support": 
-	{
-		"message": "habilitar soporte de aplicaciones (por defecto, sólo las extensiones son compatibles)"
-	},
-	"show_all_extensions_button": 
-	{
-		"message": "Mostrar el botón \'Todas las extensiones\' en popup"
-	},
-	"delay_after_enabling_extension": 
-	{
-		"message": "delay in milliseconds after enabling each extension"
-	},
-	"context_options": 
-	{
-		"message": "Grupo - Opciones"
-	},
-	"remove_context": 
-	{
-		"message": "Quitar grupo?"
-	},
-	"cancel": 
-	{
-		"message": "Cancelar"
-	},
-	"edit": 
-	{
-		"message": "Editar"
-	},
-	"create": 
-	{
-		"message": "Crear"
-	},
-	"delete": 
-	{
-		"message": "Borrar"
-	},
-	"clone": 
-	{
-		"message": "Duplicar"
-	},
-	"move": 
-	{
-		"message": "Mover"
-	},
-	"extension_is_loading": 
-	{
-		"message": "La extensión se está cargando ..."
-	},
-	"new_extension_installed_action": 
-	{
-		"message": "Después de que el grupo se instale"
-	},
-	"ask_what_to_do": 
-	{
-		"message": "preguntarle qué hacer"
-	},
-	"add_to_all_contexts": 
-	{
-		"message": "DAña extensión a todos los grupos"
-	},
-	"add_to_always_enabled": 
-	{
-		"message": "add to \'always-enabled\'"
-	},
-	"do_nothing": 
-	{
-		"message": "no hacer nada"
-	},
-	"extension_installed_1": 
-	{
-		"message": "Nuevo grupo"
-	},
-	"extension_installed_2": 
-	{
-		"message": "instalado"
-	},
-	"add_to_contexts": 
-	{
-		"message": "Añadir a los siguientes grupos"
-	},
-	"or_add_it_to": 
-	{
-		"message": "or add it to"
-	},
-	"font": 
-	{
-		"message": "Fuente"
-	},
-	"icons": 
-	{
-		"message": "Iconos"
-	},
-	"icon_flip_animation": 
-	{
-		"message": "Animación del icono"
-	},
-	"programmer": 
-	{
-		"message": "Programador"
-	},
-	"source_code": 
-	{
-		"message": "Source code"
-	},
-	"translations": 
-	{
-		"message": "Traducciones"
-	},
-	"welcome": 
-	{
-		"message": "Bienvenido"
-	},
-	"welcome_step_1": 
-	{
-		"message": "Bienvenido! Puedes empezar a trabajar con esta extensión de crear grupos (grupos de extensiones). Para cada grupo elegir un nombre y un icono."
-	},
-	"welcome_step_2": 
-	{
-		"message": "Para conectar las extensiones de los mismos grupos hay que arrastrarlas desde la lista de arriba, por orden alfabético a una caja de elegidos que representan a su grupo."
-	},
-	"welcome_step_3": 
-	{
-		"message": "Mueve todas las extensiones que deberían estar activadas para cada contexto desde \'extensiones disponibles\' a la caja \'extensiones siempre disponibles\'."
-	},
-	"welcome_step_4": 
-	{
-		"message": "Guarda tu configuración y listo. Puede fácilmente alternar los contextos usando los iconos en la barra de tareas. Seleccionando el nombre del contexto o el icono en el menú, cambiar al contexto seleccionado. Pulsando en el botón más/menos activa/desactiva el contexto elegido permitiendo mezclar unos contextos con otros."
-	},
-	"next": 
-	{
-		"message": "Próximo"
-	},
-	"previous": 
-	{
-		"message": "Anterior"
-	},
-	"close": 
-	{
-		"message": "Cerrar"
-	},
-	"popup": 
-	{
-		"message": "Popup"
-	},
-	"show_context_icon": 
-	{
-		"message": "Show Context icon"
-	},
-	"show_extension_icon": 
-	{
-		"message": "Show first extension icon"
-	}
+    "locale": 
+    {
+        "message": "en",
+        "description": "There is build in @@_ui_locale variable but it shows language variations like en_GB, en_US etc. We don't want that."
+    },
+    "application_description": 
+    {
+        "message": "Extensiones para clasificar en grupos y cambiar fácilmente entre ellas."
+    },
+    "all_extensions": 
+    {
+        "message": "Todas las extensiones"
+    },
+    "highlight_ungrouped_extensions": 
+    {
+        "message": "highlight ungrouped extensions"
+    },
+    "create_new_context": 
+    {
+        "message": "Crear nuevo grupo"
+    },
+    "edit_context": 
+    {
+        "message": "Editar grupo"
+    },
+    "name_field_is_required": 
+    {
+        "message": "Campo nombre es obligatorio."
+    },
+    "this_name_is_already_in_use": 
+    {
+        "message": "Este nombre ya está en uso."
+    },
+    "pick_an_icon": 
+    {
+        "message": "Elige un icono."
+    },
+    "available_extensions": 
+    {
+        "message": "Extensiones disponibles"
+    },
+    "always_enabled_extensions": 
+    {
+        "message": "Extensiones siempre activadas"
+    },
+    "name": 
+    {
+        "message": "Nombre"
+    },
+    "options": 
+    {
+        "message": "Opciones"
+    },
+    "icon": 
+    {
+        "message": "Icono"
+    },
+    "context_will_be_deleted": 
+    {
+        "message": "Los grupos serán borrados. ¿Está seguro?"
+    },
+    "additional_options": 
+    {
+        "message": "Opciones adicionales"
+    },
+    "new_context": 
+    {
+        "message": "Nuevo grupo"
+    },
+    "save": 
+    {
+        "message": "Guardar"
+    },
+    "about": 
+    {
+        "message": "Sobre"
+    },
+    "configuration_import_export": 
+    {
+        "message": "Configuration import/export"
+    },
+    "configuration_import": 
+    {
+        "message": "Configuration import"
+    },
+    "configuration_export_description": 
+    {
+        "message": "To export all your settings, copy encoded configuration string from the box below."
+    },
+    "configuration_import_description": 
+    {
+        "message": "Paste configuration string to the box below and click 'Import' to restore your configuration."
+    },
+    "confirm_configuration_import": 
+    {
+        "message": "Import will override your current configuration, be sure to make a backup if you don't want to lose it."
+    },
+    "import": 
+    {
+        "message": "Import"
+    },
+    "override_current_settings": 
+    {
+        "message": "Override current settings?"
+    },
+    "import_failed": 
+    {
+        "message": "Import failed"
+    },
+    "configuration_string_is_invalid": 
+    {
+        "message": "Sorry, provided configuration string is invalid. Import failed."
+    },
+    "successful_import": 
+    {
+        "message": "Successful import"
+    },
+    "configuration_was_imported_successfuly": 
+    {
+        "message": "Configuration was imported successfuly."
+    },
+    "some_extensions_were_ignored": 
+    {
+        "message": "Some extensions from imported configuration were ignored because they are not installed:"
+    },
+    "override_server_settings": 
+    {
+        "message": "Override configuration on server?"
+    },
+    "confirm_chrome_sync_configuration_export": 
+    {
+        "message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+    },
+    "manual": 
+    {
+        "message": "Manual"
+    },
+    "chrome_sync": 
+    {
+        "message": "Chrome Sync"
+    },
+    "save_on_server": 
+    {
+        "message": "Save on server"
+    },
+    "load_from_server": 
+    {
+        "message": "Load from server"
+    },
+    "saved": 
+    {
+        "message": "Saved"
+    },
+    "enable_apps_support": 
+    {
+        "message": "habilitar soporte de aplicaciones (por defecto, sólo las extensiones son compatibles)"
+    },
+    "show_all_extensions_button": 
+    {
+        "message": "Mostrar el botón 'Todas las extensiones' en popup"
+    },
+    "delay_after_enabling_extension": 
+    {
+        "message": "delay in milliseconds after enabling each extension"
+    },
+    "context_options": 
+    {
+        "message": "Grupo - Opciones"
+    },
+    "remove_context": 
+    {
+        "message": "Quitar grupo?"
+    },
+    "cancel": 
+    {
+        "message": "Cancelar"
+    },
+    "edit": 
+    {
+        "message": "Editar"
+    },
+    "create": 
+    {
+        "message": "Crear"
+    },
+    "delete": 
+    {
+        "message": "Borrar"
+    },
+    "clone": 
+    {
+        "message": "Duplicar"
+    },
+    "move": 
+    {
+        "message": "Mover"
+    },
+    "extension_is_loading": 
+    {
+        "message": "La extensión se está cargando ..."
+    },
+    "new_extension_installed_action": 
+    {
+        "message": "Después de que el grupo se instale"
+    },
+    "ask_what_to_do": 
+    {
+        "message": "preguntarle qué hacer"
+    },
+    "add_to_all_contexts": 
+    {
+        "message": "DAña extensión a todos los grupos"
+    },
+    "add_to_always_enabled": 
+    {
+        "message": "add to 'always-enabled'"
+    },
+    "do_nothing": 
+    {
+        "message": "no hacer nada"
+    },
+    "extension_installed_1": 
+    {
+        "message": "Nuevo grupo"
+    },
+    "extension_installed_2": 
+    {
+        "message": "instalado"
+    },
+    "add_to_contexts": 
+    {
+        "message": "Añadir a los siguientes grupos"
+    },
+    "or_add_it_to": 
+    {
+        "message": "or add it to"
+    },
+    "font": 
+    {
+        "message": "Fuente"
+    },
+    "icons": 
+    {
+        "message": "Iconos"
+    },
+    "icon_flip_animation": 
+    {
+        "message": "Animación del icono"
+    },
+    "programmer": 
+    {
+        "message": "Programador"
+    },
+    "source_code": 
+    {
+        "message": "Source code"
+    },
+    "translations": 
+    {
+        "message": "Traducciones"
+    },
+    "welcome": 
+    {
+        "message": "Bienvenido"
+    },
+    "welcome_step_1": 
+    {
+        "message": "Bienvenido! Puedes empezar a trabajar con esta extensión de crear grupos (grupos de extensiones). Para cada grupo elegir un nombre y un icono."
+    },
+    "welcome_step_2": 
+    {
+        "message": "Para conectar las extensiones de los mismos grupos hay que arrastrarlas desde la lista de arriba, por orden alfabético a una caja de elegidos que representan a su grupo."
+    },
+    "welcome_step_3": 
+    {
+        "message": "Mueve todas las extensiones que deberían estar activadas para cada contexto desde 'extensiones disponibles' a la caja 'extensiones siempre disponibles'."
+    },
+    "welcome_step_4": 
+    {
+        "message": "Guarda tu configuración y listo. Puede fácilmente alternar los contextos usando los iconos en la barra de tareas. Seleccionando el nombre del contexto o el icono en el menú, cambiar al contexto seleccionado. Pulsando en el botón más/menos activa/desactiva el contexto elegido permitiendo mezclar unos contextos con otros."
+    },
+    "next": 
+    {
+        "message": "Próximo"
+    },
+    "previous": 
+    {
+        "message": "Anterior"
+    },
+    "close": 
+    {
+        "message": "Cerrar"
+    },
+    "popup": 
+    {
+        "message": "Popup"
+    },
+    "show_context_icon": 
+    {
+        "message": "Show Context icon"
+    },
+    "show_extension_icon": 
+    {
+        "message": "Show first extension icon"
+    }
 }
