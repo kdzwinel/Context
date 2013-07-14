@@ -1,4 +1,5 @@
 function ExtensionsManager(onLoadCallback) {
+	"use strict";
 	var that = this;
 	var extensionsList = [];
 	var alwaysEnabledExtensionsIds = [];
@@ -27,7 +28,7 @@ function ExtensionsManager(onLoadCallback) {
 
 			return 1;
 		}).filter(function (element) { //remove Context itself from manageable extensions
-			return ( element.id != contextExtensionId );
+			return ( element.id !== contextExtensionId );
 		});
 	};
 
@@ -66,7 +67,7 @@ function ExtensionsManager(onLoadCallback) {
 		for (index in extensionsList) {
 			var extension = extensionsList[index];
 
-			if (extension.id == extid) {
+			if (extension.id === extid) {
 				return extension;
 			}
 		}
@@ -76,7 +77,7 @@ function ExtensionsManager(onLoadCallback) {
 
 	//check if extension is marked as always enabled
 	this.isAlwaysEnabled = function (extid) {
-		return (jQuery.inArray(extid, alwaysEnabledExtensionsIds) != -1);
+		return (jQuery.inArray(extid, alwaysEnabledExtensionsIds) !== -1);
 	};
 
 	this.enableAllExtensions = function () {
@@ -104,15 +105,15 @@ function ExtensionsManager(onLoadCallback) {
 	this.enableExtension = function (extension, enable, callback) {
 		if (
 			(!extension.isApp || CONFIG.get('appsSupport') === 'true') && //check if extension is an app and continue only if we support apps
-				((enable == true && !extension.enabled) || (enable == false && extension.enabled && extension.mayDisable)) && //enable extension if it is not already enabled, disable extension if it can be disabled and is not already disabled
+				((enable == true && !extension.enabled) || (enable === false && extension.enabled && extension.mayDisable)) && //enable extension if it is not already enabled, disable extension if it can be disabled and is not already disabled
 				(extension.id != chrome.i18n.getMessage("@@extension_id")) //do not enable/disable current extension (Context)
 			) {
-			if (typeof callback == "function") {
+			if (typeof callback === "function") {
 				chrome.management.setEnabled(extension.id, enable, callback);
 			} else {
 				chrome.management.setEnabled(extension.id, enable);
 			}
-		} else if (typeof callback == "function") {
+		} else if (typeof callback === "function") {
 			callback();
 		}
 	};
@@ -132,7 +133,7 @@ function ExtensionsManager(onLoadCallback) {
 			}
 		}
 
-		if (typeof callback == "function") {
+		if (typeof callback === "function") {
 			callback();
 		}
 	};

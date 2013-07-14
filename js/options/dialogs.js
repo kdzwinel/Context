@@ -32,7 +32,7 @@ function openNewContextDialog() {
 					addDialogError($(this), chrome.i18n.getMessage("pick_an_icon"));
 				}
 				
-				var showIcon = $("input:radio[name='context-icon']:checked").val();
+				var showIcon = $("#showExtensionIcon").is(':checked') ? 'show_extension' : 'show_context';
 
 				if ( isValid ) {
 					var context = newContext(contextName, selectedIcon.attr('src'), showIcon);
@@ -44,8 +44,8 @@ function openNewContextDialog() {
 			};
 
 	buttons[chrome.i18n.getMessage("cancel")] = function() {
-			$( this ).dialog( "close" );
-		};
+		$( this ).dialog( "close" );
+	};
 
 	$( '#new-context-form' )
 		.dialog( "option", "title", chrome.i18n.getMessage("create_new_context") )
@@ -61,7 +61,7 @@ function openEditContextDialog(context) {
 
 	$( '#new-context-form' ).find('input[name=context-name]').val(contextName);
 	$( '#new-context-form' ).find('img[src="'+contextImg+'"]').parent().addClass('ui-selected');
-	$( '#new-context-form' ).find('input[name=context-icon][value="'+contextIcon+'"]').prop('checked', true);
+	$( '#new-context-form' ).find('#showExtensionIcon').prop('checked', (contextIcon === 'show_extension'));
 
 	var buttons = {};
 	buttons[chrome.i18n.getMessage("edit")] = function() {
@@ -95,7 +95,7 @@ function openEditContextDialog(context) {
 					addDialogError($(this), chrome.i18n.getMessage("pick_an_icon"));
 				}
 				
-				var showIcon = $("input:radio[name='context-icon']:checked").val();
+				var showIcon = $("#showExtensionIcon").is(':checked') ? 'show_extension' : 'show_context';
 
 				if ( isValid ) {
 					context.find('.contextExtensions').data('contextName', contextName);
@@ -163,7 +163,7 @@ function initNewContextDialog() {
 			$(this).find('.ui-selected').removeClass("ui-selected");
 			$(this).find('input:text').val( "" ).removeClass("ui-state-error");
 			$(this).find('ul').removeClass( "ui-state-error" );
-			$(this).find('input[name=context-icon][value="show_context"]').prop('checked', true);
+			$(this).find('#showExtensionIcon').prop('checked', false);
 		}
 	}).find('form').submit(function(){
 		return false;

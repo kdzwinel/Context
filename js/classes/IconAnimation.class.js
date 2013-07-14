@@ -1,4 +1,5 @@
 function IconAnimation(config) {
+	"use strict";
 	var animationFrames = 36,
 	animationSpeed = 10,//ms
 	rotation = 0,

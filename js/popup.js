@@ -19,6 +19,14 @@ function createContextLi(name, title, imgSrc, status) {
 	return li;
 }
 
+function getContextIcon(context) {
+	if (context.icon === 'show_extension' && context.extensions[0] && context.extensions[0].icon) {
+		return context.extensions[0].icon;
+	}
+
+	return context.imgSrc;
+}
+
 var contextsManager = new ContextsManager();
 var blocked = false;
 var allBtn;
@@ -28,8 +36,7 @@ $(document).ready(function(){
 	//update statuses of all contexts
 	contextsManager.getContextsListWithStatuses(function(contexts){
 		contexts.forEach(function(context) {
-			var icon = (context.icon == 'show_extension' && context.extensions[0]) ? (context.extensions[0].icon || context.imgSrc) : context.imgSrc;
-			$('ul').append(createContextLi(context.name, context.name, icon, context.status));
+			$('ul').append(createContextLi(context.name, context.name, getContextIcon(context), context.status));
 		});
 
 		//create a context activating all extensions
