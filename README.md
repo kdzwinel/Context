@@ -23,6 +23,23 @@ https://github.com/kdzwinel/Context/issues
 Changelog
 ---------
 
+### 0.400 ###
+
+New features:
++ syncing configuration via Chrome Sync
++ displaying status of each context in the popup (enabled-green/disabled-red/partial-yellow)
++ displaying status of extensions on the options page (enabled-red/disabled-green)
++ possibility to use extension icon instead of context icon
++ possibility to create new context from 'New extension installed' dialog
++ preserving state of 'highlight ungrouped extensions' checkbox
+
+Bugs fixed:
++ cloned context partially inactive until options page was refreshed
+
+Other:
++ Thanks to Thiago Talma (https://github.com/thiagomt) who contributed huge part of this update.
++ Codebase improved thanks to the WebStorm
+
 ### 0.300 ###
 
 New features:
