@@ -292,16 +292,8 @@
     {
         "message": "Fermer"
     },
-    "popup": 
-    {
-        "message": "Popup"
-    },
-    "show_context_icon": 
-    {
-        "message": "Show Context icon"
-    },
     "show_extension_icon": 
     {
-        "message": "Show first extension icon"
+        "message": "In the popup use icon of the first extension instead of the context icon."
     }
 }

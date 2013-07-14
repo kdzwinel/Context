@@ -292,7 +292,7 @@
     {
         "message": "Close"
     },
-    "show_extension_icon":
+    "show_extension_icon": 
     {
         "message": "In the popup use icon of the first extension instead of the context icon."
     }
