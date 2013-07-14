@@ -1,9 +1,28 @@
 function ConfigurationBackupImporter() {
 	"use strict";
+	/**
+	 * Array of errors that occurred during last import.
+	 * @type {Array.<string>}
+	 */
 	var errors = [];
+	/**
+	 * List of extensions mentioned in imported configuration but not installed.
+	 * @type {Array.<Object>}
+	 */
 	var missingExtensions = [];
+	/**
+	 * @type {ExtensionsManager}
+	 */
 	var extensionsManager;
 
+	/**
+	 * Tries to import given encoded configuration. If no critical errors are found boolean 'true' is returned via callback as a first parameter and
+	 * imported configuration replaces current Context configuration.
+	 * Second parameter returned to the callback will contain list of extensions mentioned in imported config but currently not installed.
+	 * Third parameter returned to the callback will contain list of errors encountered during import.
+	 * @param {string} encodedConfig base64 encoded JSON
+	 * @param {function(boolean, Array.<Object>, Array.<string>): void=} callback
+	 */
 	this.importConfig = function (encodedConfig, callback) {
 		extensionsManager = new ExtensionsManager(function () {
 			var jsonString = Base64.decode(jQuery.trim(encodedConfig));

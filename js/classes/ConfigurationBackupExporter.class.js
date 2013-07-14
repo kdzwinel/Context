@@ -2,6 +2,10 @@ function ConfigurationBackupExporter() {
 	"use strict";
 	var extensionsManager;
 
+	/**
+	 * Creates dump (base64 encoded JSON) of whole configuration. Value is returned via callback.
+	 * @param {function(string)} callback
+	 */
 	this.exportConfig = function (callback) {
 		var contextsManager = new ContextsManager();
 		extensionsManager = new ExtensionsManager(function () {

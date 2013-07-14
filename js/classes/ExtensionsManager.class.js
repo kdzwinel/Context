@@ -1,7 +1,15 @@
 function ExtensionsManager(onLoadCallback) {
 	"use strict";
 	var that = this;
+	/**
+	 * List of all installed extensions.
+	 * @type {Array.<Object>}
+	 */
 	var extensionsList = [];
+	/**
+	 * List of IDs of 'always enabled' extensions.
+	 * @type {Array.<string>}
+	 */
 	var alwaysEnabledExtensionsIds = [];
 
 	this.init = function (callback) {
@@ -28,10 +36,14 @@ function ExtensionsManager(onLoadCallback) {
 
 			return 1;
 		}).filter(function (element) { //remove Context itself from manageable extensions
-			return ( element.id !== contextExtensionId );
-		});
+				return ( element.id !== contextExtensionId );
+			});
 	};
 
+	/**
+	 * Returns list of all extensions.
+	 * @returns {Array.<Object>}
+	 */
 	this.getExtensionsList = function () {
 		return extensionsList;
 	};
@@ -40,27 +52,46 @@ function ExtensionsManager(onLoadCallback) {
 		alwaysEnabledExtensionsIds = list;
 	};
 
+	/**
+	 * Returns list of 'always enabled' extensions.
+	 * @returns {Array.<Object>}
+	 */
 	this.getAlwaysEnabledExtensionsIds = function () {
 		return alwaysEnabledExtensionsIds;
 	};
 
+	/**
+	 * Removes single extension from 'always enabled extensions'
+	 * @param {string} extid
+	 */
 	this.removeExtensionFromAlwaysEnabled = function (extid) {
 		alwaysEnabledExtensionsIds = alwaysEnabledExtensionsIds.filter(function (item) {
-			return (item != extid);
+			return (item !== extid);
 		});
 	};
 
+	/**
+	 * Adds single exetnsion to 'always enabled extensions'
+	 * @param {string} extid
+	 */
 	this.addExtensionToAlwaysEnabled = function (extid) {
 		if (!that.isAlwaysEnabled(extid)) {
 			alwaysEnabledExtensionsIds.push(extid);
 		}
 	};
 
+	/**
+	 * Saves 'always enabled extensions' to localStorage
+	 */
 	this.save = function () {
 		localStorage.alwaysEnabledExtensions = JSON.stringify(alwaysEnabledExtensionsIds);
 	};
 
-	//get extension details
+	/**
+	 * Returns extension details based on extension ID.
+	 * @param {string} extid
+	 * @returns {Object|boolean}
+	 */
 	this.getExtensionData = function (extid) {
 		var index;
 
@@ -75,16 +106,27 @@ function ExtensionsManager(onLoadCallback) {
 		return false;
 	};
 
-	//check if extension is marked as always enabled
+	/**
+	 * Returns true if extension is in 'always enabled' group.
+	 * @param {string} extid
+	 * @returns {boolean}
+	 */
 	this.isAlwaysEnabled = function (extid) {
 		return (jQuery.inArray(extid, alwaysEnabledExtensionsIds) !== -1);
 	};
 
+	/**
+	 * Enables all extensions.
+	 */
 	this.enableAllExtensions = function () {
 		that.enableExtensions(that.getExtensionsList());
 	};
 
-	//enable list of extensions
+	/**
+	 * Enables list of extensions one by one. Calls optional callback when all extensions from the list are enabled.
+	 * @param {Array.<Object>} list
+	 * @param {function(): void=} callback
+	 */
 	this.enableExtensions = function (list, callback) {
 		if (list.length > 0) {
 			var extension = list.pop();
@@ -101,12 +143,17 @@ function ExtensionsManager(onLoadCallback) {
 		}
 	};
 
-	//enable (or disable) single extension
+	/**
+	 * Enables or disables single extension. Calls optional callback when operation is finished.
+	 * @param {Object} extension
+	 * @param {boolean} enable
+	 * @param {function(): void=} callback
+	 */
 	this.enableExtension = function (extension, enable, callback) {
 		if (
 			(!extension.isApp || CONFIG.get('appsSupport') === 'true') && //check if extension is an app and continue only if we support apps
-				((enable == true && !extension.enabled) || (enable === false && extension.enabled && extension.mayDisable)) && //enable extension if it is not already enabled, disable extension if it can be disabled and is not already disabled
-				(extension.id != chrome.i18n.getMessage("@@extension_id")) //do not enable/disable current extension (Context)
+				((enable === true && !extension.enabled) || (enable === false && extension.enabled && extension.mayDisable)) && //enable extension if it is not already enabled, disable extension if it can be disabled and is not already disabled
+				(extension.id !== chrome.i18n.getMessage("@@extension_id")) //do not enable/disable current extension (Context)
 			) {
 			if (typeof callback === "function") {
 				chrome.management.setEnabled(extension.id, enable, callback);
@@ -118,11 +165,18 @@ function ExtensionsManager(onLoadCallback) {
 		}
 	};
 
+	/**
+	 * Disables all extensions.
+	 */
 	this.disableAllExtensions = function () {
 		that.disableExtensions(that.getExtensionsList());
 	};
 
-	//disable list of extensions
+	/**
+	 * Disables list of extensions one by one. Calls optional callback when all extensions from the list are disabled.
+	 * @param {Array.<Object>} list
+	 * @param {function(): void=} callback
+	 */
 	this.disableExtensions = function (list, callback) {
 		var i;
 
@@ -138,7 +192,10 @@ function ExtensionsManager(onLoadCallback) {
 		}
 	};
 
-	//alias method - disable single extension
+	/**
+	 * Disable single extension (alias method).
+	 * @param {Object} extension
+	 */
 	this.disableExtension = function (extension) {
 		that.enableExtension(extension, false);
 	};

@@ -16,7 +16,13 @@ function Configuration() {
 		highlightUngroupedExtensions: 'false'
 	};
 
-	this.get = function(name) {
+	/**
+	 * Returns value of a config parameter (constant, user setting or default setting) with provided name.
+	 * Returns null if no matching parameter is found.
+	 * @param {string} name
+	 * @returns {string|Array|number|null}
+	 */
+	this.get = function (name) {
 		return constants[name] || localStorage[name] || defaults[name] || null;
 	};
 }
