@@ -9,7 +9,7 @@
 * REQUIRES PHP 5 >= 5.4 to run
 */
 
-function json_readable_encode($in, $indent = 0, $from_array = false) {
+function json_readable_encode($in, $indent = 0) {
     $_myself = __FUNCTION__;
     $_escape = function($str) {
         return preg_replace("!([\b\t\n\r\f\"])!", "\\\\\\1", $str);

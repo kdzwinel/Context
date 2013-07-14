@@ -78,7 +78,7 @@
     },
     "configuration_import_export": 
     {
-        "message": "Import/export konfiguracji"
+        "message": "Import/export/synchronizacja konfiguracji"
     },
     "configuration_import": 
     {
@@ -126,15 +126,15 @@
     },
     "override_server_settings": 
     {
-        "message": "Override configuration on server?"
+        "message": "Nadpisać konfigurację na serwerze?"
     },
     "confirm_chrome_sync_configuration_export": 
     {
-        "message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+        "message": "Ta akcja spowoduje nadpisanie istniejących ustawień zapisanych na serwerze. Kontynuować?"
     },
     "manual": 
     {
-        "message": "Manual"
+        "message": "Ręcznie"
     },
     "chrome_sync": 
     {
@@ -142,15 +142,15 @@
     },
     "save_on_server": 
     {
-        "message": "Save on server"
+        "message": "Wyślij na swerwer"
     },
     "load_from_server": 
     {
-        "message": "Load from server"
+        "message": "Załaduj z serwera"
     },
     "saved": 
     {
-        "message": "Saved"
+        "message": "Zapisano"
     },
     "enable_apps_support": 
     {
