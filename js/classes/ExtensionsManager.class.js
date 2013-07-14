@@ -8,7 +8,7 @@ function ExtensionsManager(onLoadCallback) {
 		chrome.management.getAll(function (list) {
 			that.setExtensionsList(list);
 
-			if (typeof callback == 'function') {
+			if (typeof callback === 'function') {
 				callback();
 			}
 		});
@@ -96,7 +96,7 @@ function ExtensionsManager(onLoadCallback) {
 			});
 		}
 
-		if (typeof callback == "function") {
+		if (typeof callback === "function") {
 			callback();
 		}
 	};

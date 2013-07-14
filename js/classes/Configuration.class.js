@@ -1,4 +1,5 @@
 function Configuration() {
+	"use strict";
 	var constants = {
 		iconsPath: 'icons/dortmund/',
 		icons: ['home', 'search', 'world', 'heart', 'lightbulb', 'basket', 'customers', 'hire-me', 'administrative-docs', 'comment', 'config', 'finished-work', 'settings', 'star'],

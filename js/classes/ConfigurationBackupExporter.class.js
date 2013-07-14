@@ -1,4 +1,5 @@
 function ConfigurationBackupExporter() {
+	"use strict";
 	var extensionsManager;
 
 	this.exportConfig = function (callback) {
@@ -22,7 +23,7 @@ function ConfigurationBackupExporter() {
 
 			var encodedConfig = Base64.encode(JSON.stringify(cleanConfig));
 
-			if (typeof callback == 'function') {
+			if (typeof callback === 'function') {
 				callback(encodedConfig);
 			}
 		});
@@ -57,5 +58,5 @@ function ConfigurationBackupExporter() {
 		}
 
 		return extensionsNamesDictionary;
-	}
+	};
 }

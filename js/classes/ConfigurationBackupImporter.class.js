@@ -1,4 +1,5 @@
 function ConfigurationBackupImporter() {
+	"use strict";
 	var errors = [];
 	var missingExtensions = [];
 	var extensionsManager;
@@ -17,11 +18,11 @@ function ConfigurationBackupImporter() {
 				errors.push('JSON parser error: ' + e.type);
 			}
 
-			if (typeof json == "object") {
+			if (typeof json === "object") {
 				validateStructure(json);
 
 				//we proceed only if there were no errors in the root structure
-				if (errors.length == 0) {
+				if (errors.length === 0) {
 					validateVersion(json.version);
 					validateContexts(json.contexts, json.extensionsNamesDictionary);
 					validateAlwaysEnabledExtensions(json.alwaysEnabledExtensions, json.extensionsNamesDictionary);
@@ -31,12 +32,12 @@ function ConfigurationBackupImporter() {
 				errors.push('Corrupted configuration string.');
 			}
 
-			if (errors.length == 0) {
+			if (errors.length === 0) {
 				updateConfiguration(json);
 			}
 
-			if (typeof callback == 'function') {
-				var status = (errors.length == 0);
+			if (typeof callback === 'function') {
+				var status = (errors.length === 0);
 				callback(status, missingExtensions, errors);
 			}
 		});
@@ -57,7 +58,7 @@ function ConfigurationBackupImporter() {
 	};
 
 	var validateVersion = function (version) {
-		if (version != 1) {
+		if (version !== 1) {
 			errors.push('Unknown configuration file format version.');
 		}
 	};
@@ -84,7 +85,7 @@ function ConfigurationBackupImporter() {
 				//store only valid extensions
 				context.extensions = context.extensions.filter(function (extension, idx, array) {
 					return validateExtension(extension.id, dictionary);
-				})
+				});
 			}
 		}
 	};
@@ -97,7 +98,7 @@ function ConfigurationBackupImporter() {
 		if (!extension) {
 			//check if extension is not already on a list of missing extensions
 			for (index in missingExtensions) {
-				if (missingExtensions[index].id == extid) {
+				if (missingExtensions[index].id === extid) {
 					return false;
 				}
 			}
@@ -129,13 +130,13 @@ function ConfigurationBackupImporter() {
 	};
 
 	var validateAdvancedOptions = function (config) {
-		if (config.hasOwnProperty("appsSupport") && (jQuery.inArray(config.appsSupport, ["true", "false"]) == -1)) {
+		if (config.hasOwnProperty("appsSupport") && (jQuery.inArray(config.appsSupport, ["true", "false"]) === -1)) {
 			errors.push('Invalid "appsSupport" value.');
 		}
-		if (config.hasOwnProperty("newExtensionAction") && (jQuery.inArray(config.newExtensionAction, ["ask", "add_to_all", "add_to_always_enabled", "do_nothing"]) == -1)) {
+		if (config.hasOwnProperty("newExtensionAction") && (jQuery.inArray(config.newExtensionAction, ["ask", "add_to_all", "add_to_always_enabled", "do_nothing"]) === -1)) {
 			errors.push('Invalid "newExtensionAction" value.' + config.newExtensionAction);
 		}
-		if (config.hasOwnProperty("showLoadAllBtn") && (jQuery.inArray(config.showLoadAllBtn, ["true", "false"]) == -1)) {
+		if (config.hasOwnProperty("showLoadAllBtn") && (jQuery.inArray(config.showLoadAllBtn, ["true", "false"]) === -1)) {
 			errors.push('Invalid "showLoadAllBtn" value.' + config.showLoadAllBtn);
 		}
 	};
@@ -156,5 +157,5 @@ function ConfigurationBackupImporter() {
 
 		//import alwaysEnabledExtensions
 		localStorage.alwaysEnabledExtensions = JSON.stringify(config.alwaysEnabledExtensions);
-	}
+	};
 }

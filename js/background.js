@@ -46,7 +46,7 @@ function changeContext(selectedContext) {
 			var disableList = [];
 
 			//check which extensions should be enabled and which should be disabled
-			for(i in allExtensions) {
+			for(var i in allExtensions) {
 				var extension = allExtensions[i];
 				var found = false;
 
@@ -82,7 +82,7 @@ function activateContext(selectedContext) {
 			var enableList = [];
 
 			//check which extensions should be enabled
-			for(i in allExtensions) {
+			for(var i in allExtensions) {
 				var extension = allExtensions[i];
 				var found = false;
 
@@ -114,11 +114,11 @@ function deactivateContext(selectedContext) {
 			var disableList = [];
 
 			//check which extensions should be disabled
-			for(i in allExtensions) {
+			for(var i in allExtensions) {
 				var extension = allExtensions[i];
 				var found = false;
 
-				//skip allways enabled extensions
+				//skip always enabled extensions
 				if(extensionsManager.isAlwaysEnabled(extension.id)) {
 					continue;
 				} else {
@@ -130,7 +130,7 @@ function deactivateContext(selectedContext) {
 				}
 			}
 
-			//disable extensions first
+			//disable extensions
 			extensionsManager.disableExtensions(disableList);
 		}
 	});
@@ -164,7 +164,7 @@ chrome.management.onInstalled.addListener(function(extdata) {
 	var contexts = contextsManager.getContextsList();
 
 	if(contexts.length > 0 && CONFIG.get('newExtensionAction') == 'add_to_all') {
-		for(i in contexts) {
+		for(var i in contexts) {
 			contextsManager.addExtensionToContext( contexts[i], extdata.id );
 		}
 
@@ -185,7 +185,7 @@ chrome.management.onInstalled.addListener(function(extdata) {
 chrome.management.onUninstalled.addListener(function(extid) {
 	//remove extension from all contexts
 	var contexts = contextsManager.getContextsList();
-	for(i in contexts) {
+	for(var i in contexts) {
 		contextsManager.removeExtensionFromContext( contexts[i], extid );
 	}
 	contextsManager.save();
@@ -200,24 +200,23 @@ chrome.management.onUninstalled.addListener(function(extid) {
 
 //open extension config page
 function openConfig() {
-	var found = 0;
 	chrome.tabs.getAllInWindow(null, function(tabs) {
-		$.each(tabs, function(i,tab) {
-			if(found == 0 && tab.url.indexOf(chrome.extension.getURL("options.html")) == 0) {
-				found = 1;
-				chrome.tabs.update(e.id, {
+
+		for(var i= 0, l=tabs.length; i<l;i++) {
+			var tab = tabs[i];
+			if(tab.url.indexOf(chrome.extension.getURL("options.html")) === 0) {
+				chrome.tabs.update(tab.id, {
 					url: chrome.extension.getURL("options.html"),
 					selected: true
 				});
+				return;
 			}
-		});
-
-		if(found == 0) {
-			chrome.tabs.create({
-				url:chrome.extension.getURL("options.html"),
-				selected: true
-			});
 		}
+
+		chrome.tabs.create({
+			url:chrome.extension.getURL("options.html"),
+			selected: true
+		});
 	});
 }
 
