@@ -2,7 +2,7 @@
    "name": "Context",
    "version": "0.350",
    "manifest_version": 2,
-   "permissions": [ "management", "notifications", "tabs" ],
+   "permissions": [ "management", "notifications", "tabs", "storage" ],
    "background": {
       "page": "background.html"
    },

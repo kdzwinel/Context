@@ -162,6 +162,44 @@ function newContext(name, imgSrc, showIcon) {
 	return contextLi;
 }
 
+function importConfiguration(configurationString) {
+	var buttons = {};
+	buttons[chrome.i18n.getMessage("import")] = function () {
+		configurationBackupImporter.importConfig(configurationString, function (status, missingExtensions, errors) {
+			if (status) {
+				importSuccessDialog({
+					missingExtensions: missingExtensions,
+					callback: function () {
+						loadConfiguration();
+						$('#import_box').val('');
+					}
+				});
+			} else {
+				console.error(errors);
+
+				showErrorDialog({
+					title: chrome.i18n.getMessage("import_failed"),
+					content: chrome.i18n.getMessage("configuration_string_is_invalid")
+				});
+			}
+		});
+
+		$(this).dialog("close");
+	};
+	buttons[chrome.i18n.getMessage("cancel")] = function () {
+		$(this).dialog("close");
+	};
+
+	$("#dialog-confirm").dialog({
+		title: chrome.i18n.getMessage("override_current_settings"),
+		resizable: false,
+		width: 300,
+		height: 200,
+		modal: true,
+		buttons: buttons
+	}).find('span.dialog-content').text(chrome.i18n.getMessage("confirm_configuration_import"));
+}
+
 //mark config as modified
 function markDirty() {
 	$("#save-button").button("option", "disabled", false);
@@ -477,25 +515,22 @@ $(document).ready(function () {
 	});
 
 	$('#import_button').click(function () {
-		var buttons = {};
-		buttons[chrome.i18n.getMessage("import")] = function () {
-			configurationBackupImporter.importConfig($('#import_box').val(), function (status, missingExtensions, errors) {
-				if (status) {
-					importSuccessDialog({
-						missingExtensions: missingExtensions,
-						callback: function () {
-							loadConfiguration();
-							$('#import_box').val('');
-						}
-					});
-				} else {
-					console.error(errors);
+		importConfiguration($('#import_box').val());
+		return false;
+	});
 
-					showErrorDialog({
-						title: chrome.i18n.getMessage("import_failed"),
-						content: chrome.i18n.getMessage("configuration_string_is_invalid")
-					});
-				}
+	$('#chrome_sync_export_button').click(function(){
+		var configurationString = $('#export_box').val();
+		var $exportButton = $(this);
+		var buttons = {};
+		buttons[chrome.i18n.getMessage("save")] = function () {
+			chrome.storage.sync.set({'configuration': configurationString}, function() {
+				var originalText = $exportButton.find('span').text();
+				$exportButton.find('span').text(chrome.i18n.getMessage("saved"));
+				$exportButton.effect('highlight', {}, 'slow');
+				setTimeout(function() {
+					$exportButton.find('span').text(originalText);
+				}, 2500);
 			});
 
 			$(this).dialog("close");
@@ -505,14 +540,20 @@ $(document).ready(function () {
 		};
 
 		$("#dialog-confirm").dialog({
-			title: chrome.i18n.getMessage("override_current_settings"),
+			title: chrome.i18n.getMessage("override_server_settings"),
 			resizable: false,
 			width: 300,
 			height: 200,
 			modal: true,
 			buttons: buttons
-		}).find('span.dialog-content').text(chrome.i18n.getMessage("confirm_configuration_import"));
+		}).find('span.dialog-content').text(chrome.i18n.getMessage("confirm_chrome_sync_configuration_export"));
+		return false;
+	});
 
+	$('#chrome_sync_import_button').click(function(){
+		chrome.storage.sync.get('configuration', function(obj){
+			importConfiguration(obj.configuration);
+		});
 		return false;
 	});
 

@@ -58,7 +58,7 @@
         "message": "About"
     },
     "configuration_import_export": {
-        "message": "Configuration import\/export"
+        "message": "Configuration import\/export\/sync"
     },
     "configuration_import": {
         "message": "Configuration import"
@@ -93,6 +93,27 @@
     "some_extensions_were_ignored": {
         "message": "Some extensions from imported configuration were ignored because they are not installed:"
     },
+	"override_server_settings": {
+		"message": "Override configuration on server?"
+	},
+	"confirm_chrome_sync_configuration_export": {
+		"message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+	},
+	"manual": {
+		"message": "Manual"
+	},
+	"chrome_sync": {
+		"message": "Chrome Sync"
+	},
+	"save_on_server": {
+		"message": "Save on server"
+	},
+	"load_from_server": {
+		"message": "Load from server"
+	},
+	"saved": {
+		"message": "Saved"
+	},
     "enable_apps_support": {
         "message": "enable apps support (by default only extensions are supported)"
     },

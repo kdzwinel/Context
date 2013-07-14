@@ -4,8 +4,8 @@
 
 	<title data-i18n="context_options"></title>
 	<link rel="icon" type="image/png" href="icons/context_wrench.png">
-	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css" type="text/css" />
-	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css" type="text/css"/>
+	<link rel="stylesheet" href="css/main.css" type="text/css"/>
 
 	<script src="js/libs/jquery-1.7.1.min.js"></script>
 	<script src="js/libs/jquery-ui-1.8.17.custom.min.js"></script>
@@ -27,7 +27,7 @@
 	<h1>Context <span data-i18n="options"></span></h1>
 
 	<div id='loader'>
-		<p><img src='other/flower.gif' /> <span data-i18n="extension_is_loading"></span></p>
+		<p><img src='other/flower.gif'/> <span data-i18n="extension_is_loading"></span></p>
 	</div>
 
 	<div id='content'>
@@ -35,8 +35,10 @@
 
 		<div class='ui-widget-content ui-corner-all' id='available_extensions_wrapper'>
 			<h2 data-i18n="available_extensions"></h2>
+
 			<div class='top-right-box ui-widget'>
-				<input type='checkbox' id='highlightUngrouped' /> <label for='highlightUngrouped' data-i18n="highlight_ungrouped_extensions"></label>
+				<input type='checkbox' id='highlightUngrouped'/> <label for='highlightUngrouped'
+				                                                        data-i18n="highlight_ungrouped_extensions"></label>
 			</div>
 			<ul id="extensions" class='extensions_list clearfix'>
 			</ul>
@@ -55,61 +57,98 @@
 		<div id="new-context-form">
 			<div class="ui-state-highlight ui-corner-all errors"></div>
 			<form>
-			<fieldset>
-				<div class="dialog-label" data-i18n="name"></div>
-				<input type="text" name="context-name" id="context-name" class="text ui-widget-content ui-corner-all" />
+				<fieldset>
+					<div class="dialog-label" data-i18n="name"></div>
+					<input type="text" name="context-name" id="context-name"
+					       class="text ui-widget-content ui-corner-all"/>
 
-				<div class="dialog-label" data-i18n="icon"></div>
-				<ul id='context-icons' class='clearfix'>
-				</ul>
-				<div class="dialog-label" data-i18n="popup"></div>
-				<div><input type='radio' id='showContextIcon' name='context-icon' value='show_context' checked='true' /> <label for='showContextIcon' data-i18n="show_context_icon"></label></div>
-				<div><input type='radio' id='showExtensionIcon' name='context-icon' value='show_extension' /> <label for='showExtensionIcon' data-i18n="show_extension_icon"></label></div>
-			</fieldset>
+					<div class="dialog-label" data-i18n="icon"></div>
+					<ul id='context-icons' class='clearfix'>
+					</ul>
+					<div class="dialog-label" data-i18n="popup"></div>
+					<div><input type='radio' id='showContextIcon' name='context-icon' value='show_context'
+					            checked='true'/> <label for='showContextIcon' data-i18n="show_context_icon"></label>
+					</div>
+					<div><input type='radio' id='showExtensionIcon' name='context-icon' value='show_extension'/> <label
+							for='showExtensionIcon' data-i18n="show_extension_icon"></label></div>
+				</fieldset>
 			</form>
 		</div>
 		<div id="dialog-confirm">
-			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span class="dialog-content"></span></p>
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span
+					class="dialog-content"></span></p>
 		</div>
 		<div id="dialog-import-success">
-			<p><span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 20px 0;"></span><span data-i18n="configuration_was_imported_successfuly"></span></p>
-			<p><span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 20px 0;"></span><span data-i18n="some_extensions_were_ignored"></span></p>
+			<p><span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 20px 0;"></span><span
+					data-i18n="configuration_was_imported_successfuly"></span></p>
+
+			<p><span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 20px 0;"></span><span
+					data-i18n="some_extensions_were_ignored"></span></p>
 			<ul>
 			</ul>
 		</div>
 		<div id="accordion">
 			<h3><a href="#" data-i18n="additional_options"></a></h3>
+
 			<div id='additional-options-panel'>
 				<ul>
-					<li><input type='checkbox' id='appsSupport' /> <label for='appsSupport' data-i18n="enable_apps_support"></label></li>
+					<li><input type='checkbox' id='appsSupport'/> <label for='appsSupport'
+					                                                     data-i18n="enable_apps_support"></label></li>
 					<li><select id='newExtensionAction'>
 						<option value='ask' data-i18n="ask_what_to_do"></option>
 						<option value='add_to_all' data-i18n="add_to_all_contexts"></option>
 						<option value='add_to_always_enabled' data-i18n="add_to_always_enabled"></option>
 						<option value='do_nothing' data-i18n="do_nothing"></option>
 					</select> <label for='newExtensionAction' data-i18n="new_extension_installed_action"></label></li>
-					<li><input type='checkbox' id='showLoadAllBtn' /> <label for='showLoadAllBtn' data-i18n="show_all_extensions_button"></label></li>
-					<li class='hidden_feature'><input type='number' id='extensionEnableDelay' min="0" max="1000" step="100" /> <label for='extensionEnableDelay' data-i18n="delay_after_enabling_extension"></label></li>
+					<li><input type='checkbox' id='showLoadAllBtn'/> <label for='showLoadAllBtn'
+					                                                        data-i18n="show_all_extensions_button"></label>
+					</li>
+					<li class='hidden_feature'><input type='number' id='extensionEnableDelay' min="0" max="1000"
+					                                  step="100"/> <label for='extensionEnableDelay'
+					                                                      data-i18n="delay_after_enabling_extension"></label>
+					</li>
 				</ul>
 
 			</div>
 			<h3><a href="#" data-i18n="configuration_import_export"></a></h3>
+
 			<div id='import-export-panel'>
+				<h2 data-i18n="chrome_sync"></h2>
+				<button data-i18n="save_on_server" id='chrome_sync_export_button'></button>
+				<button data-i18n="load_from_server" id='chrome_sync_import_button'></button>
+
+				<h2 data-i18n="manual"></h2>
 				<p data-i18n="configuration_export_description"></p>
 				<textarea id='export_box' readonly="true" wrap="off" class='ui-widget-content ui-corner-all'></textarea>
+
 				<p data-i18n="configuration_import_description"></p>
 				<textarea id='import_box' wrap="off" class='ui-widget-content ui-corner-all'></textarea>
-				<p><button data-i18n="import" id='import_button'></button></p>
+
+				<p>
+					<button data-i18n="import" id='import_button'></button>
+				</p>
 			</div>
 			<h3><a href="#" data-i18n="about"></a></h3>
+
 			<div id='about-panel'>
 				<ul>
-					<li><span data-i18n="font"></span>: Andika - <a href='http://www.google.com/webfonts/specimen/Andika'>Google Web Fonts</a></li>
-					<li><span data-i18n="icons"></span>: Dortmund - <a href='http://pc.de/icons/'>pc.de</a>, silk icons - <a href='http://www.famfamfam.com/archive/silk-icons-thats-your-lot/'>famfamfam</a></li>
-					<li><span data-i18n="icon_flip_animation"></span>: <a href='https://chrome.google.com/webstore/detail/mihcahmgecmbnbcchbopgniflfhgnkff'>Google Mail Checker</a></li>
-					<li><span data-i18n="translations"></span>: Português - <a href='https://github.com/thiagomt'>Thiago Talma</a>, Español - <a href='http://wwwhatsnew.com/'>Juan Diego Polo</a>, 日本語 - <a href='http://web-marketing.zako.org/'>Junichi Murashige</a>, 中文 - <a href='https://plus.google.com/u/0/107010653165528905049'>Techlive Zheng</a>, Français - <a href='http://www.passion-net.fr/'>Julien Lemonnier</a>, Italian - <a href='http://www.marcotrulla.it/'>Marco Trulla</a></li>
-					<li><span data-i18n="programmer"></span>: Konrad Dzwinel (<a href='mailto:kdzwinel@gmail.com'>kdzwinel@gmail.com</a>)</li>
-					<li><span data-i18n="source_code"></span>: <a href='https://github.com/kdzwinel/Context'>github.com</a></li>
+					<li><span data-i18n="font"></span>: Andika - <a
+							href='http://www.google.com/webfonts/specimen/Andika'>Google Web Fonts</a></li>
+					<li><span data-i18n="icons"></span>: Dortmund - <a href='http://pc.de/icons/'>pc.de</a>, silk icons
+						- <a href='http://www.famfamfam.com/archive/silk-icons-thats-your-lot/'>famfamfam</a></li>
+					<li><span data-i18n="icon_flip_animation"></span>: <a
+							href='https://chrome.google.com/webstore/detail/mihcahmgecmbnbcchbopgniflfhgnkff'>Google
+						Mail Checker</a></li>
+					<li><span data-i18n="translations"></span>: Português - <a href='https://github.com/thiagomt'>Thiago
+						Talma</a>, Español - <a href='http://wwwhatsnew.com/'>Juan Diego Polo</a>, 日本語 - <a
+							href='http://web-marketing.zako.org/'>Junichi Murashige</a>, 中文 - <a
+							href='https://plus.google.com/u/0/107010653165528905049'>Techlive Zheng</a>, Français - <a
+							href='http://www.passion-net.fr/'>Julien Lemonnier</a>, Italian - <a
+							href='http://www.marcotrulla.it/'>Marco Trulla</a></li>
+					<li><span data-i18n="programmer"></span>: Konrad Dzwinel (<a href='mailto:kdzwinel@gmail.com'>kdzwinel@gmail.com</a>)
+					</li>
+					<li><span data-i18n="source_code"></span>: <a
+							href='https://github.com/kdzwinel/Context'>github.com</a></li>
 				</ul>
 			</div>
 		</div>
@@ -146,9 +185,15 @@
 		</div>
 
 		<div id="social-buttons">
-			<g:plusone size="medium" href="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka"></g:plusone>
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka" data-text="Context - Sort extensions into groups and easily switch between them." data-count="horizontal">&nbsp;</a>
-			<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Faalnjolghjkkogicompabhhbbkljnlka&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px;" allowTransparency="true"></iframe>
+			<g:plusone size="medium"
+			           href="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka"></g:plusone>
+			<a href="https://twitter.com/share" class="twitter-share-button"
+			   data-url="https://chrome.google.com/webstore/detail/aalnjolghjkkogicompabhhbbkljnlka"
+			   data-text="Context - Sort extensions into groups and easily switch between them."
+			   data-count="horizontal">&nbsp;</a>
+			<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Faalnjolghjkkogicompabhhbbkljnlka&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21"
+			        scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px;"
+			        allowTransparency="true"></iframe>
 		</div>
 	</div>
 </div>
