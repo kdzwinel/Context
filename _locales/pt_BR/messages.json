@@ -14,7 +14,7 @@
     },
     "highlight_ungrouped_extensions": 
     {
-        "message": "destacar extensões sem grupo"
+        "message": "Destacar extensões sem grupo"
     },
     "create_new_context": 
     {
@@ -126,11 +126,11 @@
     },
     "override_server_settings": 
     {
-        "message": "Override configuration on server?"
+        "message": "Sobrescrever a configuração no servidor?"
     },
     "confirm_chrome_sync_configuration_export": 
     {
-        "message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+        "message": "Sua configuração atual mantida no Chrome Sync será substituída. Você deseja continuar?"
     },
     "manual": 
     {
@@ -142,23 +142,23 @@
     },
     "save_on_server": 
     {
-        "message": "Save on server"
+        "message": "Salvar no servidor"
     },
     "load_from_server": 
     {
-        "message": "Load from server"
+        "message": "Carregar do servidor"
     },
     "saved": 
     {
-        "message": "Saved"
+        "message": "Salvo"
     },
     "enable_apps_support": 
     {
-        "message": "ativar suporte a aplicativos (por padrão, somente extensões são suportadas)"
+        "message": "Ativar suporte a aplicativos (por padrão, somente extensões são suportadas)"
     },
     "show_all_extensions_button": 
     {
-        "message": "mostrar o botão 'Todas as extensões' no popup"
+        "message": "Mostrar o botão 'Todas as extensões' no popup"
     },
     "delay_after_enabling_extension": 
     {
@@ -206,19 +206,19 @@
     },
     "ask_what_to_do": 
     {
-        "message": "perguntar o que fazer"
+        "message": "Perguntar o que fazer"
     },
     "add_to_all_contexts": 
     {
-        "message": "incluir a extensão em todos os contextos"
+        "message": "Incluir a extensão em todos os contextos"
     },
     "add_to_always_enabled": 
     {
-        "message": "incluir em 'sempre ativas'"
+        "message": "Incluir em 'sempre ativas'"
     },
     "do_nothing": 
     {
-        "message": "não fazer nada"
+        "message": "Não fazer nada"
     },
     "extension_installed_1": 
     {
@@ -294,6 +294,6 @@
     },
     "show_extension_icon": 
     {
-        "message": "In the popup use icon of the first extension instead of the context icon."
+        "message": "Mostrar no menu o ícone da primeira extensão ao invés do ícone do contexto."
     }
 }
