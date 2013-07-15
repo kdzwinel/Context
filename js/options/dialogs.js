@@ -64,7 +64,7 @@ function openEditContextDialog(context) {
 	$( '#new-context-form' ).find('#showExtensionIcon').prop('checked', (contextIcon === 'show_extension'));
 
 	var buttons = {};
-	buttons[chrome.i18n.getMessage("edit")] = function() {
+	buttons[chrome.i18n.getMessage("save")] = function() {
 				clearDialogErrors($(this));
 				$(this).find('input, ul').removeClass("ui-state-error");
 
