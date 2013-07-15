@@ -456,6 +456,11 @@ $(document).ready(function () {
 		markDirty();
 	});
 
+	//HTML notifications are being dropped from Chrome :(
+	if(!webkitNotifications.createHTMLNotification) {
+		$('#newExtensionAction option[value=ask]').attr('disabled', 'disabled');
+	}
+
 	$('#appsSupport').change(function () {
 		if ($(this).is(':checked')) {
 			$('li.app').effect('slide', {}, 'normal', markDirty);

@@ -30,7 +30,6 @@ New features:
 + displaying status of each context in the popup (enabled-green/disabled-red/partial-yellow)
 + displaying status of extensions on the options page (enabled-red/disabled-green)
 + possibility to use extension icon instead of context icon
-+ possibility to create new context from 'New extension installed' dialog
 + preserving state of 'highlight ungrouped extensions' checkbox
 
 Bugs fixed:
@@ -38,6 +37,7 @@ Bugs fixed:
 
 Other:
 + Thanks to Thiago Talma (https://github.com/thiagomt) who contributed huge part of this update.
++ Disabling 'ask what to do' option for browsers that no longer support HTML notifications (https://github.com/kdzwinel/Context/issues/23)
 + Codebase improved thanks to the WebStorm
 
 ### 0.300 ###

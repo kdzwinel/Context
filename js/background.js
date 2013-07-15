@@ -175,10 +175,13 @@ chrome.management.onInstalled.addListener(function(extdata) {
 		extensionsManager.save();
 		configUpdated();
 	} else if(contexts.length > 0 && CONFIG.get('newExtensionAction') == 'ask') {
-		var notification = webkitNotifications.createHTMLNotification('notification.html');
+		//looks like HTML notifications are being deprecated :( In chrome 30+ this doesn't work anymore.
+		if(webkitNotifications.createHTMLNotification) {
+			var notification = webkitNotifications.createHTMLNotification('notification.html');
 
-		newestExtension = extdata;
-		notification.show();
+			newestExtension = extdata;
+			notification.show();
+		}
 	}
 });
 
