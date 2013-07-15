@@ -36,8 +36,8 @@ Bugs fixed:
 + cloned context partially inactive until options page was refreshed
 
 Other:
-+ Thanks to Thiago Talma (https://github.com/thiagomt) who contributed huge part of this update.
-+ Disabling 'ask what to do' option for browsers that no longer support HTML notifications (https://github.com/kdzwinel/Context/issues/23)
++ Thanks to Thiago Talma (@thiagomt) who contributed huge part of this update.
++ Disabling 'ask what to do' option for browsers that no longer support HTML notifications (#23)
 + Codebase improved thanks to the WebStorm
 
 ### 0.300 ###
