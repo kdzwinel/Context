@@ -126,31 +126,31 @@
     },
     "override_server_settings": 
     {
-        "message": "Override configuration on server?"
+        "message": "Sovrascrivere la configurazione sul server?"
     },
     "confirm_chrome_sync_configuration_export": 
     {
-        "message": "This will override your current configuration kept in Chrome Sync. Do you want to proceed?"
+        "message": "Questo sovrascriverà l'attuale configurazione sincronizzata in Chrome. Vuoi continuare?"
     },
     "manual": 
     {
-        "message": "Manual"
+        "message": "Manuale"
     },
     "chrome_sync": 
     {
-        "message": "Chrome Sync"
+        "message": "Sincronizza in Chrome"
     },
     "save_on_server": 
     {
-        "message": "Save on server"
+        "message": "Salva sul server"
     },
     "load_from_server": 
     {
-        "message": "Load from server"
+        "message": "Carica dal server"
     },
     "saved": 
     {
-        "message": "Saved"
+        "message": "Salvato"
     },
     "enable_apps_support": 
     {
@@ -294,6 +294,6 @@
     },
     "show_extension_icon": 
     {
-        "message": "In the popup use icon of the first extension instead of the context icon."
+        "message": "Nel popup, invece dell'icona del contesto, usa quella della prima estensione."
     }
 }
