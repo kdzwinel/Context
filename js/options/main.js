@@ -2,6 +2,7 @@ var extensionsManager;
 var contextsManager;
 var configurationBackupExporter = new ConfigurationBackupExporter();
 var configurationBackupImporter = new ConfigurationBackupImporter();
+var storageSync = new HugeStorageSync();
 
 //display list of all extensions
 function displayExtensions() {
@@ -529,7 +530,7 @@ $(document).ready(function () {
 		var $exportButton = $(this);
 		var buttons = {};
 		buttons[chrome.i18n.getMessage("save")] = function () {
-			chrome.storage.sync.set({'configuration': configurationString}, function() {
+			storageSync.set('configuration', configurationString, function() {
 				var originalText = $exportButton.find('span').text();
 				$exportButton.find('span').text(chrome.i18n.getMessage("saved"));
 				$exportButton.effect('highlight', {}, 'slow');
@@ -556,8 +557,8 @@ $(document).ready(function () {
 	});
 
 	$('#chrome_sync_import_button').click(function(){
-		chrome.storage.sync.get('configuration', function(obj){
-			importConfiguration(obj.configuration);
+		storageSync.get('configuration', function(value){
+			importConfiguration(value);
 		});
 		return false;
 	});
