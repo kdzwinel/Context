@@ -175,7 +175,7 @@ function importConfiguration(configurationString) {
 					}
 				});
 			} else {
-				console.error(errors);
+				window.console.error(errors);
 
 				showErrorDialog({
 					title: chrome.i18n.getMessage("import_failed"),
