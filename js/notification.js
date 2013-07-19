@@ -34,6 +34,25 @@ $(document).ready(function () {
 				}
 			});
 
+		$('#new_context').bind("click", function () {
+			var input = $('<input>').keydown(function (event) {
+				if (event.which == 13) {
+					event.preventDefault();
+					var context_name = $(this).val();
+					var context_img = 'icons/dortmund/settings.png';
+
+					contextsManager.newContext(context_name, context_img);
+					chrome.extension.getBackgroundPage().configUpdated();
+
+					$('ul').append(createContextLi(context_name, context_name, context_img)).find("div:last").addClass('ui-selected');
+					$(event.target).remove();
+					$('#always_enabled').removeClass('ui-selected');
+					$('#new_context').show();
+				}
+			}).attr({type: 'text', class: 'text ui-widget-content ui-corner-all'});
+			input.insertBefore($(this)).focus();
+			$(this).hide();
+		});
 		$('button').button();
 
 		$('#do_nothing').click(function () {

@@ -295,5 +295,9 @@
     "show_extension_icon": 
     {
         "message": "W popup'ie użyj ikony pierwszego dodatku zamiast ikony kontekstu."
+    },
+    "open_notification": 
+    {
+        "message": "Click here to select the context to add it."
     }
 }
