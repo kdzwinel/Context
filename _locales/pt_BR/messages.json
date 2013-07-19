@@ -295,5 +295,9 @@
     "show_extension_icon": 
     {
         "message": "Mostrar no menu o ícone da primeira extensão ao invés do ícone do contexto."
+    },
+    "open_notification": 
+    {
+        "message": "Clique aqui para selecionar o contexto para adicioná-la."
     }
 }
