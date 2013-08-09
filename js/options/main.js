@@ -457,8 +457,7 @@ $(document).ready(function () {
 		markDirty();
 	});
 
-	//HTML notifications are being dropped from Chrome :(
-	if(!webkitNotifications.createHTMLNotification) {
+	if(!window.webkitNotifications) {
 		$('#newExtensionAction option[value=ask]').attr('disabled', 'disabled');
 	}
 

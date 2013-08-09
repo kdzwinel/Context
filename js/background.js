@@ -174,10 +174,22 @@ chrome.management.onInstalled.addListener(function(extdata) {
 		extensionsManager.addExtensionToAlwaysEnabled( extdata.id );
 		extensionsManager.save();
 		configUpdated();
-	} else if(contexts.length > 0 && CONFIG.get('newExtensionAction') == 'ask') {
-		//looks like HTML notifications are being deprecated :( In chrome 30+ this doesn't work anymore.
-		if(webkitNotifications.createHTMLNotification) {
-			var notification = webkitNotifications.createHTMLNotification('notification.html');
+	} else if(CONFIG.get('newExtensionAction') == 'ask') {
+		if(window.webkitNotifications) {
+			var notification = window.webkitNotifications.createNotification(
+				extdata.icons[extdata.icons.length-1].url,
+				chrome.i18n.getMessage("extension_installed_1") + ' ' + extdata.name + ' ' + chrome.i18n.getMessage("extension_installed_2"),
+				chrome.i18n.getMessage("open_notification")
+			);
+				
+			notification.onclick = function(){
+				var w = 300;
+				var h = 500;  
+				var t = screen.height - h - 10;
+				var l = screen.width - w - 10;
+				
+				chrome.windows.create({'url': 'notification.html', 'type': 'popup', 'focused': true, 'width': w, 'height': h, 'top': t, 'left': l});
+			}
 
 			newestExtension = extdata;
 			notification.show();
