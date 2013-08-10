@@ -33,27 +33,15 @@ function displayExtensions() {
 
 //create list element representing an extension
 function createExtensionLi(extdata) {
-	var iconSrc = 'icons/plugin.png';
+	//use smallest extension icon if it exists
+	var icon = (extdata.icons && extdata.icons.length) ? (extdata.icons[0].url) : ('icons/plugin.png');
 
-	if (extdata.icons) {
-		var iconSize = 1024;
-
-		for (var iconIndex in extdata.icons) {
-			var icon = extdata.icons[iconIndex];
-
-			if (icon.size < iconSize) {
-				iconSrc = icon.url;
-				iconSize = icon.size;
-			}
-		}
-	}
-
-	var img = $('<img>').attr('src', iconSrc);
+	var img = $('<img>').attr('src', icon);
 	var span = $('<span/>').addClass('extensionName').text(extdata.name);
 	var removeImg = $('<span />').attr('class', 'ui-icon ui-icon-circle-close');
 	var removeBtn = $('<div />').addClass('removeBtn').append(removeImg);
 	var status = 'status-' + ((extdata.enabled == true) ? 'enabled' : 'disabled');
-	var li = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all ' + status).attr('data-extid', extdata.id).attr('data-exticon', iconSrc).append(img).append(span).append(removeBtn);
+	var li = $('<li>').addClass('ui-widget-content').addClass('ui-corner-all ' + status).attr('data-extid', extdata.id).attr('data-exticon', icon).append(img).append(span).append(removeBtn);
 
 	if (extdata.isApp) {
 		li.addClass('app');
@@ -456,10 +444,6 @@ $(document).ready(function () {
 	$('#additional-options-panel').find('input, select, textarea').change(function () {
 		markDirty();
 	});
-
-	if(!window.webkitNotifications) {
-		$('#newExtensionAction option[value=ask]').attr('disabled', 'disabled');
-	}
 
 	$('#appsSupport').change(function () {
 		if ($(this).is(':checked')) {

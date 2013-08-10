@@ -163,37 +163,46 @@ chrome.management.onInstalled.addListener(function(extdata) {
 
 	var contexts = contextsManager.getContextsList();
 
-	if(contexts.length > 0 && CONFIG.get('newExtensionAction') == 'add_to_all') {
+	if(contexts.length > 0 && CONFIG.get('newExtensionAction') === 'add_to_all') {
 		for(var i in contexts) {
 			contextsManager.addExtensionToContext( contexts[i], extdata.id );
 		}
 
 		contextsManager.save();
 		configUpdated();
-	} else if(CONFIG.get('newExtensionAction') == 'add_to_always_enabled') {
+	} else if(CONFIG.get('newExtensionAction') === 'add_to_always_enabled') {
 		extensionsManager.addExtensionToAlwaysEnabled( extdata.id );
 		extensionsManager.save();
 		configUpdated();
-	} else if(CONFIG.get('newExtensionAction') == 'ask') {
-		if(window.webkitNotifications) {
-			var notification = window.webkitNotifications.createNotification(
-				extdata.icons[extdata.icons.length-1].url,
-				chrome.i18n.getMessage("extension_installed_1") + ' ' + extdata.name + ' ' + chrome.i18n.getMessage("extension_installed_2"),
-				chrome.i18n.getMessage("open_notification")
-			);
-				
-			notification.onclick = function(){
-				var w = 300;
-				var h = 500;  
-				var t = screen.height - h - 10;
-				var l = screen.width - w - 10;
-				
-				chrome.windows.create({'url': 'notification.html', 'type': 'popup', 'focused': true, 'width': w, 'height': h, 'top': t, 'left': l});
-			}
+	} else if (CONFIG.get('newExtensionAction') === 'ask') {
+		//fetching last (biggest) icon if it exists, otherwise using Context icon
+		var icon = extdata.icons.length ? (extdata.icons[extdata.icons.length - 1].url) : ('icons/context-128.png');
 
-			newestExtension = extdata;
-			notification.show();
-		}
+		var notification = window.webkitNotifications.createNotification(
+			icon,
+			chrome.i18n.getMessage("extension_installed_1") + ' ' + extdata.name + ' ' + chrome.i18n.getMessage("extension_installed_2"),
+			chrome.i18n.getMessage("open_notification")
+		);
+
+		notification.onclick = function () {
+			var w = 300,
+				h = 300,
+				t = screen.height - h - 10,
+				l = screen.width - w - 10;
+
+			chrome.windows.create({
+				'url': 'notification.html',
+				'type': 'popup',
+				'focused': true,
+				'width': w,
+				'height': h,
+				'top': t,
+				'left': l
+			});
+		};
+
+		newestExtension = extdata;
+		notification.show();
 	}
 });
 

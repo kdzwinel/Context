@@ -35,24 +35,44 @@ $(document).ready(function () {
 			});
 
 		$('#new_context').bind("click", function () {
-			var input = $('<input>').keydown(function (event) {
-				if (event.which == 13) {
+			var input = $('<input>').attr({
+				type: 'text',
+				class: 'text ui-widget-content ui-corner-all'
+			}).keydown(function (event) {
+				//wait for ENTER
+				if (event.keyCode === 13) {
 					event.preventDefault();
-					var context_name = $(this).val();
-					var context_img = 'icons/dortmund/settings.png';
+					var contextName = $(this).val(),
+						contextImg = 'icons/dortmund/settings.png';
 
-					contextsManager.newContext(context_name, context_img);
+					//check if name provided isn't already in use
+					if(contextsManager.contextExists(contextName) || contextName.length === 0) {
+						$(this).addClass('ui-state-error');
+						return false;
+					}
+
+					//create new context with default icon
+					contextsManager.newContext(contextName, contextImg);
+					//save configuration
 					chrome.extension.getBackgroundPage().configUpdated();
 
-					$('ul').append(createContextLi(context_name, context_name, context_img)).find("div:last").addClass('ui-selected');
-					$(event.target).remove();
+					//append new context
+					$('ul').append(createContextLi(contextName, contextName, contextImg)).find("div:last").addClass('ui-selected');
+					//remove input field
+					$(this).remove();
+					//clear 'always enabled' selection
 					$('#always_enabled').removeClass('ui-selected');
+					//show 'new context' button
 					$('#new_context').show();
 				}
-			}).attr({type: 'text', class: 'text ui-widget-content ui-corner-all'});
+				$(this).removeClass('ui-state-error');
+			});
+
+			//show input and hide the button
 			input.insertBefore($(this)).focus();
 			$(this).hide();
 		});
+
 		$('button').button();
 
 		$('#do_nothing').click(function () {

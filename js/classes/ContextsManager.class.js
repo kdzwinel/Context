@@ -116,6 +116,15 @@ function ContextsManager() {
 	};
 
 	/**
+	 * Checks if given context exists.
+	 * @param {string} name
+	 * @returns {boolean}
+	 */
+	this.contextExists = function (name) {
+		return (this.getContext(name) !== false);
+	};
+
+	/**
 	 * Adds single extension to the given context.
 	 * @param {Object|string} context
 	 * @param {Object|string} extension
