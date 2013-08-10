@@ -470,8 +470,34 @@ a:visited {
 }
 
 #popup {
-	margin: 5px;
+	width: 222px;
 }
+
+	#popup * {
+		box-sizing: border-box;
+	}
+
+	#popup .screenContainer {
+		width: 200%;
+		-webkit-transition: -webkit-transform 0.3s;
+		transition: transform 0.3s;
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+		#popup .screenContainer.showExtensions {
+			-webkit-transform: translateX(-50%);
+			transform: translateX(-50%);
+		}
+
+		#popup .screenContainer > div {
+			margin: 5px;
+			float: left;
+		}
+
+		#popup #extensionsScreen .back-to-contexts {
+			cursor: pointer;
+		}
 
 	ul.simple-list {
 		position: relative;
@@ -503,6 +529,20 @@ a:visited {
 				ul.simple-list li div.list-context span {
 					margin-left: 5px;
 				}
+
+			ul.simple-list li div.list-item {
+				padding: 2px 2px 2px 4px;
+				cursor: pointer;
+				width: 211px;
+			}
+
+				ul.simple-list li div.list-item span {
+					display: inline-block;
+				}
+
+				ul.simple-list li div.list-item span.ui-icon {
+					vertical-align: bottom;
+				}
 			
 			ul.simple-list li div.list-context.all-context {
 				padding-left: 6px;
@@ -531,10 +571,6 @@ a:visited {
 		height: 16px;
 		vertical-align: -3px;
 	}
-
-#popup ul.simple-list {
-	width: 200px;
-}
 
 #notification {
 	margin: 7px;

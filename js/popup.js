@@ -5,10 +5,17 @@ function createContextLi(name, title, imgSrc, status) {
 
 	var activate = $("<div class='list-button activate ui-widget-content ui-corner-all'><span class='ui-icon ui-icon-plusthick'></span></div>");
 	var deactivate = $("<div class='list-button deactivate ui-widget-content ui-corner-all'><span class='ui-icon ui-icon-minusthick'></span></div>");
+	var showExtensions = $("<div class='list-button show-extensions ui-widget-content ui-corner-all'><span class='ui-icon ui-icon-triangle-1-e'></span></div>");
 
 	var context = $('<div>').attr('class', 'list-context ui-widget-content ui-corner-all ' + all).append(img).append(span);
 
-	var li = $('<li>').addClass('clearfix').append(context).append(activate).append(deactivate).data('contextName', name);
+	var li = $('<li>')
+		.addClass('clearfix')
+		.append(context)
+		.append(activate)
+		.append(deactivate)
+		.append(showExtensions)
+		.data('contextName', name);
 
 	if(status === 'enabled') {
 		li.addClass('status-all');
@@ -32,21 +39,25 @@ var blocked = false;
 var allBtn;
 
 $(document).ready(function(){
+	//load translations
+	$('[data-i18n]').each(function (i, item) {
+		$(item).text(chrome.i18n.getMessage($(item).data('i18n')));
+	});
 
 	//update statuses of all contexts
 	contextsManager.getContextsListWithStatuses(function(contexts){
 		contexts.forEach(function(context) {
-			$('ul').append(createContextLi(context.name, context.name, getContextIcon(context), context.status));
+			$('#contextsScreen ul').append(createContextLi(context.name, context.name, getContextIcon(context), context.status));
 		});
 
 		//create a context activating all extensions
 		if(CONFIG.get('showLoadAllBtn') === 'true') {
 			allBtn = createContextLi('all', chrome.i18n.getMessage("all_extensions"), 'icons/plugin.png');
-			$('ul').append(allBtn);
+			$('#contextsScreen ul').append(allBtn);
 		}
 	});
 
-	$('body').on('click', 'div.list-context, div.list-button', function(){
+	$('#contextsScreen').on('click', 'div.list-context, div.activate, div.deactivate', function(){
 		//make sure that user won't change the context while other context is loading
 		if(blocked) {
 			return false;
@@ -87,5 +98,14 @@ $(document).ready(function(){
 		}, 500);
 
 		return false;
+	});
+
+	$('#contextsScreen').on('click', 'div.show-extensions', function() {
+		$('.screenContainer').addClass('showExtensions');
+		//$('#extensionsScreen ul');
+	});
+
+	$('.back-to-contexts').on('click', function() {
+		$('.screenContainer').removeClass('showExtensions');
 	});
 });
