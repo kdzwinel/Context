@@ -540,8 +540,20 @@ a:visited {
 					display: inline-block;
 				}
 
+				ul.simple-list li div.list-item span.extension-name {
+					width: 180px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					vertical-align: bottom;
+				}
+
 				ul.simple-list li div.list-item span.ui-icon {
 					vertical-align: bottom;
+				}
+
+				ul.simple-list li div.list-item img {
+					margin-right: 5px;
 				}
 			
 			ul.simple-list li div.list-context.all-context {

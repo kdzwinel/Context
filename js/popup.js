@@ -1,3 +1,39 @@
+function createListOfContexts() {
+	contextsManager.getContextsListWithStatuses(function(contexts){
+		$('#contextsScreen ul').empty();
+
+		contexts.forEach(function(context) {
+			$('#contextsScreen ul').append(createContextLi(context.name, context.name, getContextIcon(context), context.status));
+		});
+
+		//create a context activating all extensions
+		if(CONFIG.get('showLoadAllBtn') === 'true') {
+			allBtn = createContextLi('all', chrome.i18n.getMessage("all_extensions"), 'icons/plugin.png');
+			$('#contextsScreen ul').append(allBtn);
+		}
+	});
+}
+
+function createListOfExtensions(extid) {
+	var context, extensions;
+
+	if(extid) {
+		context = contextsManager.getContext(extid);
+		extensions = context.extensions;
+	} else {
+		extensions = extensionsManager.getExtensionsList();
+	}
+
+	$('#extensionsScreen ul > li:gt(0)').remove();
+	for(var idx in extensions) {
+		var extId = extensions[idx].id;
+		var extension = extensionsManager.getExtensionData(extId);
+		var li = createExtensionLi(extension);
+
+		$('#extensionsScreen ul').append(li);
+	}
+}
+
 function createContextLi(name, title, imgSrc, status) {
 	var img = $('<img>').attr('src', imgSrc);
 	var span = $('<span>').append(title);
@@ -26,6 +62,25 @@ function createContextLi(name, title, imgSrc, status) {
 	return li;
 }
 
+function createExtensionLi(extension) {
+	var imgSrc = (extension.icons && extension.icons.length) ? (extension.icons[0].url) : ('icons/plugin.png');
+	var img = $('<img>').attr('src', imgSrc);
+	var span = $('<span>').addClass('extension-name').append(extension.name);
+
+	var extensionDiv = $('<div>')
+		.attr('class', 'list-item ui-widget-content ui-corner-all')
+		.append(img)
+		.append(span)
+		.addClass(extension.enabled ? 'status-enabled' : 'status-disabled');
+
+	var li = $('<li>')
+		.addClass('clearfix')
+		.append(extensionDiv)
+		.data('extensionID', extension.id);
+
+	return li;
+}
+
 function getContextIcon(context) {
 	if (context.icon === 'show_extension' && context.extensions[0] && context.extensions[0].icon) {
 		return context.extensions[0].icon;
@@ -35,6 +90,8 @@ function getContextIcon(context) {
 }
 
 var contextsManager = new ContextsManager();
+var extensionsManager = new ExtensionsManager();
+var currentContextName = null;
 var blocked = false;
 var allBtn;
 
@@ -44,18 +101,7 @@ $(document).ready(function(){
 		$(item).text(chrome.i18n.getMessage($(item).data('i18n')));
 	});
 
-	//update statuses of all contexts
-	contextsManager.getContextsListWithStatuses(function(contexts){
-		contexts.forEach(function(context) {
-			$('#contextsScreen ul').append(createContextLi(context.name, context.name, getContextIcon(context), context.status));
-		});
-
-		//create a context activating all extensions
-		if(CONFIG.get('showLoadAllBtn') === 'true') {
-			allBtn = createContextLi('all', chrome.i18n.getMessage("all_extensions"), 'icons/plugin.png');
-			$('#contextsScreen ul').append(allBtn);
-		}
-	});
+	createListOfContexts();
 
 	$('#contextsScreen').on('click', 'div.list-context, div.activate, div.deactivate', function(){
 		//make sure that user won't change the context while other context is loading
@@ -102,10 +148,35 @@ $(document).ready(function(){
 
 	$('#contextsScreen').on('click', 'div.show-extensions', function() {
 		$('.screenContainer').addClass('showExtensions');
-		//$('#extensionsScreen ul');
+		var li = $(this).closest('li');
+
+		if(li[0] === allBtn[0]) { // 'all extensions' button clicked
+			currentContextName = null;
+			createListOfExtensions();
+		} else {
+			currentContextName = li.data('contextName');
+			createListOfExtensions(currentContextName);
+		}
 	});
 
 	$('.back-to-contexts').on('click', function() {
 		$('.screenContainer').removeClass('showExtensions');
+	});
+
+	$('#extensionsScreen').on('click', 'li', function(){
+		var li = $(this);
+		var extension = extensionsManager.getExtensionData( li.data('extensionID') );
+
+		if(!extension) {
+			return;
+		}
+
+		extensionsManager.enableExtension(extension, !extension.enabled, function() {
+			createListOfContexts();
+			//reload extensions manager before updating list of extensions
+			extensionsManager = new ExtensionsManager(function () {
+				createListOfExtensions(currentContextName);
+			});
+		});
 	});
 });
