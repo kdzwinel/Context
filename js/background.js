@@ -186,7 +186,7 @@ chrome.management.onInstalled.addListener(function(extdata) {
 
 		notification.onclick = function () {
 			var w = 300,
-				h = 300,
+				h = 400,
 				t = screen.height - h - 10,
 				l = screen.width - w - 10;
 
