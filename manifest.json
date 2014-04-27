@@ -1,6 +1,6 @@
 {
    "name": "Context",
-   "version": "0.410",
+   "version": "0.411",
    "manifest_version": 2,
    "permissions": [ "management", "notifications", "tabs", "storage" ],
    "background": {

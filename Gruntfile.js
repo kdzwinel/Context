@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 			}
 		},
 		zip: {
-			'context-<%= pkg.version %>.zip': ['_locales/*/messages.json', 'css/**/*', 'screenshots/**/*.jpg', 'icons/*.png', 'js/**/*', 'other/**/*', '*.html', 'manifest.json']
+			'context-<%= pkg.version %>.zip': ['_locales/*/messages.json', 'css/**/*', 'screenshots/**/*.jpg', 'icons/**/*.png', 'js/**/*', 'other/**/*', '*.html', 'manifest.json']
 		}
 	});
 

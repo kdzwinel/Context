@@ -1,6 +1,6 @@
 {
 	"name": "Context",
-	"version": "0.410.0",
+	"version": "0.411.0",
 	"description": "Sort extensions into groups and easily switch between them.",
 	"main": "Gruntfile.js",
 	"repository": {
