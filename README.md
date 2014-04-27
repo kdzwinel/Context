@@ -23,6 +23,17 @@ https://github.com/kdzwinel/Context/issues
 Changelog
 ---------
 
+### 0.410 ###
+
+New features:
++ Ability to manage individual extensions from the popup (#29)
+
+Bug fixes:
++ options page not responding - replacing webkitNotifications with Chrome notifications / HTML5 notifications
+
+Other:
++ Grunt support
+
 ### 0.400 ###
 
 New features:
