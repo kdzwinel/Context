@@ -178,28 +178,27 @@ chrome.management.onInstalled.addListener(function(extdata) {
 		//fetching last (biggest) icon if it exists, otherwise using Context icon
 		var icon = extdata.icons.length ? (extdata.icons[extdata.icons.length - 1].url) : ('icons/context-128.png');
 
-		var notification = window.webkitNotifications.createNotification(
-			icon,
-			chrome.i18n.getMessage("extension_installed_1") + ' ' + extdata.name + ' ' + chrome.i18n.getMessage("extension_installed_2"),
-			chrome.i18n.getMessage("open_notification")
-		);
+		var notification = new ExtensionNotification({
+			icon: icon,
+			title: chrome.i18n.getMessage("extension_installed_1") + ' ' + extdata.name + ' ' + chrome.i18n.getMessage("extension_installed_2"),
+			body: chrome.i18n.getMessage("open_notification"),
+			onclick: function () {
+				var w = 300,
+					h = 400,
+					t = screen.height - h - 10,
+					l = screen.width - w - 10;
 
-		notification.onclick = function () {
-			var w = 300,
-				h = 400,
-				t = screen.height - h - 10,
-				l = screen.width - w - 10;
-
-			chrome.windows.create({
-				'url': 'notification.html',
-				'type': 'popup',
-				'focused': true,
-				'width': w,
-				'height': h,
-				'top': t,
-				'left': l
-			});
-		};
+				chrome.windows.create({
+					'url': 'notification.html',
+					'type': 'popup',
+					'focused': true,
+					'width': w,
+					'height': h,
+					'top': t,
+					'left': l
+				});
+			}
+		});
 
 		newestExtension = extdata;
 		notification.show();

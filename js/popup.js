@@ -28,9 +28,12 @@ function createListOfExtensions(extid) {
 	for(var idx in extensions) {
 		var extId = extensions[idx].id;
 		var extension = extensionsManager.getExtensionData(extId);
-		var li = createExtensionLi(extension);
 
-		$('#extensionsScreen ul').append(li);
+		if(extension.isApp && CONFIG.get('appsSupport') !== 'true') {
+			continue;
+		}
+
+		$('#extensionsScreen ul').append(createExtensionLi(extension));
 	}
 }
 
