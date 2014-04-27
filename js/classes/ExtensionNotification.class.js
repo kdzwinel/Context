@@ -1,6 +1,6 @@
 function ExtensionNotification(options) {
 	"use strict";
-	var useChromeNotifications = (chrome && chrome.notifications && false);
+	var useChromeNotifications = (chrome && chrome.notifications);
 	var defaults = { icon: 'icons/context-128.png', title: '', body: '' };
 	var settings = $.extend({}, defaults, options);
 	var notification = null;
@@ -32,5 +32,5 @@ function ExtensionNotification(options) {
 				notification.onclick = settings.onclick;
 			}
 		}
-	}
+	};
 }
