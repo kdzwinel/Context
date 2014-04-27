@@ -153,7 +153,7 @@ $(document).ready(function(){
 		$('.screenContainer').addClass('showExtensions');
 		var li = $(this).closest('li');
 
-		if(li[0] === allBtn[0]) { // 'all extensions' button clicked
+		if(allBtn && li[0] === allBtn[0]) { // 'all extensions' button clicked
 			currentContextName = null;
 			createListOfExtensions();
 		} else {
