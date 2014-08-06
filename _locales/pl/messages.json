@@ -299,5 +299,9 @@
     "open_notification": 
     {
         "message": "Kliknij tutaj aby zadecydować do jakich kontekstów checsz je dodać."
+    },
+    "confirm_enable_all": 
+    {
+        "message": "Confirm enable ALL extensions?"
     }
 }

@@ -299,5 +299,9 @@
     "open_notification": 
     {
         "message": "Clique aqui para selecionar o contexto para adicioná-la."
+    },
+    "confirm_enable_all": 
+    {
+        "message": "Confirma a ativação de TODAS as extensões?"
     }
 }
