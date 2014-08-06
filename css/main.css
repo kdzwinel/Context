@@ -499,6 +499,12 @@ a:visited {
 			cursor: pointer;
 		}
 
+		#popup #toolbar > div {
+			margin: 5px 5px 5px 0;
+			padding: 2px;
+			float: left;
+		}
+
 	ul.simple-list {
 		position: relative;
 		list-style: none;
