@@ -7,6 +7,11 @@ function ExtensionsManager(onLoadCallback) {
 	 */
 	var extensionsList = [];
 	/**
+	 * List of enabled extensions.
+	 * @type {Array.<Object>}
+	 */
+	var enabledExtensionsList = [];
+	/**
 	 * List of IDs of 'always enabled' extensions.
 	 * @type {Array.<string>}
 	 */
@@ -38,6 +43,10 @@ function ExtensionsManager(onLoadCallback) {
 		}).filter(function (element) { //remove Context itself from manageable extensions
 				return ( element.id !== contextExtensionId );
 			});
+			
+		enabledExtensionsList = extensionsList.filter(function (element) {
+			return ( element.enabled === true );
+		});
 	};
 
 	/**
@@ -58,6 +67,14 @@ function ExtensionsManager(onLoadCallback) {
 	 */
 	this.getAlwaysEnabledExtensionsIds = function () {
 		return alwaysEnabledExtensionsIds;
+	};
+
+	/**
+	 * Returns list of 'enabled' extensions.
+	 * @returns {Array.<Object>}
+	 */
+	this.getEnabledExtensionsList = function () {
+		return enabledExtensionsList;
 	};
 
 	/**

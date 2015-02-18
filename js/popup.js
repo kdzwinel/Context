@@ -18,8 +18,12 @@ function createListOfExtensions(extid) {
 	var context, extensions;
 
 	if(extid) {
-		context = contextsManager.getContext(extid);
-		extensions = context.extensions;
+		if(extid == '__enabled__') {
+			extensions = extensionsManager.getEnabledExtensionsList();	
+		} else {
+			context = contextsManager.getContext(extid);
+			extensions = context.extensions;
+		}
 	} else {
 		extensions = extensionsManager.getExtensionsList();
 	}
@@ -160,6 +164,11 @@ $(document).ready(function(){
 			currentContextName = li.data('contextName');
 			createListOfExtensions(currentContextName);
 		}
+	});
+
+	$('#toolbar').on('click', '.all-enabled', function() {
+		$('.screenContainer').addClass('showExtensions');
+		createListOfExtensions('__enabled__');
 	});
 
 	$('.back-to-contexts').on('click', function() {
