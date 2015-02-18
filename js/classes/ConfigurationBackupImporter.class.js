@@ -176,5 +176,8 @@ function ConfigurationBackupImporter() {
 
 		//import alwaysEnabledExtensions
 		localStorage.alwaysEnabledExtensions = JSON.stringify(config.alwaysEnabledExtensions);
+
+		//reload bg page settings
+		chrome.extension.getBackgroundPage().configUpdated();
 	};
 }

@@ -176,7 +176,7 @@ chrome.management.onInstalled.addListener(function(extdata) {
 		configUpdated();
 	} else if (CONFIG.get('newExtensionAction') === 'ask') {
 		//fetching last (biggest) icon if it exists, otherwise using Context icon
-		var icon = extdata.icons.length ? (extdata.icons[extdata.icons.length - 1].url) : ('icons/context-128.png');
+		var icon = (extdata.icons && extdata.icons.length) ? (extdata.icons[extdata.icons.length - 1].url) : ('icons/context-128.png');
 
 		var notification = new ExtensionNotification({
 			icon: icon,
