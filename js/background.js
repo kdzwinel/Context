@@ -151,6 +151,11 @@ function getNewestExtension() {
 }
 
 chrome.management.onInstalled.addListener(function(extdata) {
+	//ignore themes
+	if(extdata.type === 'theme') {
+		return;
+	}
+
 	//if app support is disabled do nothing
 	if(extdata.isApp && CONFIG.get('appsSupport') !== 'true') {
 		return;

@@ -35,9 +35,11 @@ function ExtensionsManager(onLoadCallback) {
 			}
 
 			return 1;
-		}).filter(function (element) { //remove Context itself from manageable extensions
-				return ( element.id !== contextExtensionId );
-			});
+		}).filter(function (element) {
+			//remove Context itself from manageable extensions
+			//remove themes as support for multiple themes is very unstable
+			return ( element.id !== contextExtensionId && element.type !== 'theme' );
+		});
 	};
 
 	/**
@@ -151,10 +153,11 @@ function ExtensionsManager(onLoadCallback) {
 	 */
 	this.enableExtension = function (extension, enable, callback) {
 		if (
+			extension.type !== 'theme' && //do not touch themes
 			(!extension.isApp || CONFIG.get('appsSupport') === 'true') && //check if extension is an app and continue only if we support apps
-				((enable === true && !extension.enabled) || (enable === false && extension.enabled && extension.mayDisable)) && //enable extension if it is not already enabled, disable extension if it can be disabled and is not already disabled
-				(extension.id !== chrome.i18n.getMessage("@@extension_id")) //do not enable/disable current extension (Context)
-			) {
+			((enable === true && !extension.enabled) || (enable === false && extension.enabled && extension.mayDisable)) && //enable extension if it is not already enabled, disable extension if it can be disabled and is not already disabled
+			(extension.id !== chrome.i18n.getMessage("@@extension_id")) //do not enable/disable current extension (Context)
+		) {
 			if (typeof callback === "function") {
 				chrome.management.setEnabled(extension.id, enable, callback);
 			} else {
